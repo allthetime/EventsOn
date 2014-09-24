@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924202926) do
+ActiveRecord::Schema.define(version: 20140924224856) do
 
   create_table "bookmarks", force: true do |t|
     t.integer  "user_id"
@@ -52,10 +52,12 @@ ActiveRecord::Schema.define(version: 20140924202926) do
     t.string   "picture_url"
     t.string   "link_url"
     t.integer  "event_planner_id"
-    t.integer  "location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "venue_id"
   end
+
+  add_index "events", ["venue_id"], name: "index_events_on_venue_id"
 
   create_table "reviews", force: true do |t|
     t.string   "content"
