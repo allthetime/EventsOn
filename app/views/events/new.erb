@@ -1,0 +1,17 @@
+<form action="/events" method="post">
+  <div>
+    <label>Event Name</label>
+      <input type="text" name="name" value="<%= @event.name %>">
+  </div>
+  <div>
+
+  <div>
+  <label>Description</label>
+    <input type="text" name="description" value="<%= @event.description %>">
+  </div>
+
+    <div>
+  <label>Website</label>
+    <input type="text" name="link_url" value="<%= @event.link_url %>">
+  </div>
+</form>
