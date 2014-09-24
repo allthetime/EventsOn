@@ -1,4 +1,4 @@
-class Type < Activerecord::Base
+class Type < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
 
   has_many :events, through:

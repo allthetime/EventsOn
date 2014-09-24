@@ -1,6 +1,4 @@
-class Venue < User
-  validates :phone, presence: true
-  validates_associated :events
+class EventPlanner < User
 
   has_many :events
 

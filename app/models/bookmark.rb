@@ -1,4 +1,4 @@
-class bookmark < ActiveRecord::Base
+class Bookmark < ActiveRecord::Base
   validates_associated :users
   validates_associated :events
   belongs_to :user
