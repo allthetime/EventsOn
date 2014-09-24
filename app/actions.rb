@@ -4,13 +4,18 @@ get '/' do
 end
 
 helpers do
-  @chars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] 
   def salt_string
-    (0...50).map { @chars[rand(@chars.length)] }.join
+    chars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] 
+    (0...50).map { chars[rand(chars.length)] }.join
   end
   def encrypt(password,salt)
     Digest::SHA256.hexdigest(password+salt)
   end
+end
+
+get '/signup' do
+  @user = User.new
+  erb :'users/index'
 end
 
 post '/signup' do
@@ -26,12 +31,10 @@ post '/signup' do
   if @user.save
     redirect '/'
   else
-    redirect '/'
+    erb :'users/index'
   end
 end
 
-post '/login' do 
 
-end
 
 
