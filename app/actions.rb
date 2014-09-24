@@ -8,21 +8,30 @@ helpers do
   def salt_string
     (0...50).map { @chars[rand(@chars.length)] }.join
   end
+  def encrypt(password,salt)
+    Digest::SHA256.hexdigest(password+salt)
+  end
 end
 
 post '/signup' do
-  salted_and_hashed_password = Digest::SHA256.hexdigest(params[:password]+salt_string)
+  salt = salt_string
+  password_salted_and_hashed = encrypt(params[:password],salt)
   @user = User.new(
     name: params[:name],
-    password: password
+    email: params[:email],
+    avatar_url: params[:avatar_url],
+    password: password_salted_and_hashed,
+    salt: salt
   )
   if @user.save
     redirect '/'
   else
-    erb :signup
+    redirect '/'
   end
 end
 
-post '/login'
+post '/login' do 
 
 end
+
+
