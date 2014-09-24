@@ -1,17 +1,28 @@
 <form action="/events" method="post">
   <div>
+    <label>Picture URL</label>
+      <input type="text" name="picture_url" value="<%= @event.picture_url %>">
+  </div>
+
+  <div>
     <label>Event Name</label>
       <input type="text" name="name" value="<%= @event.name %>">
   </div>
   <div>
 
   <div>
-  <label>Description</label>
-    <input type="text" name="description" value="<%= @event.description %>">
+    <label>Description</label>
+      <input type="text" name="description" value="<%= @event.description %>">
   </div>
 
-    <div>
-  <label>Website</label>
-    <input type="text" name="link_url" value="<%= @event.link_url %>">
+  <div>
+    <label>Website</label>
+      <input type="text" name="link_url" value="<%= @event.link_url %>">
+  </div>
+
+
+
+  <div>
+    <input type="submit" value="Submit">
   </div>
 </form>

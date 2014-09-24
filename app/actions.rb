@@ -12,7 +12,8 @@ post '/events/new' do
   @event = Event.new(
     name: params[:name],
     description:  params[:description],
-    link_url: params[:link_url]
+    link_url: params[:link_url],
+    picture_url: params[:picture_url]
   )
   @event.save
 end
