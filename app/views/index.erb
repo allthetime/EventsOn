@@ -89,32 +89,21 @@ HI planner <%= current_planner.name %>
         var map;
         var bounds = new google.maps.LatLngBounds();
         var mapOptions = {
-            mapTypeId: 'roadmap'
+
         };
                         
         // Display a map on the page
         map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
         map.setTilt(45);
-            
+                
+        //map.setCenter(new google.maps.LatLng(50.4419, -122.1419));
+
+
         // Multiple Markers
         var markers = [
           ['Milano Coffee', 49.266110, -123.096640, "http://www.milanocoffee.ca/"],
           ['Leonidas Chocolates', 49.288682, -123.116923, "http://www.leonidaswaterfront.com/"],
           ['La petite cuillere', 49.263662, -123.099796, "http://www.lapetitecuillere.ca/" ],
-          ['Truffle Fine Foods Café at Van Dusen garden', 49.238907, -123.128145, "http://www.trufflesfinefoods.com/our-cafes"],
-          ['La Cuisson Cafe', 49.234555, -123.153746, "http://www.facebook.com/pages/La-Cuisson-Cafe/142054755871323"],
-          ['L’Epicerie Rotisserie & Gourmet Shop', 49.272824, -123.135428, "http://www.lepiceriegourmande.com/"],
-          ['Burdock and Co.', 49.260994, -123.100859, "http://www.burdockandco.com/"],
-          ['Le Gateau Bake Shop', 49.280988, -123.029296, "http://legateaubakeshop.com/"],
-          ['Harvest Union in Chinatown', 49.277735, -123.098191, "http://harvestunion.ca/"],
-          ['o5 Tea', 49.268079, -123.155579, "http://o5tea.com/"],
-          ['Meinhardt Fine Foods', 49.258679, -123.138489, "http://www.meinhardt.com/"],
-          ['Sweet Nom', 49.266407, -123.099863, "http://www.sweetnom.com"],
-          ['CC Violin Patisserie', 49.328477, -123.158170, "http://www.ccviolin.com/"],
-          ['Thyme to indulge', 49.259587, -123.100758, "http://www.thymetoindulgecatering.com/"],
-          ['Shaktea', 49.251955, -123.100728, "http://www.shaktea.ca/"],
-          ['Fairmont Hotel Vancouver', 49.284099, -123.120882, "http://www.fairmont.com/Vancouver"],
-          ['Neverland tea salon', 49.264107, -123.173346, "http://neverlandtea.com/"]
         ];
                             
         // Info Window Content
@@ -131,61 +120,6 @@ HI planner <%= current_planner.name %>
           '<h4>La petite cuillere</h4>' +
           '<div>55 Kingsway St,<br> Vancouver<br><a href="tel:+16042980088">604.298.0088</a><br><a href="http://www.lapetitecuillere.ca/" target="_blank">lapetitecuillere.ca</a></div>'],
 
-          ['<div class="info_content">' +
-          '<h4>Truffle Fine Foods Café at Van Dusen garden</h4>' +
-          '<div>5151 Oak St, Vancouver<br><a href="tel:+16045054961">604.505.4961</a><br><a href="http://www.trufflesfinefoods.com/our-cafes" target="_blank">trufflesfinefoods.com</a></div>'],
-
-          ['<div class="info_content">' +
-          '<h4>La Cuisson Cafe</h4>' +
-          '<div>2050 W 41st Ave, Vancouver<br><a href="tel:+16045582589">604.558.2589</a><br><a href="http://www.facebook.com/pages/La-Cuisson-Cafe/142054755871323" target="_blank">La Cuisson facebook page</a></div>'],
-
-          ['<div class="info_content">' +
-          '<h4>L’Epicerie Rotisserie & Gourmet Shop</h4>' +
-          '<div>1689 Johnston St, Vancouver<br><a href="tel:+16046537317">604.653.7317</a><br><a href="http://www.lepiceriegourmande.com/" target="_blank">lepiceriegourmande.com</a></div>'],
-
-          ['<div class="info_content">' +
-          '<h4>Burdock and Co.</h4>' +
-          '<div>2702 Main St, Vancouver<br><a href="tel:+16048790077">604.879.0077</a><br><a href="http://www.burdockandco.com/" target="_blank">burdockandco.com</a></div>'],
-
-          ['<div class="info_content">' +
-          '<h4>Le Gateau Bake Shop</h4>' +
-          '<div>3458 E Hastings St,<br>Vancouver<br><a href="tel:+16046207975">604.620.7975</a><br><a href="http://legateaubakeshop.com/" target="_blank">legateaubakeshop.com</a></div>'],
-
-          ['<div class="info_content">' +
-          '<h4>Harvest Union in Chinatown</h4>' +
-          '<div>243 Union St, Vancouver<br><a href="tel:+16046828851">604.682.8851</a><br><a href="http://harvestunion.ca/" target="_blank">harvestunion.ca</a></div>'],
-
-          ['<div class="info_content">' +
-          '<h4>o5 Tea</h4>' +
-          '<div>2208 W 4th, Vancouver<br><a href="tel:+16045580500">604.558.0500</a><br><a href="http://o5tea.com/" target="_blank">o5tea.com</a></div>'],
-
-          ['<div class="info_content">' +
-          '<h4>Meinhardt Fine Foods</h4>' +
-          '<div>3002 Granville St, Vancouver<br><a href="tel:+16047324405">604.732.4405</a><br><a href="http://www.meinhardt.com/" target="_blank">www.meinhardt.com</a></div>'],
-
-          ['<div class="info_content">' +
-          '<h4>Sweet Nom</h4>' +
-          '<div>260 E 5th Ave, Vancouver<br><a href="tel:+16048897818">604.889.7818</a><br><a href="http://www.sweetnom.com" target="_blank">sweetnom.com</a></div>'],
-
-          ['<div class="info_content">' +
-          '<h4>CC Violin Patisserie</h4>' +
-          '<div>1564 Marine, W Van<br><a href="tel:+16042811680">604.281.1680</a><br><a href="http://www.ccviolin.com/" target="_blank">ccviolin.com</a></div>'],
-
-          ['<div class="info_content">' +
-          '<h4>Thyme to indulge</h4>' +
-          '<div>2858 Main St, Vancouver<br><a href="tel:+16048771760">604.877.1760</a><br><a href="http://www.thymetoindulgecatering.com/" target="_blank">thymetoindulgecatering.com</a></div>'],
-
-          ['<div class="info_content">' +
-          '<h4>Shaktea</h4>' +
-          '<div>3702 Main St, Vancouver<br><a href="tel:+16048735151">604.873.5151</a><br><a href="http://www.shaktea.ca/" target="_blank">shaktea.ca</a></div>'],
-
-          ['<div class="info_content">' +
-          '<h4>Fairmont Hotel Vancouver</h4>' +
-          '<div>900 W Georgia St, Vancouver,<br><a href="tel:+16046843131">604.684.3131</a><br><a href="http://www.fairmont.com/Vancouver" target="_blank">Fairmont.com/vancouver</a></div>'],
-
-          ['<div class="info_content">' +
-          '<h4>Neverland Tea Salon</h4>' +
-          '<div>3066 W Broadway, Vancouver,<br><a href="tel:+16044283066">604.428.3066</a><br><a href="http://neverlandtea.com/" target="_blank">neverlandtea.com</a></div>']
 
         ];
             
@@ -241,6 +175,10 @@ HI planner <%= current_planner.name %>
         this.setZoom(11);
         google.maps.event.removeListener(boundsListener);
       });
+
+
+
+
 }   
 
     </script>
