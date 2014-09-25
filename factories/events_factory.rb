@@ -9,13 +9,6 @@ FactoryGirl.define do
     venue_id          1
   end
 end
-# Event(id: integer, 
-#   name: string, 
-#   date: datetime, 
-#   description: string, 
-#   picture_url: string, 
-#   link_url: string, 
-#   event_planner_id: integer, 
-#   created_at: datetime, 
-#   updated_at: datetime, 
-#   venue_id: integer)
+
+
+# FactoryGirl.create :events
