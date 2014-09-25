@@ -1,5 +1,7 @@
-  <link rel="stylesheet" type="text/css" href="../stylesheets/jquery.datetimepicker.css"/ >
-  <script src="../javascript/jquery.datetimepicker.js"></script>
+<script src="../javascript/jquery.timepicker.js"></script>
+<link rel="stylesheet" href="../stylesheets/jquery.timepicker.css" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> 
 
 <form action="/events" method="post">
   <div>
@@ -41,19 +43,40 @@
   <input id = "datetimepicker_line" name="date" type="text" value="<%= @event.date %>">
   </div>
 
+<div>
+venue
+  <input id="venue_name" type="text"/>
+</div>
+
+<div>
+time
+  <input id="time_pick" type="text"/>
+</div>
+
+
+
+
   <div>
     <input type="submit" value="Submit">
   </div>
 
 </form>
 
-<script>jQuery('#datetimepicker').datetimepicker({
-  format:'unixtime',
-  inline:true,
-  lang:'ru',
-  onChangeDateTime:function(dp,$input){
-    $('#datetimepicker_line').val($input.val())
+<script>jQuery('#datetimepicker').datepicker({
+  onSelect: function(i,o,p){
+    $('#datetimepicker_line').val(i)
   }
 }); 
+
+$("#venue_name").autocomplete({ source: [ 
+
+  <% all_venues.each do |venue| %>
+    "<%= venue.name %>",
+  <% end %>
+
+] });
+
+
+$('#time_pick').timepicker({ 'scrollDefault': 'now' });
 
 </script>

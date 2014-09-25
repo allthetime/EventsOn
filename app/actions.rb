@@ -20,6 +20,19 @@ helpers do
   def all_events
     Event.all
   end
+  def all_venues
+    Venue.all
+  end
+  def log_in(user_type)
+    return redirect '/' unless user_type.find_by(name: params[:name])
+    password = encrypt(params[:password],user_type.find_by(name: params[:name]).salt)
+    if user_type.find_by(name: params[:name]).password == password
+      session[:planner_id] = user_type.find_by(name: params[:name])
+      redirect '/'
+    else
+      redirect '/'
+    end 
+  end
 end
 
 get '/signup' do
@@ -45,7 +58,7 @@ post '/signup' do
   if @user.save
     redirect '/'
   else
-    erb :'users/index'
+    erb :'users/user'
   end
 end
 
@@ -53,7 +66,6 @@ post '/signup/event_planner' do
   salt = salt_string
   password_salted_and_hashed = encrypt(params[:password],salt)
   @planner = EventPlanner.new(
-
     name: params[:name],
     email: params[:email],
     phone_number: params[:phone_number],
@@ -70,23 +82,9 @@ end
 
 post '/login' do
   unless params[:planner]
-    return redirect '/' unless User.find_by(name: params[:name])
-    password = encrypt(params[:password],User.find_by(name: params[:name]).salt)
-    if User.find_by(name: params[:name]).password == password
-      session[:user_id] = User.find_by(name: params[:name])
-      redirect '/'
-    else
-      redirect '/'
-    end 
+    log_in(User)
   else
-    return redirect '/' unless EventPlanner.find_by(name: params[:name])
-    password = encrypt(params[:password],EventPlanner.find_by(name: params[:name]).salt)
-    if EventPlanner.find_by(name: params[:name]).password == password
-      session[:planner_id] = EventPlanner.find_by(name: params[:name])
-      redirect '/'
-    else
-      redirect '/'
-    end 
+    log_in(EventPlanner)
   end
 end
 
