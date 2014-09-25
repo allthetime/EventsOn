@@ -15,6 +15,22 @@ HI <%= current_user.name %>
 HI planner <%= current_planner.name %>
 <% end %>
 
+<button id="share_location" onclick="showlocation();">YOUR LOCATION</button>
+
+<script>
+
+function showlocation() {
+   navigator.geolocation.getCurrentPosition(callback);
+}
+function callback(position) {
+   lat = position.coords.latitude
+   lng = position.coords.longitude
+   map.setCenter(new google.maps.LatLng(lat, lng));
+   map.setZoom(13);
+}
+
+var map
+</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -86,7 +102,7 @@ HI planner <%= current_planner.name %>
       });
 
       function initialize() {
-        var map;
+        //var map;
         var bounds = new google.maps.LatLngBounds();
         var mapOptions = {
 
@@ -172,7 +188,7 @@ HI planner <%= current_planner.name %>
 
       // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
       var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-        this.setZoom(11);
+        this.setZoom(12);
         google.maps.event.removeListener(boundsListener);
       });
 
@@ -184,13 +200,5 @@ HI planner <%= current_planner.name %>
     </script>
 
     
-
-    <script type="text/javascript">
-      $(document).ready(function() {
-        var date = new Date;
-        var year = date.getFullYear()
-        document.getElementById('thisyear').innerHTML = year;
-      })
-    </script>
   </body>
 </html>

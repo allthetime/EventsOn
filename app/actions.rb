@@ -102,6 +102,7 @@ get '/events/new' do
   erb :'events/new'
 end
 
+
 post '/events' do
   @event = Event.new(
     name: params[:name],
@@ -118,3 +119,7 @@ post '/events' do
   end
 end
 
+get 'events/:id' do
+  @event = Event.find(params[:id])
+  erb :'events/index'
+end
