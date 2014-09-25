@@ -1,30 +1,21 @@
 FactoryGirl.define do
-  factory :employee do
-    store
-    first_name     Faker::Name.first_name
-    last_name      Faker::Name.last_name
-    hourly_rate    12
-    gender         'F'
-
-    factory :senior_male_employee do
-      hourly_rate  20
-      gender 'M'
-    end
-
-    factory :senior_female_employee do
-      hourly_rate  22
-      gender 'F'
-    end
-
-    factory :junior_male_employee do
-      hourly_rate  10
-      gender 'M'
-    end
-
-    factory :junior_female_employee do
-      hourly_rate  12
-      gender 'F'
-    end
-
+  factory :event do
+    name          Faker::Company.name
+    date         Faker::Business.credit_card_expiry_date
+    description      "description goes here"
+    picture_url    "http://imgs.xkcd.com/comics/im_so_random.png"
+    link_url         'http://google.ca'
+    event_planner_id  1
+    venue_id          1
   end
 end
+# Event(id: integer, 
+#   name: string, 
+#   date: datetime, 
+#   description: string, 
+#   picture_url: string, 
+#   link_url: string, 
+#   event_planner_id: integer, 
+#   created_at: datetime, 
+#   updated_at: datetime, 
+#   venue_id: integer)

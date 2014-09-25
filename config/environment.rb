@@ -6,6 +6,7 @@ require 'faker'
 
 require_relative '../factories/events_factory.rb'
 require_relative '../factories/venues_factory.rb'
+require_relative '../factories/event_planners_factory.rb'
 
 require 'active_support/all'
 
