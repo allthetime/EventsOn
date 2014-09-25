@@ -52,9 +52,9 @@ ActiveRecord::Schema.define(version: 20140924202926) do
     t.string   "picture_url"
     t.string   "link_url"
     t.integer  "event_planner_id"
-    t.integer  "location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "venue_id"
   end
 
   create_table "reviews", force: true do |t|
