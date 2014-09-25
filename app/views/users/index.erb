@@ -1,0 +1,47 @@
+<% if @user && @user.errors.any? %>
+  <div>
+    <strong>Some issues with your message, please fix them:</strong>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<form action="/signup" method="post">
+
+  <div>
+  username
+    <input 
+      type="text" 
+      name="name" 
+      value="<%= @user.name %>"/>
+  </div>
+  <div>
+  email
+    <input 
+      type="text" 
+      name="email" 
+      value="<%= @user.email %>"/>
+  </div>
+  <div>
+  password
+    <input 
+      type="password" 
+      name="password"/>
+  </div>
+  <div>
+  avatar
+    <input 
+      type="text" 
+      name="avatar_url" 
+      value="<%= @user.avatar_url %>"/>
+  </div>      
+  <div>
+    <input type="submit"/>
+  </div>
+
+  <input name="invisble" style="display:none;">
+
+</form>

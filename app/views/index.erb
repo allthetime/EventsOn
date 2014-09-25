@@ -1,1 +1,16 @@
 <h1>Home Page</h1>
+
+
+<% unless current_user.nil? && current_planner.nil? %>
+  <form action="/logout" method="post">
+      <input type="submit" value="logout"/>
+  </form>
+<% end %>
+
+<% unless current_user.nil?  %>
+HI <%= current_user.name %>
+<% end %>
+
+<% unless current_planner.nil? %>
+HI planner <%= current_planner.name %>
+<% end %>
