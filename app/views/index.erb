@@ -8,12 +8,46 @@
     </style>
 
 
+
+
+
+
+
     
     <% unless current_user.nil? && current_planner.nil? %>
+
       <form action="/logout" method="post">
           <input type="submit" value="logout"/>
       </form>
+
+    <% else %>
+
+      <form action="/login" method="post">
+        <div>
+          <input type="checkbox" name="planner"/>
+        </div>
+        <div>
+        username
+          <input 
+            type="text" 
+            name="name" />
+        </div>
+        <div>
+        password
+          <input 
+            type="password" 
+            name="password" />
+        </div>
+
+        <div>
+          <input type="submit"/>
+        </div>
+      </form>
+
     <% end %>
+
+
+
 
     <% unless current_user.nil?  %>
       HI <%= current_user.name %>
@@ -22,6 +56,11 @@
     <% unless current_planner.nil? %>
       HI planner <%= current_planner.name %>
     <% end %>    
+
+
+
+
+
 
     <button id="share_location" onclick="showlocation();">YOUR LOCATION</button>
 

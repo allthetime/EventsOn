@@ -24,7 +24,7 @@ end
 
 get '/signup' do
   @user = User.new
-  erb :'users/index'
+  erb :'users/user'
 end
 
 get '/signup/event_planner' do
@@ -68,28 +68,24 @@ post '/signup/event_planner' do
   end
 end
 
-get '/login' do
-  erb :'/login'
-end
-
 post '/login' do
   unless params[:planner]
-    return redirect '/login' unless User.find_by(name: params[:name])
+    return redirect '/' unless User.find_by(name: params[:name])
     password = encrypt(params[:password],User.find_by(name: params[:name]).salt)
     if User.find_by(name: params[:name]).password == password
       session[:user_id] = User.find_by(name: params[:name])
       redirect '/'
     else
-      redirect '/login'
+      redirect '/'
     end 
   else
-    return redirect '/login' unless EventPlanner.find_by(name: params[:name])
+    return redirect '/' unless EventPlanner.find_by(name: params[:name])
     password = encrypt(params[:password],EventPlanner.find_by(name: params[:name]).salt)
     if EventPlanner.find_by(name: params[:name]).password == password
       session[:planner_id] = EventPlanner.find_by(name: params[:name])
       redirect '/'
     else
-      redirect '/login'
+      redirect '/'
     end 
   end
 end
@@ -99,12 +95,10 @@ post '/logout' do
   redirect '/'
 end
 
-
 get '/events/new' do
   @event = Event.new
   erb :'events/new'
 end
-
 
 post '/events' do
   @event = Event.new(
@@ -122,7 +116,7 @@ post '/events' do
   end
 end
 
-get 'events/:id' do
+get '/events/:id' do
   @event = Event.find(params[:id])
   erb :'events/index'
 end
