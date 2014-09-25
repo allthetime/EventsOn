@@ -1,0 +1,59 @@
+  <link rel="stylesheet" type="text/css" href="../stylesheets/jquery.datetimepicker.css"/ >
+  <script src="../javascript/jquery.datetimepicker.js"></script>
+
+<form action="/events" method="post">
+  <div>
+    <label>Picture URL</label>
+      <input type="text" name="picture_url" value="<%= @event.picture_url %>">
+  </div>
+
+  <div>
+    <label>Event Name</label>
+      <input type="text" name="name" value="<%= @event.name %>">
+  </div>
+  <div>
+
+ <% if @event.errors.any? %>
+  <div>
+    <strong>Some issues with your event, please fix them:</strong>
+    <ul>
+      <% @event.errors.full_event.each do |event| %>
+        <li><%= event %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  <div>
+    <label>Description</label>
+      <input type="text" name="description" value="<%= @event.description %>">
+  </div>
+
+  <div>
+    <label>Website</label>
+      <input id = "website" type="text" name="link_url" value="<%= @event.link_url %>">
+  </div>
+
+  <div id = "datetimepicker">
+  </div>
+
+  <div><label>Date and Time</label>
+  <input id = "datetimepicker_line" name="date" type="text" value="<%= @event.date %>">
+  </div>
+
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+
+</form>
+
+<script>jQuery('#datetimepicker').datetimepicker({
+  format:'unixtime',
+  inline:true,
+  lang:'ru',
+  onChangeDateTime:function(dp,$input){
+    $('#datetimepicker_line').val($input.val())
+  }
+}); 
+
+</script>
