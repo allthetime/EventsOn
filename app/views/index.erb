@@ -17,6 +17,15 @@ HI planner <%= current_planner.name %>
 
 <button id="share_location" onclick="showlocation();">YOUR LOCATION</button>
 
+<% all_events.each do |event| %>
+
+  <br><%= event.name %><br>
+  <br><%= event.venue.latitude %><br>
+  <br><%= event.venue.longitude %><br>
+
+<% end %>
+
+
 <script>
 
 function showlocation() {
@@ -34,8 +43,9 @@ var map
 
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
-      <style type="text/css">
+  <style type="text/css">
 
   #map_canvas {
     width:500px;
@@ -45,47 +55,12 @@ var map
   </style>
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
-    <title>Gourmand Macaron - Where to find our macarons in Vancouver</title>
-
-    <!--legacy meta desc. and keyword, left intact to preserve SE ranking -->
-    <meta name="description" content="Making delicious macarons in Vancouver" />
-    <meta name="keywords" content="macarons, macaron, vancouver,cuisine, pastry, delicious, cake, wedding, party, parties, prestige, Gourmand, gourmands, offers, elegant, authentic, flavors  Please contact us to be update on flavors available and do not hesitate to ask for special flavor/color requests we will do our best to accomm" />
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
-    <!-- Font Awesome for glyphicons -->
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <!--Google fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Niconne' rel='stylesheet' type='text/css'>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
-    <!--Internal customs styles -->
-    <link rel="stylesheet" href='css/style.css' />
-
-
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-    <script type="text/javascript">var switchTo5x=true;</script>
-    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-    <script type="text/javascript">stLight.options({publisher: "0f684e7e-a0f0-4dcb-b8a4-b17fc19cb5a5", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-
-
-
-
   </head>
 
   <body>
-
-   <div class='top-head-border'></div>
     
-    <div class='container'>
 
 
         <div id='map_canvas' class='col-sm-8'>
@@ -114,27 +89,27 @@ var map
                 
         //map.setCenter(new google.maps.LatLng(50.4419, -122.1419));
 
-
         // Multiple Markers
         var markers = [
-          ['Milano Coffee', 49.266110, -123.096640, "http://www.milanocoffee.ca/"],
-          ['Leonidas Chocolates', 49.288682, -123.116923, "http://www.leonidaswaterfront.com/"],
-          ['La petite cuillere', 49.263662, -123.099796, "http://www.lapetitecuillere.ca/" ],
+
+<% all_events.each do |event| %>
+          ["<%= event.name %>", <%= event.venue.latitude %>, <%= event.venue.longitude %>, "<%= event.link_url %>"],
+<% end %>
+
+
         ];
                             
         // Info Window Content
         var infoWindowContent = [
-          ['<div class="info_content">' +
-          '<h4>Milano Coffee</h4>' +
-          '<div>156 W 8th Ave, <br>Vancouver<br><a href="tel:+16048794468">604.879.4468</a><br><a href="http://www.milanocoffee.ca/" target="_blank">milanocoffee.ca</a></div>'],
 
-          ['<div class="info_content">' +
-          '<h4>Leonidas Chocolates</h4>' +
-          '<div>1055 Canada Pl #29,<br> Vancouver<br><a href="tel:+16046477559">604.647.7559</a><br><a href="http://www.leonidaswaterfront.com/" target="_blank">leonidaswaterfront.com</a></div>'],
+ <% all_events.each do |event| %>
 
-          ['<div class="info_content">' +
-          '<h4>La petite cuillere</h4>' +
-          '<div>55 Kingsway St,<br> Vancouver<br><a href="tel:+16042980088">604.298.0088</a><br><a href="http://www.lapetitecuillere.ca/" target="_blank">lapetitecuillere.ca</a></div>'],
+         [
+          '<a href="<%= event.link_url %>"><h4><%= event.name %></h4></a>' +
+          '<%= event.venue.address %>'],
+
+<% end %>
+
 
 
         ];

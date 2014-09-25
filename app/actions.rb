@@ -17,6 +17,9 @@ helpers do
   def encrypt(password,salt)
     Digest::SHA256.hexdigest(password+salt)
   end
+  def all_events
+    Event.all
+  end
 end
 
 get '/signup' do
