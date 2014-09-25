@@ -50,6 +50,7 @@ post '/signup/event_planner' do
   salt = salt_string
   password_salted_and_hashed = encrypt(params[:password],salt)
   @planner = EventPlanner.new(
+
     name: params[:name],
     email: params[:email],
     phone_number: params[:phone_number],
