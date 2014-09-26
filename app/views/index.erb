@@ -61,10 +61,9 @@
 
 
 <form action="/" method="post">
-          <input type="checkbox" name="date_option"/>
-
+    <input type="checkbox" name="date_option"/>
     date:<input name="date" type="text" id="date_picker"></div>
-     <input type="checkbox" name="type_option"/>
+    <input type="checkbox" name="type_option"/>
     <select name="type">
     <% all_types.each do |type| %>
       <option value="<%= type.name %>"><%= type.name %></option>
