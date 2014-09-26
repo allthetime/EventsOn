@@ -80,7 +80,20 @@
          lat = position.coords.latitude
          lng = position.coords.longitude
          map.setCenter(new google.maps.LatLng(lat, lng));
-         map.setZoom(13);
+         map.setZoom(14);
+
+         var user_marker = new google.maps.Marker({
+                  position: new google.maps.LatLng(lat, lng),
+                  map: map,
+                  title: "YOUR LOCATION",
+                  animation: google.maps.Animation.DROP
+              });
+              user_marker.metadata = {
+                  type: "point",
+                  id: i
+              };
+              markerList.push(user_marker);
+
       }
       var map
     </script>
