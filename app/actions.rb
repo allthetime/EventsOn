@@ -11,6 +11,9 @@ end
 get '/' do
   if params[:type] || params[:date]
     @events = Event.where(date:params[:date])
+    if @events.empty?
+      @results = "none"
+    end
     erb :index
   else
     @events = Event.all
