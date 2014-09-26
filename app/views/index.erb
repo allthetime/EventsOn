@@ -152,18 +152,34 @@
               marker, i;
           var markerList = [];
 
-          for (i = 0; i < markers.length; i++) {
-              var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+          // javascript object called icons
+       
+          icons = { 
+                        "art": "/icons/art.png",
+                        "comedy": "/icons/comedy.png",
+                        "dance": "/icons/dance.png",
+                        "festival": "/icons/festival.png",
+                        "market": "/icons/market.png",
+                        "music": "/icons/music.png",
+                        "theatre": "/icons/theatre.png"
+                      }
+          
+     
+          <% @events.each_with_index do |event,index| %>
+ 
+              var position = new google.maps.LatLng(markers[<%= index %>][1], markers[<%= index %>][2]);
               bounds.extend(position);
               marker = new google.maps.Marker({
                   position: position,
                   map: map,
-                  title: markers[i][0],
+                  title: markers[<%= index %>][0],
+                  icon: icons["<%= event.types[0].name %>"], 
                   animation: google.maps.Animation.DROP
               });
+             
               marker.metadata = {
                   type: "point",
-                  id: i
+                  id: <%= index %>
               };
               markerList.push(marker);
 
@@ -172,12 +188,12 @@
                       infoWindow.setContent(infoWindowContent[i][0]);
                       infoWindow.open(map, marker);
                   };
-              })(marker, i));
+              })(marker, <%= index %>));
 
               map.fitBounds(bounds);
-              $('.stores ul').append('<li><a href=' + '"' + markers[i][3] + '"' + 'target="_blank"' + 'data-id="' + i + '"' + '>' + markers[i][0] + '</a></li>');
-          }
-
+              $('.stores ul').append('<li><a href=' + '"' + markers[<%= index %>][3] + '"' + 'target="_blank"' + 'data-id="' + <%= index %> + '"' + '>' + markers[<%= index %>][0] + '</a></li>');
+  
+    <% end %>
           var foundMarkerId;
 
           $('.stores a').hover(function(e) {
