@@ -23,11 +23,18 @@ helpers do
   def all_venues
     Venue.all
   end
+  def all_types
+    Type.all
+  end
   def log_in(user_type)
     return redirect '/' unless user_type.find_by(name: params[:name])
     password = encrypt(params[:password],user_type.find_by(name: params[:name]).salt)
     if user_type.find_by(name: params[:name]).password == password
-      session[:planner_id] = user_type.find_by(name: params[:name])
+      if user_type == EventPlanner
+        session[:planner_id] = user_type.find_by(name: params[:name])
+      elsif user_type == User
+        session[:user_id] = user_type.find_by(name: params[:name])          
+      end
       redirect '/'
     else
       redirect '/'
