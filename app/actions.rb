@@ -5,9 +5,9 @@ post '/' do
   puts "POST--------------------------"
   type = params[:type]
   date = params[:date].to_date
-  t_o = params[:type_option]
-  d_o = params[:date_option]
-  redirect "/?type=#{type}&date=#{date}&t_o=#{t_o}&d_o=#{d_o}"
+  t = params[:type_option]
+  d = params[:date_option]
+  redirect "/?t=#{t}&d=#{d}&type=#{type}&date=#{date}"
 end
 
 
@@ -15,18 +15,16 @@ require "pry"
 
 get '/' do
   if params[:type] || params[:date]
-    binding.pry
-    if params[:t_o] && params[:d_o].empty?
+    if !params[:t].empty? && params[:d].empty?
       @events = Type.find_by(name: params[:type]).events
-      puts "TYPE---------------"
-    elsif params[:d_o] && params[:t_o].empty?
+    elsif !params[:d].empty? && params[:t].empty?
       @events = Event.where(date:params[:date])
-      puts "DATE-----------------"
-    elsif (params[:t_o] == 'on') && (params[:d_o] == 'on')
+    elsif (params[:t] == 'on') && (params[:d] == 'on')
       @events = Type.find_by(name: params[:type]).events.where(date:params[:date])
-      puts "BOTH------------------"
+    else
+      @events = []
     end
-    if @events.empty? || @events.nil?
+    if @events.empty? || @events.nil? || @events == []
       @results = "none"
     end
     erb :index

@@ -61,12 +61,12 @@
 
 
 <form action="/" method="post">
-    <input type="checkbox" name="date_option"/>
+    <input type="checkbox" name="date_option" id="date_option"/>
     date:<input name="date" type="text" id="date_picker"></div>
-    <input type="checkbox" name="type_option"/>
-    <select name="type">
+    <input type="checkbox" name="type_option" id="type_option"/>
+    <select name="type" id="type_picker">
     <% all_types.each do |type| %>
-      <option value="<%= type.name %>"><%= type.name %></option>
+    <option value="<%= type.name %>"><%= type.name %></option>
     <% end %>
     </select>
     <input type="submit"/>
@@ -236,6 +236,19 @@
       dateFormat: 'dd/mm/yy'
     });
   });
+
+
+  $('#date_picker').click(function(){
+    console.log("OK")
+    $('#date_option').prop('checked', true);
+  })
+
+  $('#type_picker').click(function(){
+    console.log('yup')
+    $('#type_option').prop('checked', true);
+  })
+
+
 
 
     </script>
