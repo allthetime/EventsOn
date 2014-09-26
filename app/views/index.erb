@@ -103,12 +103,15 @@
       function initialize() {
           var bounds = new google.maps.LatLngBounds();
           var mapOptions = {
-            center: new google.maps.LatLng(-33.9, 151.2),
+            center: new google.maps.LatLng(49.2805,-123.1085761),
           };
+
 
           map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
           map.setTilt(45);
-        
+          bounds.extend(new google.maps.LatLng(49.2805,-123.1085761));
+          map.fitBounds(bounds);
+
  <% if @events %>
 
           var markers = [
@@ -116,10 +119,6 @@
               ["<%= event.name %>", <%= event.venue.latitude %> , <%= event.venue.longitude %> , "<%= event.link_url %>"], 
             <% end %>
           ];
-
-          [name, 12.43234, 12.5345, "google.ca"],
-          [name, 12.43234, 12.5345, "google.ca"],
-          [name, 12.43234, 12.5345, "google.ca"]
 
           var infoWindowContent = [
 
