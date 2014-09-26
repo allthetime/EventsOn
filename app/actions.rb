@@ -27,9 +27,9 @@ helpers do
   end
   def current_planner
     @current_planner = EventPlanner.find(session[:planner_id]) if session[:planner_id]
-  end  
+  end
   def salt_string
-    chars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] 
+    chars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     (0...50).map { chars[rand(chars.length)] }.join
   end
   def encrypt(password,salt)
@@ -51,12 +51,12 @@ helpers do
       if user_type == EventPlanner
         session[:planner_id] = user_type.find_by(name: params[:name])
       elsif user_type == User
-        session[:user_id] = user_type.find_by(name: params[:name])          
+        session[:user_id] = user_type.find_by(name: params[:name])
       end
       redirect '/'
     else
       redirect '/'
-    end 
+    end
   end
 end
 
@@ -124,6 +124,21 @@ get '/events/new' do
 end
 
 post '/events' do
+  unless Venue.find_by(name: params[:venue])
+    @venue = Venue.new(
+      name: params[:venue],
+      latitude: params[:lat],
+      longitude: params[:lng],
+      address: params[:street_address] + " " + params[:city]
+    )
+  else
+    @venue = Venue.find_by(name: params[:venue])
+  end
+  if @venue.save
+    true
+  else
+    erb :'events/new'
+  end
   @event = Event.new(
     name: params[:name],
     description:  params[:description],
@@ -131,8 +146,9 @@ post '/events' do
     picture_url: params[:picture_url],
     date: params[:date].to_date,
     time: params[:time].to_time,
-    venue_id: Venue.where(name:params[:venue])[0].id
+    venue_id: @venue.id
   )
+  @event.types << Type.find_by(name: params[:type])
   if @event.save
     redirect "/events/#{@event.id}"
   else
