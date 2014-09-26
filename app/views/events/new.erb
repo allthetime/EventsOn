@@ -1,6 +1,6 @@
 
-
-<form action="/events" method="post">
+<script type="text/javascript" src="javascript/request.js"></script>
+<form action="/events" method="post" id="new-event">
   <div>
     <label>Picture URL</label>
       <input type="text" name="picture_url" value="<%= @event.picture_url %>">
@@ -16,12 +16,19 @@
   <div>
     <strong>Some issues with your event, please fix them:</strong>
     <ul>
-      <% @event.errors.full_event.each do |event| %>
+      <% @event.errors.full_messages.each do |event| %>
         <li><%= event %></li>
       <% end %>
     </ul>
   </div>
 <% end %>
+
+
+<select name="type">
+    <% all_types.each do |type| %>
+      <option value="<%= type.name %>"><%= type.name %></option>
+    <% end %>
+</select>
 
   <div>
     <label>Description</label>
@@ -36,9 +43,16 @@
   <div id = "datetimepicker">
   </div>
 
-  <div><label>Date and Time</label>
-  <input id = "datetimepicker_line" name="date" type="text" value="<%= @event.date %>">
+  <div>
+  <input id = "datetimepicker_line" name="date" type="hidden" value="<%= @event.date %>">
   </div>
+
+
+
+<div>
+time
+  <input id="time_pick" name="time" type="text"/>
+</div>
 
 <div>
 venue
@@ -46,20 +60,30 @@ venue
 </div>
 
 <div>
-time
-  <input id="time_pick" name="time" type="text"/>
+  street address
+    <input id="street_address" name="street_address" type="text"/>
+
+</div>
+
+<div>
+  city
+      <input id="city" name="city" type="text"/>
 </div>
 
 
 
 
   <div>
+    <input type="hidden" name="lat">
+    <input type="hidden" name="lng">
     <input type="submit" value="Submit">
   </div>
 
 </form>
 
-<script>jQuery('#datetimepicker').datepicker({
+<script>
+
+jQuery('#datetimepicker').datepicker({
   onSelect: function(i,o,p){
     $('#datetimepicker_line').val(i)
   },
@@ -75,6 +99,49 @@ $("#venue_name").autocomplete({ source: [
 ] });
 
 
+var venues = {}
+
+  <% all_venues.each do |venue| %>
+    venues["<%= venue.name %>"] = "<%= venue.address %>"
+  <% end %> 
+
+$( "#venue_name" ).on('keydown', function () {
+  console.log(venues[$(this).val()])
+
+
+  if(venues[$(this).val()]){
+    $('#street_address').val(venues[$(this).val()])
+  }else{
+    return 
+  }
+});
+
+
 $('#time_pick').timepicker({ 'scrollDefault': 'now' });
 
+</script>
+
+
+<script>
+
+  $('#new-event').submit(function(e) {
+    alert($('input[name="lat"]').val());
+    if(!$('input[name="lat"]').val()) {
+      e.preventDefault();
+
+      var streetAndCity = $('#street_address').val() + $('#city').val()
+      var readyForGoogle = streetAndCity.split(" ").join("+")
+
+      var connection = $.getJSON("https://maps.google.com/maps/api/geocode/json?address="+readyForGoogle+"&sensor=false&key=AIzaSyAPHhHcY9JGUE4pwDrfRuOJI4iEkYN25rc", function(response){
+        if(response.results.length > 0) {
+          console.log(response.results[0].geometry.location);
+          var location = response.results[0].geometry.location;
+          $('input[name="lat"]').val(location.lat);
+          $('input[name="lng"]').val(location.lng);
+
+          $('#new-event').submit();
+        }
+      }
+    )}
+  });
 </script>
