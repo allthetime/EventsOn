@@ -9,9 +9,9 @@
 
 
 
-<% if @results == "none" %>
-  <%= "No events on selected day" %>
-<% end %>
+  <% if @results == "none" %>
+    <%= "No events on selected day" %>
+  <% end %>
 
 
 
@@ -88,14 +88,14 @@
                   position: new google.maps.LatLng(lat, lng),
                   map: map,
                   title: "YOUR LOCATION",
-                  animation: google.maps.Animation.DROP
+                  animation: google.maps.Animation.DROP,
+                  icon: "/icons/user.png"
               });
               user_marker.metadata = {
                   type: "point",
                   id: i
               };
               markerList.push(user_marker);
-
       }
       var map
     </script>
@@ -162,6 +162,7 @@
                         "market": "/icons/market.png",
                         "music": "/icons/music.png",
                         "theatre": "/icons/theatre.png"
+                     
                       }
           
      
