@@ -42,12 +42,12 @@
 
 <div>
 venue
-  <input id="venue_name" type="text"/>
+  <input id="venue_name" name="venue" type="text"/>
 </div>
 
 <div>
 time
-  <input id="time_pick" type="text"/>
+  <input id="time_pick" name="time" type="text"/>
 </div>
 
 
@@ -62,7 +62,8 @@ time
 <script>jQuery('#datetimepicker').datepicker({
   onSelect: function(i,o,p){
     $('#datetimepicker_line').val(i)
-  }
+  },
+   dateFormat: 'dd/mm/yy'
 }); 
 
 $("#venue_name").autocomplete({ source: [ 

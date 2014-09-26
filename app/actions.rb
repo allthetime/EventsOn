@@ -1,6 +1,21 @@
 # Homepage (Root path)
+
+
+post '/' do
+  puts "POST--------------------------"
+  type = params[:type]
+  date = params[:date].to_date
+  redirect "/?type=#{type}&date=#{date}"
+end
+
 get '/' do
-  erb :index
+  if params[:type] || params[:date]
+    @events = Event.where(date:params[:date])
+    erb :index
+  else
+    @events = Event.all
+    erb :index
+  end
 end
 
 helpers do
@@ -111,13 +126,14 @@ post '/events' do
     description:  params[:description],
     link_url: params[:link_url],
     picture_url: params[:picture_url],
-    date: Time.new(params[:date]),
-    venue_id: 1
+    date: params[:date].to_date,
+    time: params[:time].to_time,
+    venue_id: Venue.where(name:params[:venue])[0].id
   )
   if @event.save
     redirect "/events/#{@event.id}"
   else
-    erb :'event/new'
+    erb :'events/new'
   end
 end
 

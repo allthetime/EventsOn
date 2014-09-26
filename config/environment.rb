@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
-
+require 'active_support/all'
 require 'factory_girl'
 require 'faker'
 
@@ -8,7 +8,7 @@ require_relative '../factories/events_factory.rb'
 require_relative '../factories/venues_factory.rb'
 require_relative '../factories/event_planners_factory.rb'
 
-require 'active_support/all'
+
 
 # Load Sinatra Framework (with AR)
 require 'sinatra'

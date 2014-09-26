@@ -58,13 +58,15 @@
     <% end %>    
 
 
-    date:<input type="text" id="date_picker"></div>
+<form action="/" method="post">
+    date:<input name="date" type="text" id="date_picker"></div>
     <select name="type">
     <% all_types.each do |type| %>
       <option value="<%= type.name %>"><%= type.name %></option>
     <% end %>
     </select>
-
+    <input type="submit"/>
+</form>
 
 
 
@@ -97,28 +99,37 @@
           document.body.appendChild(script);
       });
 
+
       function initialize() {
           var bounds = new google.maps.LatLngBounds();
           var mapOptions = {
+            center: new google.maps.LatLng(-33.9, 151.2),
           };
 
           map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
           map.setTilt(45);
+        
+ <% if @events %>
 
           var markers = [
-            <% all_events.each do |
-              event | %>
+            <% @events.each do |event| %>
               ["<%= event.name %>", <%= event.venue.latitude %> , <%= event.venue.longitude %> , "<%= event.link_url %>"], 
             <% end %>
           ];
 
+          [name, 12.43234, 12.5345, "google.ca"],
+          [name, 12.43234, 12.5345, "google.ca"],
+          [name, 12.43234, 12.5345, "google.ca"]
+
           var infoWindowContent = [
-            <% all_events.each do |event| %>
+
+            <% @events.each do |event| %>
               [
                 '<a href="<%= event.link_url %>"><h4><%= event.name %></h4></a>' +
                 '<%= event.venue.address %>'
               ],
             <% end %>
+
           ];
 
           var infoWindow = new google.maps.InfoWindow({
@@ -169,6 +180,9 @@
               }
           });
 
+<% end %>
+
+
           var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
               this.setZoom(12);
               google.maps.event.removeListener(boundsListener);
@@ -185,7 +199,9 @@
 
 
   $(function() {
-    $( "#date_picker" ).datepicker();
+    $( "#date_picker" ).datepicker({
+      dateFormat: 'dd/mm/yy'
+    });
   });
 
 
