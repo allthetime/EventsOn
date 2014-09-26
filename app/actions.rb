@@ -9,8 +9,17 @@ post '/' do
 end
 
 get '/' do
+
+
+
   if params[:type] || params[:date]
-    @events = Event.where(date:params[:date])
+    if params[:type_option] && !params[:date_option]
+      @events = Type.find_by(name: params[:type]).events
+    elsif params[:date_option] && !params[:type_option]
+      @events = Event.where(date:params[:date])
+    elsif params[:type_option] && params[:date_option]
+      @events = Type.find_by(name: params[:type]).events.where(date:params[:date])
+    end
     if @events.empty?
       @results = "none"
     end
