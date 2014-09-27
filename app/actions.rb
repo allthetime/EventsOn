@@ -195,7 +195,7 @@ post '/events' do
   @event = Event.new(
     name: params[:name],
     description:  params[:description],
-    picture_url: "public/uploads/" + fname,
+    picture_url: "/uploads/" + fname,
     date: params[:date].to_date,
     time: params[:time].to_time,
     venue_id: @venue.id
