@@ -22,6 +22,7 @@ get '/' do
 end
 
 helpers do
+
   def current_user
     @current_user = User.find(session[:user_id]) if session[:user_id]
   end
@@ -43,6 +44,9 @@ helpers do
   end
   def all_types
     Type.all
+  end
+  def all_users
+    User.all
   end
   def log_in(user_type)
     return redirect '/' unless user_type.find_by(name: params[:name])
@@ -156,7 +160,28 @@ post '/events' do
   end
 end
 
+
+post '/events/messages' do
+  
+  if current_user
+    @user = current_user
+    @comment = Comment.new(
+    content: params[:content],
+    user_id: @user.id,
+    event_id: params[:event_id]
+    )
+    if @comment.save 
+      redirect "/events/#{params[:event_id]}"
+    else 
+      redirect "/events/#{params[:event_id]}"
+    end
+  end
+end
+
 get '/events/:id' do
   @event = Event.find(params[:id])
+  @venue = Venue.find(@event.venue_id)
+  @comments = @event.comments.order(:created_at).reverse
   erb :'events/index'
 end
+
