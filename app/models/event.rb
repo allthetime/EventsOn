@@ -7,6 +7,7 @@ class Event < ActiveRecord::Base
 
   belongs_to :event_planner
   belongs_to :venue
+  has_many :comments
   has_many :event_types
   has_many :types, through: :event_types
 
