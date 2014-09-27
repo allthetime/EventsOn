@@ -35,7 +35,12 @@ get '/' do
 end
 
 helpers do
-
+  def sanitize_filename(filename)
+    filename.gsub(/[^\w\.\-]/,"_")
+  end
+  def is_picture?(filename)
+    filename =~ /([^\s]+(\.(?i)(JPG|jpg|PNG|png|GIF|gif|BMP|bmp))$)/
+  end
   def current_user
     @current_user = User.find(session[:user_id]) if session[:user_id]
   end
@@ -88,12 +93,20 @@ get '/signup/event_planner' do
 end
 
 post '/signup' do
+  if !(params[:photo] && is_picture?(params[:photo][:filename]))
+    @error = true
+    erb :'users/user'
+  end
+  fname = sanitize_filename(params[:photo][:filename])
+  File.open("public/uploads/#{fname}", "w") do |f|
+    f.write(params[:photo][:tempfile].read)
+  end
   salt = salt_string
   password_salted_and_hashed = encrypt(params[:password],salt)
   @user = User.new(
     name: params[:name],
     email: params[:email],
-    avatar_url: params[:avatar_url],
+    avatar_url: "public/uploads/" + fname,
     password: password_salted_and_hashed,
     salt: salt
   )
@@ -105,13 +118,21 @@ post '/signup' do
 end
 
 post '/signup/event_planner' do
+  if !(params[:photo] && is_picture?(params[:photo][:filename]))
+    @error = true
+    erb :'users/event_planner'
+  end
+  fname = sanitize_filename(params[:photo][:filename])
+  File.open("public/uploads/#{fname}", "w") do |f|
+    f.write(params[:photo][:tempfile].read)
+  end
   salt = salt_string
   password_salted_and_hashed = encrypt(params[:password],salt)
   @planner = EventPlanner.new(
     name: params[:name],
     email: params[:email],
     phone_number: params[:phone_number],
-    avatar_url: params[:avatar_url],
+    avatar_url: "public/uploads/" + fname,
     password: password_salted_and_hashed,
     salt: salt
   )
@@ -140,7 +161,22 @@ get '/events/new' do
   erb :'events/new'
 end
 
+
+
+
+
+
+
+
 post '/events' do
+  if !(params[:photo] && is_picture?(params[:photo][:filename]))
+    @error = true
+    erb :'/events/new'
+  end
+  fname = sanitize_filename(params[:photo][:filename])
+  File.open("public/uploads/#{fname}", "w") do |f|
+    f.write(params[:photo][:tempfile].read)
+  end
   unless Venue.find_by(name: params[:venue])
     @venue = Venue.new(
       name: params[:venue],
@@ -159,8 +195,7 @@ post '/events' do
   @event = Event.new(
     name: params[:name],
     description:  params[:description],
-    link_url: params[:link_url],
-    picture_url: params[:picture_url],
+    picture_url: "public/uploads/" + fname,
     date: params[:date].to_date,
     time: params[:time].to_time,
     venue_id: @venue.id
@@ -175,17 +210,17 @@ end
 
 
 post '/events/messages' do
-  
+
   if current_user
     @user = current_user
     @comment = Comment.new(
-    content: params[:content],
-    user_id: @user.id,
-    event_id: params[:event_id]
+      content: params[:content],
+      user_id: @user.id,
+      event_id: params[:event_id]
     )
-    if @comment.save 
+    if @comment.save
       redirect "/events/#{params[:event_id]}"
-    else 
+    else
       redirect "/events/#{params[:event_id]}"
     end
   end
@@ -197,4 +232,3 @@ get '/events/:id' do
   @comments = @event.comments.order(:created_at).reverse
   erb :'events/index'
 end
-

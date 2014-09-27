@@ -1,0 +1,102 @@
+body {
+  font-size: 16px; }
+
+html {
+  -webkit-font-smoothing: antialiased !important; }
+
+#geo-po:hover {
+  transform: scale(0.9); }
+
+#geo-po {
+  border: 2px solid white;
+  border-radius: 100px; }
+
+#topbar {
+  position: absolute;
+  box-shadow: 3px 3px 6px #666;
+  z-index: 666;
+  background: rgba(12, 102, 240, 0.6);
+  transition: 0.2s;
+  height: 5em;
+  margin: 1.3em;
+  border-radius: 0.5em;
+  width: calc(100% - 2.6em);
+  line-height: 2.5em;
+  text-align: right; }
+  #topbar:hover {
+    background: rgba(12, 102, 240, 0.8);
+    transition: 0.2s; }
+
+#bottombar {
+  position: absolute;
+  box-shadow: 3px 3px 6px #666;
+  z-index: 666;
+  background: rgba(12, 102, 240, 0.6);
+  transition: 0.2s;
+  width: 100%;
+  height: 3em;
+  bottom: 0;
+  text-align: center; }
+  #bottombar:hover {
+    background: rgba(12, 102, 240, 0.8);
+    transition: 0.2s; }
+
+select {
+  transform: scale(1.5) translateX(0);
+  font-size: 10px; }
+
+input:focus {
+  box-shadow: 0px 0px 0px white; }
+
+select, input {
+  background: rgba(250, 250, 250, 0.4);
+  padding: 0.3em;
+  display: inline-block;
+  margin: 0.1em;
+  margin-right: 0.6em;
+  border: 0px solid #eee;
+  font-family: verdana;
+  color: #222; }
+  select:hover, input:hover {
+    background: rgba(250, 250, 250, 0.8); }
+
+#topbar input[type="password"] {
+  border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  vertical-align: top; }
+
+#topbar input[type="text"] {
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
+  vertical-align: bottom; }
+
+#topbar input[type="text"], #topbar input[type="password"] {
+  width: 8.5em; }
+
+input[type="submit"] {
+  border-radius: 0.6em; }
+
+#eo {
+  position: absolute;
+  left: 0.3em;
+  top: 0.5em;
+  font-weight: 900;
+  letter-spacing: -0.07em;
+  font-size: 3em;
+  color: rgba(250, 250, 250, 0.6); }
+  #eo a:link, #eo a:visited {
+    text-decoration: none;
+    color: rgba(250, 250, 250, 0.6); }
+  #eo a:hover {
+    color: #fafafa; }
+  #eo:hover {
+    color: #fafafa; }
+
+.map-info {
+  color: #666; }
+  .map-info a {
+    text-decoration: none; }
+  .map-info:hover {
+    color: #000; }
+
+/*# sourceMappingURL=application.css.map */

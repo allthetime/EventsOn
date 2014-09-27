@@ -1,109 +1,37 @@
+<style type="text/css">
+  #map_canvas {
+    width:100%;
+    min-height:100vh;
+  }
+</style>
 
-    <style type="text/css">
-      #map_canvas {
-        width:100%;
-        min-height:70vh;
+  <script>
+    function showlocation() {
+       navigator.geolocation.getCurrentPosition(callback);
+    }
+    function callback(position) {
+       lat = position.coords.latitude
+       lng = position.coords.longitude
+       map.setCenter(new google.maps.LatLng(lat, lng));
+       map.setZoom(14);
 
-      }
-    </style>
+       var user_marker = new google.maps.Marker({
+                position: new google.maps.LatLng(lat, lng),
+                map: map,
+                title: "YOUR LOCATION",
+                animation: google.maps.Animation.DROP,
+                icon: "/icons/user.png"
+            });
+            user_marker.metadata = {
+                type: "point",
+                id: i
+            };
+            markerList.push(user_marker);
+    }
+    var map
+  </script>
 
-
-
-  <% if @results == "none" %>
-    <%= "No events on selected day" %>
-  <% end %>
-
-
-
-    
-    <% unless current_user.nil? && current_planner.nil? %>
-
-      <form action="/logout" method="post">
-          <input type="submit" value="logout"/>
-      </form>
-
-    <% else %>
-
-      <form action="/login" method="post">
-        <div>
-          <input type="checkbox" name="planner"/>
-        </div>
-        <div>
-        username
-          <input 
-            type="text" 
-            name="name" />
-        </div>
-        <div>
-        password
-          <input 
-            type="password" 
-            name="password" />
-        </div>
-
-        <div>
-          <input type="submit"/>
-        </div>
-      </form>
-
-    <% end %>
-
-
-
-
-    <% unless current_user.nil?  %>
-      HI <%= current_user.name %>
-    <% end %>
-
-    <% unless current_planner.nil? %>
-      HI planner <%= current_planner.name %>
-    <% end %>    
-
-
-<form action="/" method="post">
-    <input type="checkbox" name="date_option" id="date_option"/>
-    date:<input name="date" type="text" id="date_picker"></div>
-    <input type="checkbox" name="type_option" id="type_option"/>
-    <select name="type" id="type_picker">
-    <% all_types.each do |type| %>
-    <option value="<%= type.name %>"><%= type.name %></option>
-    <% end %>
-    </select>
-    <input type="submit"/>
-</form>
-
-
-
-    <button id="share_location" onclick="showlocation();">YOUR LOCATION</button>
-
-    <script>
-      function showlocation() {
-         navigator.geolocation.getCurrentPosition(callback);
-      }
-      function callback(position) {
-         lat = position.coords.latitude
-         lng = position.coords.longitude
-         map.setCenter(new google.maps.LatLng(lat, lng));
-         map.setZoom(14);
-
-         var user_marker = new google.maps.Marker({
-                  position: new google.maps.LatLng(lat, lng),
-                  map: map,
-                  title: "YOUR LOCATION",
-                  animation: google.maps.Animation.DROP,
-                  icon: "/icons/user.png"
-              });
-              user_marker.metadata = {
-                  type: "point",
-                  id: i
-              };
-              markerList.push(user_marker);
-      }
-      var map
-    </script>
-
-    <div id='map_canvas' class='col-sm-8'>
-    </div>
+<div id='map_canvas' class='col-sm-8'></div>
 
 
 
@@ -121,6 +49,7 @@
           var bounds = new google.maps.LatLngBounds();
           var mapOptions = {
             center: new google.maps.LatLng(49.2805,-123.1085761),
+            disableDefaultUI: true
           };
 
 
@@ -141,8 +70,7 @@
 
             <% @events.each do |event| %>
               [
-                '<a href="/events/<%= event.id %>"><h4><%= event.name %></h4></a>' +
-                '<%= event.venue.address %>'
+                '<div class="map-info"><a href="/events/<%= event.id %>"><h4><%= event.name %></h4></a></div>'
               ],
             <% end %>
 
@@ -168,13 +96,14 @@
                       }
           
      
-          <% @events.each_with_index do |event,index| %>
+        <% @events.each_with_index do |event,index| %>
  
               var position = new google.maps.LatLng(markers[<%= index %>][1], markers[<%= index %>][2]);
               bounds.extend(position);
               marker = new google.maps.Marker({
                   position: position,
                   map: map,
+                  url: "/events/<%= event.id %>",
                   title: markers[<%= index %>][0],
                   icon: icons["<%= event.types[0].name %>"], 
                   animation: google.maps.Animation.DROP
@@ -184,19 +113,33 @@
                   type: "point",
                   id: <%= index %>
               };
-              markerList.push(marker);
+              
 
-              google.maps.event.addListener(marker, 'click', (function(marker, i) {
+    google.maps.event.addListener(marker, 'click', function() {
+      window.location.href = this.url;  //changed from markers[i] to this[i]
+    });
+      
+
+
+
+              google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
                   return function() {
                       infoWindow.setContent(infoWindowContent[i][0]);
                       infoWindow.open(map, marker);
                   };
               })(marker, <%= index %>));
 
+              google.maps.event.addListener(marker, 'mouseout', (function(marker, i) {
+                  return function() {
+                      infoWindow.setContent(infoWindowContent[i][0]);
+                      infoWindow.close(map, marker);
+                  };
+              })(marker, <%= index %>));
+
               map.fitBounds(bounds);
-              $('.stores ul').append('<li><a href=' + '"' + markers[<%= index %>][3] + '"' + 'target="_blank"' + 'data-id="' + <%= index %> + '"' + '>' + markers[<%= index %>][0] + '</a></li>');
+              // $('.stores ul').append('<li><a href=' + '"' + markers[<%= index %>][3] + '"' + 'target="_blank"' + 'data-id="' + <%= index %> + '"' + '>' + markers[<%= index %>][0] + '</a></li>');
   
-    <% end %>
+      <% end %>
           var foundMarkerId;
 
           $('.stores a').hover(function(e) {
@@ -228,6 +171,9 @@
           $(window).resize(function() {
               map.setCenter(center);
           });
+
+
+
       }
 
 
@@ -236,7 +182,6 @@
       dateFormat: 'dd/mm/yy'
     });
   });
-
 
   $('#date_picker').click(function(){
     console.log("OK")
@@ -248,7 +193,18 @@
     $('#type_option').prop('checked', true);
   })
 
+</script>
+
+
+<% if @results == "none" %>
+<%= "No events on selected day" %>
+<% end %>
 
 
 
-    </script>
+<% unless current_user.nil?  %>
+<% end %>
+
+<% unless current_planner.nil? %>
+<% end %>
+

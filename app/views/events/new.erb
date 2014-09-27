@@ -1,113 +1,83 @@
+<form action="/events" method="post" id="new-event" enctype='multipart/form-data' runat="server">
 
-<script type="text/javascript" src="javascript/request.js"></script>
-<form action="/events" method="post" id="new-event">
-  <div>
-    <label>Picture URL</label>
-      <input type="text" name="picture_url" >
-  </div>
+
+
+ <input type="file" name="photo" accept=".jpg,.gif,.png" required> 
+
 
   <div>
     <label>Event Name</label>
-      <input type="text" name="name">
+    <input type="text" name="name">
   </div>
   <div>
-<!--  -->
-
-
-<select name="type">
-    <% all_types.each do |type| %>
-      <option value="<%= type.name %>"><%= type.name %></option>
-    <% end %>
-</select>
-
-  <div>
-    <label>Description</label>
+    <!--  -->
+    <select name="type">
+      <% all_types.each do |type| %>
+        <option value="<%= type.name %>"><%= type.name %></option>
+      <% end %>
+    </select>
+    <div>
+      <label>Description</label>
       <input type="text" name="description">
-  </div>
+    </div>
 
-  <div>
-    <label>Website</label>
-      <input id = "website" type="text" name="link_url">
-  </div>
-
-  <div id = "datetimepicker">
-  </div>
-
-  <div>
-  <input id = "datetimepicker_line" name="date" type="hidden">
-  </div>
-
-
-
-<div>
-time
-  <input id="time_pick" name="time" type="text"/>
-</div>
-
-<div>
-venue
-  <input id="venue_name" name="venue" type="text"/>
-</div>
-
-<div>
-  street address
-    <input id="street_address" name="street_address" type="text"/>
-
-</div>
-
-<div>
-  city
+    <div id = "datetimepicker">
+    </div>
+    <div>
+      <input id = "datetimepicker_line" name="date" type="hidden">
+    </div>
+    <div>
+      time
+      <input id="time_pick" name="time" type="text"/>
+    </div>
+    <div>
+      venue
+      <input id="venue_name" name="venue" type="text"/>
+    </div>
+    <div>
+      street address
+      <input id="street_address" name="street_address" type="text"/>
+    </div>
+    <div>
+      city
       <input id="city" name="city" type="text"/>
-</div>
-
-
-
-
-  <div>
-    <input type="hidden" name="lat">
-    <input type="hidden" name="lng">
-    <input type="submit" value="Submit">
-  </div>
-
-</form>
+    </div>
+    <div>
+      <input type="hidden" name="lat">
+      <input type="hidden" name="lng">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
 
 <script>
+  jQuery('#datetimepicker').datepicker({
+    onSelect: function(i){
+      $('#datetimepicker_line').val(i)
+    },
+    dateFormat: 'dd/mm/yy'
+  }); 
 
-jQuery('#datetimepicker').datepicker({
-  onSelect: function(i,o,p){
-    $('#datetimepicker_line').val(i)
-  },
-   dateFormat: 'dd/mm/yy'
-}); 
+  $("#venue_name").autocomplete({ source: [ 
+    <% all_venues.each do |venue| %>
+      "<%= venue.name %>",
+    <% end %>
+  ] });
 
-$("#venue_name").autocomplete({ source: [ 
-
-  <% all_venues.each do |venue| %>
-    "<%= venue.name %>",
-  <% end %>
-
-] });
-
-
-var venues = {}
+  var venues = {}
 
   <% all_venues.each do |venue| %>
     venues["<%= venue.name %>"] = "<%= venue.address %>"
   <% end %> 
 
-$( "#venue_name" ).on('keydown', function () {
-  console.log(venues[$(this).val()])
+  $( "#venue_name" ).on('keydown', function () {
+    if(venues[$(this).val()]){
+      $('#street_address').val(venues[$(this).val()])
+    }else{
+      return 
+    }
+  });
 
-
-  if(venues[$(this).val()]){
-    $('#street_address').val(venues[$(this).val()])
-  }else{
-    return 
-  }
-});
-
-
-$('#time_pick').timepicker({ 'scrollDefault': 'now' });
+  $('#time_pick').timepicker({ 'scrollDefault': 'now' });
 
 </script>
 

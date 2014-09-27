@@ -9,7 +9,7 @@
   </div>
 <% end %>
 
-<form action="/signup/event_planner" method="post">
+<form action="/signup/event_planner" method="post" enctype='multipart/form-data' runat="server">
 
   <div>
   username
@@ -40,10 +40,8 @@
   </div>
   <div>
   avatar
-    <input 
-      type="text" 
-      name="avatar_url" 
-      value="<%= @planner.avatar_url %>"/>
+ <input type="file" name="photo" accept=".jpg,.gif,.png" required> 
+
   </div>      
   <div>
     <input type="submit"/>

@@ -1,35 +1,23 @@
 <div> Name of Venue: <%= @venue.name %> <br/>
   Location: <%= @venue.address %>
 </div>
-
-
-
-
 <% unless current_user.nil? %>
-
   <form action="/logout" method="post">
-      <input type="submit" value="logout"/>
+    <input type="submit" value="logout"/>
   </form>
-
-<form method="post" action="/events/messages">
-  <textarea name="content"></textarea><br/>
-  <input type="hidden" name="event_id" value="<%= @event.id %>">
-  <input type="submit">
-</form>
-
+  <form method="post" action="/events/messages">
+    <textarea name="content"></textarea><br/>
+    <input type="hidden" name="event_id" value="<%= @event.id %>">
+    <input type="submit">
+  </form>
 <% end %>
 
 <% if @comments %>
- <% @comments.each do |comment| %>
+  <% @comments.each do |comment| %>
   <div>
     <br/>
-   Comment by:<strong> <%= all_users.find(comment.user_id).name %> </strong><br/>
-   <p><%= comment.content %></p>
+    Comment by:<strong> <%= all_users.find(comment.user_id).name %> </strong><br/>
+    <p><%= comment.content %></p>
   </div>
-   
-   <% end %>
+  <% end %>
 <% end %>
-
-
-
-
