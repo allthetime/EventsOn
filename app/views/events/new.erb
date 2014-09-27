@@ -3,25 +3,15 @@
 <form action="/events" method="post" id="new-event">
   <div>
     <label>Picture URL</label>
-      <input type="text" name="picture_url" value="<%= @event.picture_url %>">
+      <input type="text" name="picture_url" >
   </div>
 
   <div>
     <label>Event Name</label>
-      <input type="text" name="name" value="<%= @event.name %>">
+      <input type="text" name="name">
   </div>
   <div>
-
- <% if @event.errors.any? %>
-  <div>
-    <strong>Some issues with your event, please fix them:</strong>
-    <ul>
-      <% @event.errors.full_messages.each do |event| %>
-        <li><%= event %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<!--  -->
 
 
 <select name="type">
@@ -32,19 +22,19 @@
 
   <div>
     <label>Description</label>
-      <input type="text" name="description" value="<%= @event.description %>">
+      <input type="text" name="description">
   </div>
 
   <div>
     <label>Website</label>
-      <input id = "website" type="text" name="link_url" value="<%= @event.link_url %>">
+      <input id = "website" type="text" name="link_url">
   </div>
 
   <div id = "datetimepicker">
   </div>
 
   <div>
-  <input id = "datetimepicker_line" name="date" type="hidden" value="<%= @event.date %>">
+  <input id = "datetimepicker_line" name="date" type="hidden">
   </div>
 
 
@@ -125,7 +115,14 @@ $('#time_pick').timepicker({ 'scrollDefault': 'now' });
 <script>
 
   $('#new-event').submit(function(e) {
-    alert($('input[name="lat"]').val());
+
+console.log(venues[$(this).val()])
+if(venues[$(this).val()]){
+
+  console.log(venues[$(this).val()])
+}else{
+
+    console.log('to google')
     if(!$('input[name="lat"]').val()) {
       e.preventDefault();
 
@@ -143,5 +140,6 @@ $('#time_pick').timepicker({ 'scrollDefault': 'now' });
         }
       }
     )}
+  }
   });
 </script>
