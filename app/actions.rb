@@ -160,3 +160,7 @@ get '/events/:id' do
   @event = Event.find(params[:id])
   erb :'events/index'
 end
+
+get '/test' do
+  erb :'test'
+end
