@@ -16,30 +16,20 @@
 
 
 
-
 </head>
 <body>
 <header id="topbar">
-
-<div id="eo">
-<a href="/">eventsOn</a>
-</div>
-
-
-  <% unless current_user.nil? && current_planner.nil? %>
-    
-
-<div class="chunk">
-
-
-</div>
-
-
-<div class="chunk">
+  <div id="eo">
+    <a href="/">eventsOn</a>
+  </div>
+<% unless current_user.nil? && current_planner.nil? %> 
+  <div class="chunk">
+  </div>
+  <div class="chunk">
     <form autocomplete="off" action="/logout" method="post">
       <input type="submit" value="logout"/>
     </form>
-  <% else %>
+<% else %>
     <form action="/login" method="post">
       <div>
         <input
@@ -47,40 +37,34 @@
         name="name" />
       </div>
       <div>
-              <input type="checkbox" name="planner"/>
-
+        <input type="checkbox" name="planner"/>
         <input
         type="password"
         name="password" />
-
         <input type="submit" style="display:none"/>
       </div>
-</div>
-    </form>
-  <% end %>  
+    </div>
+  </form>
+<% end %>
 
 
 </header>
-
 <footer id="bottombar">
   
-
-<form action="/" method="post">
-  <input type="checkbox" name="date_option" id="date_option" style="display:none;"/>
-  <input name="date" style="transform: scale(1.15) translateX(-15px);     border-radius: 0.5em;
- width:100px;
-margin-top: 10px;" type="text" id="date_picker">
-  <input type="checkbox" name="type_option" id="type_option" style="display:none;"/>
-  <select name="type" id="type_picker">
-    <% all_types.each do |type| %>
+  <form action="/" method="post">
+    <input type="checkbox" name="date_option" id="date_option" style="display:box;"/>
+    <input name="date" type="text" id="date_picker">
+    <input type="checkbox" name="type_option" id="type_option" style="display:box;"/>
+    <select name="type" id="type_picker">
+  <% all_types.each do |type| %>
       <option value="<%= type.name %>"><%= type.name %></option>
-    <% end %>
-  </select>
-  <!-- <input type="submit" style="display:none;float:right;"/> <button id="share_location" onclick="showlocation();">YOUR LOCATION</button> -->
-
-<svg id="geo-po" onclick="showlocation();" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px"
-   height="50px" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;position:absolute;right:20px;" xml:space="preserve">
-  <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M240,159.909c-44.235,0-80.091,35.859-80.091,80.091
+  <% end %>
+    </select>
+    <input type="submit">
+    <!-- <input type="submit" style="display:none;float:right;"/> <button id="share_location" onclick="showlocation();">YOUR LOCATION</button> -->
+    <svg id="geo-po" onclick="showlocation();" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="42px"
+    height="42px" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;position:absolute;right:20px;bottom:0;" xml:space="preserve">
+    <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M240,159.909c-44.235,0-80.091,35.859-80.091,80.091
     s35.855,80.091,80.091,80.091c44.231,0,80.091-35.859,80.091-80.091S284.231,159.909,240,159.909z M400,226.667h-25.694
     c-6.267-63.891-57.086-114.701-120.973-120.967V80c0-7.363-5.97-13.333-13.333-13.333S226.667,72.637,226.667,80v25.701
     c-63.889,6.266-114.705,57.075-120.971,120.966H80c-7.363,0-13.333,5.97-13.333,13.333s5.97,13.333,13.333,13.333h25.696
@@ -88,14 +72,8 @@ margin-top: 10px;" type="text" id="date_picker">
     c63.888-6.266,114.707-57.075,120.974-120.966H400c7.363,0,13.333-5.97,13.333-13.333S407.363,226.667,400,226.667z M240,347.669
     c-59.463,0-107.666-48.209-107.666-107.669S180.537,132.331,240,132.331c59.466,0,107.669,48.209,107.669,107.669
     S299.466,347.669,240,347.669z"/>
-</svg>
-
-
-</form>
-
-
-
-
+    </svg>
+  </form>
 </footer>
   <%= yield %>
 </body>

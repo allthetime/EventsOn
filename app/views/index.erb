@@ -34,6 +34,17 @@
 <div id='map_canvas' class='col-sm-8'></div>
 
 
+<!-- <script type="text/javascript">
+      var script = '<script type="text/javascript" src="http://google-maps-' +
+          'utility-library-v3.googlecode.com/svn/trunk/infobubble/src/infobubble';
+      if (document.location.search.indexOf('compiled') !== -1) {
+        script += '-compiled';
+      }
+      script += '.js"><' + '/script>';
+      document.write(script);
+    </script> -->
+
+      <script src="javascript/infobubble.js"></script> 
 
      
     <script type="text/javascript">
@@ -64,20 +75,33 @@
             <% @events.each do |event| %>
               ["<%= event.name %>", <%= event.venue.latitude %> , <%= event.venue.longitude %> , "<%= event.link_url %>"], 
             <% end %>
+
+
           ];
 
-          var infoWindowContent = [
+          var infoBubbleContent = [
 
             <% @events.each do |event| %>
               [
-                '<div class="map-info"><a href="/events/<%= event.id %>"><h4><%= event.name %></h4></a></div>'
+                '<div class="map-info"><a href="/events/<%= event.id %>"><%= event.name %></a></div>'
               ],
             <% end %>
 
           ];
 
-          var infoWindow = new google.maps.InfoWindow({
-                  maxWidth: 300
+          var infoBubble = new InfoBubble({
+                  maxWidth: 300,
+                  backgroundColor: 'rgba(255, 225, 0, 0.6)',
+                  //rgba(255, 225, 0, 0.8)
+                  // rgba(12, 102, 240, 0.6)
+                  zIndex:667,
+                  borderRadius: 10,
+                  arrowSize: 0,
+                  borderWidth: 0,
+                  borderColor: '#ddd',
+                  disableAutoPan: true,
+                  ShadowStyle: 0,
+                  backgroundClassName : 'info-bubble',
               }),
               marker, i;
           var markerList = [];
@@ -91,8 +115,7 @@
                         "festival": "/icons/festival.png",
                         "market": "/icons/market.png",
                         "music": "/icons/music.png",
-                        "theatre": "/icons/theatre.png"
-                     
+                        "theatre": "/icons/theatre.png"  
                       }
           
      
@@ -109,10 +132,10 @@
                   animation: google.maps.Animation.DROP
               });
              
-              marker.metadata = {
-                  type: "point",
-                  id: <%= index %>
-              };
+              // marker.metadata = {
+              //     type: "point",
+              //     id: <%= index %>
+              // };
               
 
     google.maps.event.addListener(marker, 'click', function() {
@@ -124,15 +147,15 @@
 
               google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
                   return function() {
-                      infoWindow.setContent(infoWindowContent[i][0]);
-                      infoWindow.open(map, marker);
+                      infoBubble.setContent(infoBubbleContent[i][0]);
+                      infoBubble.open(map, marker);
                   };
               })(marker, <%= index %>));
 
               google.maps.event.addListener(marker, 'mouseout', (function(marker, i) {
                   return function() {
-                      infoWindow.setContent(infoWindowContent[i][0]);
-                      infoWindow.close(map, marker);
+                      infoBubble.setContent(infoBubbleContent[i][0]);
+                      infoBubble.close(map, marker);
                   };
               })(marker, <%= index %>));
 

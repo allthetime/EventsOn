@@ -1,3 +1,5 @@
+<section id="content">
+
 <form action="/events" method="post" id="new-event" enctype='multipart/form-data' runat="server">
 
 
@@ -49,6 +51,9 @@
     </div>
   </form>
 
+
+</section>  
+
 <script>
   jQuery('#datetimepicker').datepicker({
     onSelect: function(i){
@@ -86,13 +91,13 @@
 
   $('#new-event').submit(function(e) {
 
-console.log(venues[$(this).val()])
-if(venues[$(this).val()]){
+// console.log(venues[$(this).val()])
+// if(venues[$(this).val()]){
 
-  console.log(venues[$(this).val()])
-}else{
+//   console.log(venues[$(this).val()])
+// }else{
 
-    console.log('to google')
+    // console.log('to google')
     if(!$('input[name="lat"]').val()) {
       e.preventDefault();
 
@@ -112,4 +117,8 @@ if(venues[$(this).val()]){
     )}
   }
   });
+
+
 </script>
+
+
