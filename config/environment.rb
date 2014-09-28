@@ -8,13 +8,10 @@ require_relative '../factories/events_factory.rb'
 require_relative '../factories/venues_factory.rb'
 require_relative '../factories/event_planners_factory.rb'
 
-
-
 # Load Sinatra Framework (with AR)
 require 'sinatra'
 require 'sinatra/activerecord'
 
-require 'pry'
 
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 APP_NAME = APP_ROOT.basename.to_s
