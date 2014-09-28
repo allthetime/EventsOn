@@ -46,8 +46,23 @@
   </div>
   <div>
 
- <input type="file" name="photo" accept=".jpg,.gif,.png" required> 
-  </div>      
+    <label id="file-label" for="file-input"></label>
+      <input id="file-input" style="display:none;" type="file" name="photo" accept=".jpg,.gif,.png" required >    
+
+
+
+      <script>
+document.querySelector('input[type="file"]').onchange = 
+  function(){
+    document.querySelector('#file-label').innerHTML=this.files[0].name
+  }
+      </script>
+
+
+  </div>
+
+
+
   <div>
     <input type="submit"/>
   </div>

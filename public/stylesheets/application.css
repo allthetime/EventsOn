@@ -51,20 +51,102 @@ section {
 #date_picker, #type_picker {
   vertical-align: middle; }
 
+  #date_picker{
+    border-radius: 6px;
+padding-top: 2px;
+padding-bottom: 1px;
+width: 97px;
+  }
+
 input:focus {
   box-shadow: 0px 0px 0px white; }
 
-select, input {
+select, input,button {
   background: rgba(250, 250, 250, 0.4);
   padding: 0.3em;
   display: inline-block;
   margin: 0.1em;
-  margin-right: 0.6em;
+  margin-right: 0.2em;
   border: 0px solid #eee;
   font-family: verdana;
   color: #222; }
-  select:hover, input:hover {
+  select:hover, input:hover, button:hover {
     background: rgba(250, 250, 250, 0.8); }
+
+#topbar > form > div:nth-child(1) > button{
+  vertical-align: bottom;
+}
+
+#topbar > form > div:nth-child(2) > button{
+  vertical-align: top;
+}
+
+#topbar > form > div > button{
+  background: rgba(250, 250, 250, 0.6);
+  color: rgba(12, 102, 240, 0.8);
+  height:28px;
+  margin-left: 0;
+  width:28px;
+  border-radius:8px;
+  padding-top:0;
+  margin-right: 0.6em;
+  font-size:10px;
+  transition:0.2s;
+}
+#topbar > form > div > button:hover{
+
+background: rgba(12, 102, 240, 0.8);
+color:white;  
+transition: 0.3s;
+
+}
+
+
+input[type="checkbox"] {
+    height: 1.2em;
+    width: 1.2em;
+    vertical-align: middle;
+    margin: 0 0.4em 0.4em 0;
+    background: rgba(250, 250, 250, 0.5);
+    -webkit-appearance: none;
+}
+ 
+input[type="checkbox"] {
+    -webkit-border-radius:8px;
+    border-radius:8px;
+}
+ 
+input[type="checkbox"]:not(:disabled):hover {
+      background: rgba(250, 250, 250, 0.8);
+}
+ 
+input[type="checkbox"]:checked:hover {
+    background:rgba(12, 102, 240, 0.8);
+
+}
+ 
+input[type="checkbox"]:focus {
+    outline:none;
+    box-shadow: 0 0 1px 2px rgba(0, 240, 255, 0.4);
+
+}
+ 
+input[type="checkbox"]:checked {
+    border-color:rgba(0, 0, 0, 0.5);
+    background:rgba(12, 102, 240, 0.6);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 #topbar input[type="password"] {
   border-top-left-radius: 8px;
@@ -80,7 +162,18 @@ select, input {
   width: 8.5em; }
 
 input[type="submit"] {
-  border-radius: 0.6em; }
+  border-radius: 0.6em;
+  background: rgba(12, 102, 240, 0.8);
+  color:white; 
+  transition:0.3s;
+  border:0 solid #000;
+  }
+
+input[type="submit"]:hover{
+  color: rgba(12, 102, 240, 1);
+  background:white;
+  transition:0.3s;
+}
 
 #eo {
   position: absolute;

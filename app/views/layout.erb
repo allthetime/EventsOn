@@ -14,8 +14,6 @@
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> 
   <title>EventsOn</title>
 
-
-
 </head>
 <body>
 <header id="topbar">
@@ -43,15 +41,24 @@
         type="text"
         name="name" 
         placeholder="name"
-        id="login"/>
+        id="login"
+        tabindex="1"/>
+                  <input type="submit" style="display:none"/>
+
+        <button onclick="window.open('/signup','_top');return false; ">U</button>
       </div>
       <div>
-        <input type="checkbox" name="planner"/>
+        <input type="checkbox" name="planner" tabindex="3"/>
+                <input type="submit" style="display:none"/>
+
         <input
         type="password"
         name="password" 
-        placeholder="*****"/>
-        <input type="submit" style="display:none"/>
+        placeholder="*****"
+        tabindex="2"/>
+                <input type="submit" style="display:none"/>
+
+        <button onclick="window.open('/signup/event_planner','_top');return false; ">eP</button>
       </div>
     </div>
   </form>
@@ -77,7 +84,8 @@ label{
       <option value="<%= type.name %>"><%= type.name %></option>
   <% end %>
     </select>
-    <input type="submit" style="font-size:10px;height:20px;">
+    <input type="submit" style="font-size: 12px;
+height: 22px;">
     <!-- <input type="submit" style="display:none;float:right;"/> <button id="share_location" onclick="showlocation();">YOUR LOCATION</button> -->
     <svg id="geo-po" onclick="showlocation();" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="42px"
     height="42px" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;position:absolute;right:20px;bottom:0;" xml:space="preserve">

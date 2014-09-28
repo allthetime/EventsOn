@@ -71,7 +71,7 @@ textarea:hover,textarea:focus, input:focus, select:focus, #file-label:hover,#fil
 }
 
 
-#new-event input:hover, textarea:hover, select:hover{
+#new-event input:hover, textarea:hover, #new-event select:hover{
   border:2px solid rgba(12,102,240,0.9);
   transition:0.3s;
 }
@@ -90,4 +90,8 @@ input[type="file"]::-webkit-file-upload-button{
 input[type="file"] {
   height: 20px;
   vertical-align: middle;
+}
+
+input[type="submit"]:hover{
+  border:0px solid #fff !important;
 }

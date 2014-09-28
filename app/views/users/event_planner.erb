@@ -18,6 +18,7 @@
 <div class="cols right">
            <label>Username</label><br>
             <label>Email</label><br>
+                      <label>Phone</label><br> 
        <label>Password</label><br>
     <label>Image</label><br>
   </div>
@@ -49,7 +50,19 @@
       name="password"/>
   </div>
   <div>
- <input type="file" name="photo" accept=".jpg,.gif,.png" required> 
+
+
+    <label id="file-label" for="file-input"></label>
+      <input id="file-input" style="display:none;" type="file" name="photo" accept=".jpg,.gif,.png" required >    
+
+
+
+      <script>
+document.querySelector('input[type="file"]').onchange = 
+  function(){
+    document.querySelector('#file-label').innerHTML=this.files[0].name
+  }
+      </script>
 
   </div>      
   <div>
