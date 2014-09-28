@@ -1,4 +1,10 @@
 
+body{
+   background: url("/images/Lines_on_Twirl_by_ViCoDe.jpg") no-repeat center center fixed;
+  background-position: center;
+  background-size:cover;
+}
+
   #topbar {
   height: 3em;
   margin: 0;
@@ -30,13 +36,6 @@ height: calc(100vh - 6em);
    background: rgba(12, 102, 240, 0.8);
   }
 
-  #map { 
-    border-radius: 0.5em;
-    margin-top: -10em;
-    width: 300px;
-    height: 300px;
-    border: 1px solid black;
-  }
 
 input[type="submit"]{
   font-size:10px;
@@ -69,4 +68,5 @@ input[type="submit"]{
   min-width: 200px;
   max-width: 500px;
   font-size:16px;
+  margin-bottom:30px;
 }

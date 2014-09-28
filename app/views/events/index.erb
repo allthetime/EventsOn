@@ -3,26 +3,38 @@
 <style>
 
 body {
-  background: url("/images/Lines_on_Twirl_by_ViCoDe.jpg") no-repeat center center fixed;
-  background-position: center;
-  background-size:cover;
+ 
 }
 
-  #picture {
+  #map   {
     width: 100%;
     height: 300px;
-    background: url(<%= @event.picture_url %>);
+    z-index: -2;
+    /*background: url(<%= @event.picture_url %>);
     background-position: center;
+    background-size:cover;*/
   }
+
+  #picture{
+     background: url(<%= @event.picture_url %>);
+    background-position: center;
+    background-size:cover;
+        border-radius: 0.5em;
+    margin-top: -10em;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+  }
+
   .column {
     display: inline-block;
     /*overflow: scroll;*/
   }
 
   #column1 {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
     padding-left: 4%;
-    padding-bottom: 4%;
+    padding-bottom: 400px;
     width: 350px;
     color: white;
   }
@@ -35,16 +47,27 @@ body {
   }
 
 #comment_block {
-  background: rgba(12, 102, 240, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   padding: 1em;
-  border: 1px solid #666;
-  border-radius: 1em;
+  padding-top:0.5em;
+  padding-bottom: 0.5em;
+  border-radius: 3px;
   width: 100%;
-  box-shadow: 3px 3px 6px #666;
-  margin-bottom: 15px;
-  color: black;
+  margin-bottom: 2px;
+  color: white;
   max-width:500px;
   min-width:200px;
+  display:inline-block;
+  text-align: left;
+}
+
+#comment_block span{
+  color: rgba(12,102,240,1);
+  font-size:12px;
+}
+
+#comment_block p{
+  margin-top:0px;
 }
 
 textarea{ 
@@ -58,18 +81,28 @@ textarea{
   border-radius: 1em;
   resize: vertical; 
   line-height: 20px; 
-  background:rgba(250,250,250,0.5); } 
-textarea:hover,textarea:focus{ background:rgba(250,250,250,0.9); } 
+  background:rgba(250,250,250,1); } 
+textarea:hover,textarea:focus{  
+border:2px solid rgba(12,102,240,0.8);} 
 
 </style>
+
+
+
+
+
+
+
+
+
 
 <section>
 
   <div class="container-fluid">
-  <div class="row" id = "picture"></div>
+  <div class="row" id = "map"></div>
   <div class="row">
     <div class="span2 column" id="column1">
-      <img  id = "map" src="http://placehold.it/300x300" class="img-thumbnail" id = "picture"/>
+   <div id="picture"></div>
       <div><h1><%= @event.name %></h1></div>
       <div>at: <strong><%= @venue.name %></br>
            <%= @venue.address %></strong>
@@ -77,7 +110,7 @@ textarea:hover,textarea:focus{ background:rgba(250,250,250,0.9); }
       <p></br><%= @event.description %></p>
     </div>
     <div class="span6 column" id="column2">
-      <% unless current_user.nil? && current_planner.nil? %>
+      <% unless current_user.nil?  %>
 
         <form id="comments-form" method="post" action="/events/messages">
           <textarea name="content" placeholder="Leave a comment..."></textarea><br/>
@@ -89,7 +122,7 @@ textarea:hover,textarea:focus{ background:rgba(250,250,250,0.9); }
         <% @comments.each do |comment| %>
           <div id = "comment_block">
             <br/>
-            <strong> <%= all_users.find(comment.user_id).name %></strong> says:<br/>
+            <span><strong> <%= all_users.find(comment.user_id).name %></strong></span><br/>
             <p><%= comment.content %></p>
           </div>
         <% end %>
@@ -98,3 +131,51 @@ textarea:hover,textarea:focus{ background:rgba(250,250,250,0.9); }
   </div>
 </div>
 </section>
+
+
+<script type="text/javascript">
+
+      $(function($) {
+          var script = document.createElement('script');
+          script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+          document.body.appendChild(script);
+      });
+
+
+      function initialize() {
+          var mapOptions = {
+            center: new google.maps.LatLng(<%= @venue.latitude  %>,<%= @venue.longitude  %>),
+            disableDefaultUI: true
+          };
+
+
+          map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+
+       var user_marker = new google.maps.Marker({
+                position: new google.maps.LatLng(<%= @venue.latitude  %>, <%= @venue.longitude  %>),
+                map: map,
+                title: "YOUR LOCATION",
+                animation: google.maps.Animation.DROP,
+                icon: "/icons/<%= @event.types[0].name %>.png",
+                zIndex: 1000
+            });
+
+        map.setZoom(15);
+
+
+          google.maps.event.addDomListener(map, "idle", function() {
+              center = map.getCenter();
+          });
+
+          $(window).resize(function() {
+              map.setCenter(center);
+          });
+
+            //markerList.push(user_marker);
+          }
+
+
+
+
+</script>

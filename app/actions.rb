@@ -227,7 +227,6 @@ end
 
 
 post '/events/messages' do
-
   if current_user
     @user = current_user
     @comment = Comment.new(
