@@ -11,8 +11,8 @@
 <section id="content">
   <div class="cols right">
            <label>Picture</label><br>
+              <label>Event Name</label><br>
             <label>Type</label><br>
-       <label>Event Name</label><br>
     <label>Description</label><br>
       <label>Date</label><br>
        <label>Time</label><br>
@@ -21,9 +21,21 @@
   </div>
   <div class="cols left">
     <form action="/events" method="post" id="new-event" enctype='multipart/form-data' runat="server">
-      <input type="file" name="photo" accept=".jpg,.gif,.png" required >
-      <div>
- 
+
+    <label id="file-label" for="file-input"></label>
+      <input id="file-input" style="display:none;" type="file" name="photo" accept=".jpg,.gif,.png" required >    
+
+
+
+      <script>
+document.querySelector('#new-event > input[type="file"]').onchange = 
+  function(){
+    document.querySelector('#file-label').innerHTML=this.files[0].name
+  }
+      </script>
+
+        <div>
+ <!-- document.querySelector('#new-event > input[type="file"]').files[0].name -->
         <input type="text" name="name">
       </div>
       <div>

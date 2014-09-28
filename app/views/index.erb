@@ -34,20 +34,18 @@
 
 <div id='map_canvas' class='col-sm-8'></div>
 
-
-<!-- <script type="text/javascript">
-      var script = '<script type="text/javascript" src="http://google-maps-' +
-          'utility-library-v3.googlecode.com/svn/trunk/infobubble/src/infobubble';
+      <script src="javascript/infobubble.js"></script> 
+   <script type="text/javascript">
+      var script = '<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer';
       if (document.location.search.indexOf('compiled') !== -1) {
-        script += '-compiled';
+        script += '_compiled';
       }
       script += '.js"><' + '/script>';
       document.write(script);
-    </script> -->
+    
+ </script>    
 
-      <script src="javascript/infobubble.js"></script> 
 
-     
     <script type="text/javascript">
 
       $(function($) {
@@ -84,7 +82,7 @@
 
             <% @events.each do |event| %>
               [
-                '<div class="map-info"><a href="/events/<%= event.id %>"><%= event.name %></a></div>'
+                "<div class='map-info'><a href='/events/<%= event.id %>'><strong><%= event.name %></strong></a><span class='time'> <%= event.time.strftime('%I:%M %p') %></span></div>"
               ],
             <% end %>
 
@@ -93,11 +91,10 @@
           var infoBubble = new InfoBubble({
                   maxWidth: 300,
                   backgroundColor: 'rgba(255, 225, 0, 0.8)',
-                  //rgba(255, 225, 0, 0.8)
-                  // rgba(12, 102, 240, 0.6)
                   zIndex:667,
                   borderRadius: 10,
                   arrowSize: 0,
+                  padding:20,
                   borderWidth: 0,
                   borderColor: '#ddd',
                   disableAutoPan: true,
@@ -132,6 +129,8 @@
                   icon: icons["<%= event.types[0].name %>"], 
                   animation: google.maps.Animation.DROP
               });
+
+              var markerCluster = new MarkerClusterer(map, markerList);
              
               // marker.metadata = {
               //     type: "point",

@@ -23,9 +23,6 @@ section{
   width: 300px;
 }
 
-input[type="file"]{
-  font-size:0;
-}
 
 
 
@@ -35,12 +32,17 @@ input[type="file"]{
   padding-right:20px;
 } 
 
-#new-event input, textarea, select{
+#new-event input, #new-event textarea, #new-event select, #file-label{
   border:2px solid rgba(12,102,240,0.3);
     transition:0.3s;
     padding:10px;
     width:300px;
   border-radius:8px;
+}
+
+#file-label{
+  background: rgba(250,250,250,0.5);
+  padding-right: 28px;
 }
 
 textarea{
@@ -49,18 +51,19 @@ textarea{
   background:rgba(250,250,250,0.5);
 }
 
-textarea:hover{
+textarea:hover,textarea:focus, input:focus, select:focus, #file-label:hover,#file-label:focus{
   background:rgba(250,250,250,0.9);
 } 
 
 
-#new-event select {
-  height:47px;
-  width:323px;
-}
+
 #new-event select,#new-event input[type="submit"]{
   height:50px;
   width:323px;
+}
+
+#new-event select {
+  height:42px;
 }
 
 #new-event input[type="submit"]{
@@ -78,4 +81,13 @@ textarea:hover{
 
 label{
     vertical-align: initial;
+}
+
+input[type="file"]::-webkit-file-upload-button{
+  display:none;
+}
+
+input[type="file"] {
+  height: 20px;
+  vertical-align: middle;
 }
