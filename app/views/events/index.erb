@@ -1,27 +1,94 @@
-<div> Name of Venue: <%= @venue.name %> <br/>
-  Location: <%= @venue.address %>
-</div>
+<link rel="stylesheet" href="/stylesheets/other.css">
 
+<style>
 
-<% unless current_user.nil? %>
+body {
+  background: url("/images/Lines_on_Twirl_by_ViCoDe.jpg");
+}
 
-  <form method="post" action="/events/messages">
-    <textarea name="content"></textarea><br/>
-    <input type="hidden" name="event_id" value="<%= @event.id %>">
-    <input type="submit">
-  </form>
+  #picture {
+    width: 100%;
+    height: 300px;
+    background: url(<%= @event.picture_url %>);
+    background-position: center;
+  }
+  .column {
+    display: inline-block;
+    /*overflow: scroll;*/
+  }
 
-<% end %>
+  #column1 {
+    background: rgba(0, 0, 0, 0.6);
+    padding-left: 4%;
+    padding-bottom: 4%;
+    margin-right: 10px;
+    width: 350px;
+    color: white;
+  }
 
+  #column2 {
+    padding-top: 4%;
+    vertical-align: top;
+    width: calc(100% - 562px);
+  }
 
-<img src="<%= @event.picture_url %>"></img>
+#comment_block {
+  background: rgba(12, 102, 240, 0.6);
+  padding: 1em;
+  border: 1px solid #666;
+  border-radius: 1em;
+  width: 100%;
+  box-shadow: 3px 3px 6px #666;
+  margin-bottom: 15px;
+  color: black;
+}
 
-<% if @comments %>
-  <% @comments.each do |comment| %>
-  <div>
-    <br/>
-    Comment by:<strong> <%= all_users.find(comment.user_id).name %> </strong><br/>
-    <p><%= comment.content %></p>
+textarea{ 
+  border:2px solid rgba(12,102,240,0.3);
+  margin-bottom: 25px;
+  padding: 1em; 
+  width: 100%; 
+  box-shadow: 3px 3px 6px #666;
+  border-radius: 1em;
+  resize: vertical; 
+  line-height: 20px; 
+  background:rgba(250,250,250,0.5); } 
+textarea:hover,textarea:focus{ background:rgba(250,250,250,0.9); } 
+
+</style>
+
+<section>
+
+  <div class="container-fluid">
+  <div class="row" id = "picture"></div>
+  <div class="row">
+    <div class="span2 column" id="column1">
+      <img  id = "map" src="http://placehold.it/300x300" class="img-thumbnail" id = "picture"/>
+      <div><h1><%= @event.name %></h1></div>
+      <div>at: <strong><%= @venue.name %></br>
+           <%= @venue.address %></strong>
+      </div>
+      <p></br><%= @event.description %></p>
+    </div>
+    <div class="span6 column" id="column2">
+      <% unless current_user.nil? %>
+
+        <form method="post" action="/events/messages">
+          <textarea name="content" placeholder="Leave a comment..."></textarea><br/>
+          <input type="hidden" name="event_id" value="<%= @event.id %>">
+          <input type="submit" style="display: none">
+        </form>
+      <% end %>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <div id = "comment_block">
+            <br/>
+            <strong> <%= all_users.find(comment.user_id).name %></strong> says:<br/>
+            <p><%= comment.content %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-  <% end %>
-<% end %>
+</div>
+</section>
