@@ -1,3 +1,5 @@
+<% if current_planner %>
+
 <section id="content">
 
 <form action="/events" method="post" id="new-event" enctype='multipart/form-data' runat="server">
@@ -37,12 +39,8 @@
       <input id="venue_name" name="venue" type="text"/>
     </div>
     <div>
-      street address
+      address
       <input id="street_address" name="street_address" type="text"/>
-    </div>
-    <div>
-      city
-      <input id="city" name="city" type="text"/>
     </div>
     <div>
       <input type="hidden" name="lat">
@@ -91,20 +89,19 @@
 
   $('#new-event').submit(function(e) {
 
-// console.log(venues[$(this).val()])
-// if(venues[$(this).val()]){
+console.log(venues[$(this).val()])
+if(venues[$(this).val()]){
 
-//   console.log(venues[$(this).val()])
-// }else{
+  console.log(venues[$(this).val()])
+}else{
 
-    // console.log('to google')
+    console.log('to google')
     if(!$('input[name="lat"]').val()) {
       e.preventDefault();
 
-      var streetAndCity = $('#street_address').val() + $('#city').val()
-      var readyForGoogle = streetAndCity.split(" ").join("+")
+      var addressOfVenue = $('#street_address').val().split(" ").join("+")
 
-      var connection = $.getJSON("https://maps.google.com/maps/api/geocode/json?address="+readyForGoogle+"&sensor=false&key=AIzaSyAPHhHcY9JGUE4pwDrfRuOJI4iEkYN25rc", function(response){
+      var connection = $.getJSON("https://maps.google.com/maps/api/geocode/json?address="+addressOfVenue+"&sensor=false&key=AIzaSyAPHhHcY9JGUE4pwDrfRuOJI4iEkYN25rc", function(response){
         if(response.results.length > 0) {
           console.log(response.results[0].geometry.location);
           var location = response.results[0].geometry.location;
@@ -122,3 +119,4 @@
 </script>
 
 
+<% end %> 

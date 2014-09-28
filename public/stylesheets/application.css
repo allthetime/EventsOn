@@ -99,11 +99,12 @@ input[type="submit"] {
   margin-top: -10px;
   font-size: 2em;
   transform: translateY(8px);
-  color: #444; }
+  text-shadow: 1px 1px 0px #666;
+  color: #fff; }
   .map-info a:visited, .map-info a:link {
     text-decoration: none;
-    color: #444; }
+    color: #fff; }
   .map-info:hover {
-    color: #444; }
+    color: #fff; }
 
 /*# sourceMappingURL=application.css.map */

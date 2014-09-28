@@ -23,12 +23,19 @@
     <a href="/">eventsOn</a>
   </div>
 <% unless current_user.nil? && current_planner.nil? %> 
+
   <div class="chunk">
   </div>
   <div class="chunk">
     <form autocomplete="off" action="/logout" method="post">
-      <input type="submit" value="logout"/>
+      <input type="submit" value="logout"/ style="vertical-align:bottom;width:100px;">
     </form>
+  <% if current_planner %>
+    <form autocomplete="off" action="/events/new" method="get">
+      <input type="submit" value="new event"/ style="vertical-align:top;width:100px;">
+    </form> 
+ <% end %>
+
 <% else %>
     <form action="/login" method="post">
       <div>
@@ -48,19 +55,26 @@
 <% end %>
 
 
+<style>
+label{
+  vertical-align: sub;
+}
+</style>
+
 </header>
 <footer id="bottombar">
   
   <form action="/" method="post">
-    <input type="checkbox" name="date_option" id="date_option" style="display:box;"/>
-    <input name="date" type="text" id="date_picker">
-    <input type="checkbox" name="type_option" id="type_option" style="display:box;"/>
+    <input type="checkbox" name="date_option" id="date_option" style="display:none;"/>
+    <label>DATE</label> <input name="date" type="text" id="date_picker">
+    <input type="checkbox" name="type_option" id="type_option" style="display:none;"/>
     <select name="type" id="type_picker">
+          <option value="all">all</option>
   <% all_types.each do |type| %>
       <option value="<%= type.name %>"><%= type.name %></option>
   <% end %>
     </select>
-    <input type="submit">
+    <input type="submit" style="font-size:10px;height:20px;">
     <!-- <input type="submit" style="display:none;float:right;"/> <button id="share_location" onclick="showlocation();">YOUR LOCATION</button> -->
     <svg id="geo-po" onclick="showlocation();" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="42px"
     height="42px" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;position:absolute;right:20px;bottom:0;" xml:space="preserve">

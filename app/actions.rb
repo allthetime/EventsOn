@@ -16,11 +16,22 @@ require "pry"
 get '/' do
   if params[:type] || params[:date]
     if !params[:t].empty? && params[:d].empty?
-      @events = Type.find_by(name: params[:type]).events
+      unless params[:type] == "all"
+        @events = Type.find_by(name: params[:type]).events
+      else
+        @events = Event.all
+      end
     elsif !params[:d].empty? && params[:t].empty?
       @events = Event.where(date:params[:date])
+      @events = Event.all if params[:date] = ""
     elsif (params[:t] == 'on') && (params[:d] == 'on')
-      @events = Type.find_by(name: params[:type]).events.where(date:params[:date])
+      unless params[:type] == "all"
+        @events = Type.find_by(name: params[:type]).events.where(date:params[:date])
+        @events = Type.find_by(name: params[:type]).events params[:date] = ""
+      else
+        @events = Event.where(date:params[:date])
+        @events = Event.all if params[:date] = ""
+      end
     else
       @events = []
     end
@@ -182,7 +193,7 @@ post '/events' do
       name: params[:venue],
       latitude: params[:lat],
       longitude: params[:lng],
-      address: params[:street_address] + " " + params[:city]
+      address: params[:street_address]
     )
   else
     @venue = Venue.find_by(name: params[:venue])
@@ -198,7 +209,8 @@ post '/events' do
     picture_url: "/uploads/" + fname,
     date: params[:date].to_date,
     time: params[:time].to_time,
-    venue_id: @venue.id
+    venue_id: @venue.id,
+    event_planner_id: current_planner.id
   )
   @event.types << Type.find_by(name: params[:type])
   if @event.save
