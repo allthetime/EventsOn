@@ -71,7 +71,7 @@ textarea:hover,textarea:focus{ background:rgba(250,250,250,0.9); }
       <p></br><%= @event.description %></p>
     </div>
     <div class="span6 column" id="column2">
-      <% unless current_user.nil? %>
+      <% unless current_user.nil? || current_planner.nil? %>
 
         <form method="post" action="/events/messages">
           <textarea name="content" placeholder="Leave a comment..."></textarea><br/>

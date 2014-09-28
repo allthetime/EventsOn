@@ -21,8 +21,8 @@
    }
 
    section {
-    transform: translateY(3.5em);
-    height: calc(100vh - 6.3em);
+transform: translateY(3em);
+height: calc(100vh - 6em);
     /*margin-left: 1.5em;*/
    }
 
@@ -38,5 +38,29 @@
     border: 1px solid black;
   }
 
+input[type="submit"]{
+  font-size:10px;
+}
 
+
+#topbar > form > div:nth-child(1) > button{
+  vertical-align: bottom;
+}
+
+#topbar > form > div:nth-child(2) > button{
+  vertical-align: top;
+}
+
+#topbar > form > div > button{
+  background: rgba(250, 250, 250, 0.6);
+  color: rgba(12, 102, 240, 0.8);
+  height:18px;
+  margin-left: 0;
+  width:18px;
+  border-radius:4px;
+  padding-top:0;
+  margin-right: 0.6em;
+  font-size:8px;
+  transition:0.2s;
+}
 
