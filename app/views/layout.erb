@@ -41,13 +41,16 @@
       <div>
         <input
         type="text"
-        name="name" />
+        name="name" 
+        placeholder="name"
+        id="login"/>
       </div>
       <div>
         <input type="checkbox" name="planner"/>
         <input
         type="password"
-        name="password" />
+        name="password" 
+        placeholder="*****"/>
         <input type="submit" style="display:none"/>
       </div>
     </div>
@@ -66,7 +69,7 @@ label{
   
   <form action="/" method="post">
     <input type="checkbox" name="date_option" id="date_option" style="display:none;"/>
-    <label>DATE</label> <input name="date" type="text" id="date_picker">
+    <input name="date" type="text" id="date_picker" placeholder="date">
     <input type="checkbox" name="type_option" id="type_option" style="display:none;"/>
     <select name="type" id="type_picker">
           <option value="all">all</option>
@@ -90,5 +93,27 @@ label{
   </form>
 </footer>
   <%= yield %>
+
+
+<script>
+ $(function() {
+    $( "#date_picker" ).datepicker({
+      dateFormat: 'dd/mm/yy'
+    });
+  });
+
+  $('#date_picker').click(function(){
+    console.log("OK")
+    $('#date_option').prop('checked', true);
+  })
+
+  $('#type_picker').click(function(){
+    console.log('yup')
+    $('#type_option').prop('checked', true);
+  })
+
+  </script>
+
+
 </body>
 </html>

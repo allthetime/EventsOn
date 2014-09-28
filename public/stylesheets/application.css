@@ -1,5 +1,8 @@
 body {
-  font-size: 16px; }
+  font-size: 16px;
+
+  z-index:-100;
+  background:#B5C2D7  }
 
 html {
   -webkit-font-smoothing: antialiased !important; }
@@ -19,7 +22,7 @@ section {
   box-shadow: 3px 3px 6px #666;
   z-index: 666;
   background: rgba(12, 102, 240, 0.6);
-  transition: 0.2s;
+  transition: 0.2s ease 0.5s;
   height: 5em;
   margin: 1.3em;
   border-radius: 0.5em;
@@ -35,7 +38,7 @@ section {
   box-shadow: 3px 3px 6px #666;
   z-index: 666;
   background: rgba(12, 102, 240, 0.6);
-  transition: 0.2s;
+  transition: 0.2s ease 0.5s;
   width: 100%;
   height: 3em;
   bottom: 0;
@@ -106,5 +109,13 @@ input[type="submit"] {
     color: #fff; }
   .map-info:hover {
     color: #fff; }
+
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* Firefox 18- */
+input:focus::-moz-placeholder { color:transparent; } /* Firefox 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* oldIE ;) */
+
+input::-webkit-input-placeholder { color:rgba(0,0,0,0.4); }
 
 /*# sourceMappingURL=application.css.map */

@@ -15,6 +15,8 @@ require "pry"
 
 get '/' do
   if params[:type] || params[:date]
+
+
     if !params[:t].empty? && params[:d].empty?
       unless params[:type] == "all"
         @events = Type.find_by(name: params[:type]).events
@@ -23,14 +25,17 @@ get '/' do
       end
     elsif !params[:d].empty? && params[:t].empty?
       @events = Event.where(date:params[:date])
-      @events = Event.all if params[:date] = ""
+    elsif params[:d].empty? && params[:t].empty?
+      @events = Event.all
     elsif (params[:t] == 'on') && (params[:d] == 'on')
       unless params[:type] == "all"
         @events = Type.find_by(name: params[:type]).events.where(date:params[:date])
-        @events = Type.find_by(name: params[:type]).events params[:date] = ""
       else
-        @events = Event.where(date:params[:date])
-        @events = Event.all if params[:date] = ""
+        if params[:date] == ""
+          @events = Event.all
+        else
+          @events = Event.where(date:params[:date])
+        end
       end
     else
       @events = []
@@ -193,7 +198,7 @@ post '/events' do
       name: params[:venue],
       latitude: params[:lat],
       longitude: params[:lng],
-      address: params[:street_address]
+      address: params[:street_address].gsub!(/\r\n/, " ")
     )
   else
     @venue = Venue.find_by(name: params[:venue])

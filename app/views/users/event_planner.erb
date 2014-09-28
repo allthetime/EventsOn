@@ -1,3 +1,8 @@
+<link rel="stylesheet" href="/stylesheets/forms.css">
+
+<section id="content">
+
+
 <% if @planner && @planner.errors.any? %>
   <div>
     <strong>Some issues with your message, please fix them:</strong>
@@ -9,37 +14,41 @@
   </div>
 <% end %>
 
-<form action="/signup/event_planner" method="post" enctype='multipart/form-data' runat="server">
+
+<div class="cols right">
+           <label>Username</label><br>
+            <label>Email</label><br>
+       <label>Password</label><br>
+    <label>Image</label><br>
+  </div>
+  <div class="cols left">
+
+<form action="/signup/event_planner" id="new-event" method="post" enctype='multipart/form-data' runat="server">
 
   <div>
-  username
     <input 
       type="text" 
       name="name" 
       value="<%= @planner.name %>"/>
   </div>
   <div>
-  email
     <input 
       type="text" 
       name="email" 
       value="<%= @planner.email %>"/>
   </div>
   <div>
-  phone(optional)
     <input 
       type="text" 
       name="phone_number" 
       value="<%= @planner.phone_number %>"/>
   </div>
   <div>
-  password
     <input 
       type="password" 
       name="password"/>
   </div>
   <div>
-  avatar
  <input type="file" name="photo" accept=".jpg,.gif,.png" required> 
 
   </div>      
@@ -48,3 +57,7 @@
   </div>
 
 </form>
+
+</div>
+
+</section>

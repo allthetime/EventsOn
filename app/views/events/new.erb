@@ -1,122 +1,124 @@
+
+
+<link rel="stylesheet" href="/stylesheets/forms.css">
+
+
+
+
+
+
 <% if current_planner %>
-
 <section id="content">
-
-<form action="/events" method="post" id="new-event" enctype='multipart/form-data' runat="server">
-
-
-
- <input type="file" name="photo" accept=".jpg,.gif,.png" required> 
-
-
-  <div>
-    <label>Event Name</label>
-    <input type="text" name="name">
+  <div class="cols right">
+           <label>Picture</label><br>
+            <label>Type</label><br>
+       <label>Event Name</label><br>
+    <label>Description</label><br>
+      <label>Date</label><br>
+       <label>Time</label><br>
+        <label>Venue</label><br>
+         <label>Address</label><br>
   </div>
-  <div>
-    <!--  -->
-    <select name="type">
-      <% all_types.each do |type| %>
-        <option value="<%= type.name %>"><%= type.name %></option>
-      <% end %>
-    </select>
-    <div>
-      <label>Description</label>
-      <input type="text" name="description">
+  <div class="cols left">
+    <form action="/events" method="post" id="new-event" enctype='multipart/form-data' runat="server">
+      <input type="file" name="photo" accept=".jpg,.gif,.png" required >
+      <div>
+ 
+        <input type="text" name="name">
+      </div>
+      <div>
+        <!--  -->
+        <select name="type">
+          <% all_types.each do |type| %>
+          <option value="<%= type.name %>"><%= type.name %></option>
+          <% end %>
+        </select>
+        <div>
+          <input type="text" name="description">
+        </div>
+        <input type="text" id = "datetimepicker">
+        <div>
+          <input id = "datetimepicker_line" name="date" type="hidden">
+        </div>
+        <div>
+          <input id="time_pick" name="time" type="text"/>
+        </div>
+        <div>
+          <input id="venue_name" name="venue" type="text"/>
+        </div>
+        <div>
+          <textarea id="street_address" name="street_address"></textarea>
+        </div>
+        <div>
+          <input type="hidden" name="lat">
+          <input type="hidden" name="lng">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
     </div>
-
-    <div id = "datetimepicker">
-    </div>
-    <div>
-      <input id = "datetimepicker_line" name="date" type="hidden">
-    </div>
-    <div>
-      time
-      <input id="time_pick" name="time" type="text"/>
-    </div>
-    <div>
-      venue
-      <input id="venue_name" name="venue" type="text"/>
-    </div>
-    <div>
-      address
-      <input id="street_address" name="street_address" type="text"/>
-    </div>
-    <div>
-      <input type="hidden" name="lat">
-      <input type="hidden" name="lng">
-      <input type="submit" value="Submit">
-    </div>
-  </form>
-
-
-</section>  
-
-<script>
+  </section>
+  <script>
   jQuery('#datetimepicker').datepicker({
-    onSelect: function(i){
-      $('#datetimepicker_line').val(i)
-    },
-    dateFormat: 'dd/mm/yy'
-  }); 
-
-  $("#venue_name").autocomplete({ source: [ 
-    <% all_venues.each do |venue| %>
-      "<%= venue.name %>",
-    <% end %>
-  ] });
-
-  var venues = {}
-
+  onSelect: function(i){
+  $('#datetimepicker_line').val(i)
+  },
+  dateFormat: 'dd/mm/yy'
+  });
+  $("#venue_name").autocomplete({ source: [
   <% all_venues.each do |venue| %>
-    venues["<%= venue.name %>"] = "<%= venue.address %>"
-  <% end %> 
+  "<%= venue.name %>",
+  <% end %>
+  ] });
+  var venues = {}
+  <% all_venues.each do |venue| %>
+  venues["<%= venue.name %>"] = "<%= venue.address %>"
+  <% end %>
 
-  $( "#venue_name" ).on('keydown', function () {
+    $( "#venue_name" ).on('keydown', function () {
     if(venues[$(this).val()]){
       $('#street_address').val(venues[$(this).val()])
     }else{
-      return 
+      return
     }
-  });
+    });
+
+    $( "#venue_name" ).on('keyup', function () {
+      if($(this).val()==""){
+        $('#street_address').val("")
+      }
+    });
+
+
+   $( "textarea" ).on('keyup', function () {
+      if($(this).val()==""){
+        $('#street_address').val("")
+      }
+    });
+
 
   $('#time_pick').timepicker({ 'scrollDefault': 'now' });
-
-</script>
-
-
-<script>
-
+  </script>
+  <script>
   $('#new-event').submit(function(e) {
-
-console.log(venues[$(this).val()])
-if(venues[$(this).val()]){
-
   console.log(venues[$(this).val()])
-}else{
-
-    console.log('to google')
-    if(!$('input[name="lat"]').val()) {
-      e.preventDefault();
-
-      var addressOfVenue = $('#street_address').val().split(" ").join("+")
-
-      var connection = $.getJSON("https://maps.google.com/maps/api/geocode/json?address="+addressOfVenue+"&sensor=false&key=AIzaSyAPHhHcY9JGUE4pwDrfRuOJI4iEkYN25rc", function(response){
-        if(response.results.length > 0) {
-          console.log(response.results[0].geometry.location);
-          var location = response.results[0].geometry.location;
-          $('input[name="lat"]').val(location.lat);
-          $('input[name="lng"]').val(location.lng);
-
-          $('#new-event').submit();
-        }
-      }
-    )}
+  if(venues[$(this).val()]){
+  console.log(venues[$(this).val()])
+  }else{
+  console.log('to google')
+  if(!$('input[name="lat"]').val()) {
+  e.preventDefault();
+  var addressOfVenue = $('#street_address').val().split(" ").join("+")
+  var connection = $.getJSON("https://maps.google.com/maps/api/geocode/json?address="+addressOfVenue+"&sensor=false&key=AIzaSyAPHhHcY9JGUE4pwDrfRuOJI4iEkYN25rc", function(response){
+  if(response.results.length > 0) {
+  console.log(response.results[0].geometry.location);
+  var location = response.results[0].geometry.location;
+  $('input[name="lat"]').val(location.lat);
+  $('input[name="lng"]').val(location.lng);
+  $('#new-event').submit();
+  }
+  }
+  )}
   }
   });
-
-
-</script>
-
-
-<% end %> 
+  </script>
+  <% end %>

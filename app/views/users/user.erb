@@ -1,3 +1,8 @@
+<link rel="stylesheet" href="/stylesheets/forms.css">
+
+<section id="content">
+
+
 <% if @user && @user.errors.any? %>
   <div>
     <strong>Some issues with your message, please fix them:</strong>
@@ -9,30 +14,37 @@
   </div>
 <% end %>
 
-<form action="/signup" method="post" enctype='multipart/form-data' runat="server">
+
+<div class="cols right">
+           <label>Username</label><br>
+            <label>Email</label><br>
+       <label>Password</label><br>
+    <label>Image</label><br>
+  </div>
+  <div class="cols left">
+
+
+
+<form action="/signup" id="new-event" method="post" enctype='multipart/form-data' runat="server">
 
   <div>
-  username
     <input 
       type="text" 
       name="name" 
       value="<%= @user.name %>"/>
   </div>
   <div>
-  email
     <input 
       type="text" 
       name="email" 
       value="<%= @user.email %>"/>
   </div>
   <div>
-  password
     <input 
       type="password" 
       name="password"/>
   </div>
   <div>
-  avatar
 
  <input type="file" name="photo" accept=".jpg,.gif,.png" required> 
   </div>      
@@ -43,3 +55,8 @@
   <input name="invisble" style="display:none;">
 
 </form>
+
+
+</div>
+
+</section>
