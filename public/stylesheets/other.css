@@ -1,0 +1,42 @@
+
+  #topbar {
+  height: 3em;
+  margin: 0;
+  border-bottom-right-radius: 1.0em;
+  border-bottom-left-radius: 1.0em;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  width: 100%;
+  line-height: 1.5em; }
+
+  #eo {
+  left: 0.3em;
+  top: 0.2em; }
+
+  #topbar input[type="password"] {
+  height: 12px; }
+
+  #topbar input[type="text"] {
+    height: 12px;
+   }
+
+   section {
+    transform: translateY(3.5em);
+    height: calc(100vh - 6.3em);
+    /*margin-left: 1.5em;*/
+   }
+
+   #event_info {
+   background: rgba(12, 102, 240, 0.8);
+  }
+
+  #map { 
+    border-radius: 0.5em;
+    margin-top: -10em;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+  }
+
+
+
