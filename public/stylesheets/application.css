@@ -1,11 +1,15 @@
 body {
-  font-size: 16px; }
+  font-size: 16px;
+  height: 100vh;
+  overflow: hidden; }
 
 html {
   -webkit-font-smoothing: antialiased !important; }
 
 section {
-  transform: translateY(6.3em); }
+  transform: translateY(6.3em);
+  height: calc(100vh - 9.3em);
+  overflow: scroll; }
 
 #geo-po:hover {
   transform: scale(0.9); }

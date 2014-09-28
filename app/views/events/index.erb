@@ -1,27 +1,53 @@
-<div> Name of Venue: <%= @venue.name %> <br/>
-  Location: <%= @venue.address %>
-</div>
+<style>
+  #topbar {
+  height: 3em;
+  margin: 0;
+  border-bottom-right-radius: 1.0em;
+  border-bottom-left-radius: 1.0em;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  width: 100%;
+  line-height: 1.5em; }
 
+  #eo {
+  left: 0.3em;
+  top: 0.2em; }
 
-<% unless current_user.nil? %>
+  #topbar input[type="password"] {
+  height: 12px; }
 
-  <form method="post" action="/events/messages">
-    <textarea name="content"></textarea><br/>
-    <input type="hidden" name="event_id" value="<%= @event.id %>">
-    <input type="submit">
-  </form>
+  #topbar input[type="text"] {
+    height: 12px;
+   }
 
-<% end %>
+</style>
 
-
-<img src="<%= @event.picture_url %>"></img>
-
-<% if @comments %>
-  <% @comments.each do |comment| %>
-  <div>
-    <br/>
-    Comment by:<strong> <%= all_users.find(comment.user_id).name %> </strong><br/>
-    <p><%= comment.content %></p>
+<section>
+  <div> Name of Venue: <%= @venue.name %> <br/>
+    Location: <%= @venue.address %>
   </div>
+
+
+  <% unless current_user.nil? %>
+
+    <form method="post" action="/events/messages">
+      <textarea name="content"></textarea><br/>
+      <input type="hidden" name="event_id" value="<%= @event.id %>">
+      <input type="submit">
+    </form>
+
   <% end %>
-<% end %>
+
+
+  <img src="<%= @event.picture_url %>"></img>
+
+  <% if @comments %>
+    <% @comments.each do |comment| %>
+    <div>
+      <br/>
+      Comment by:<strong> <%= all_users.find(comment.user_id).name %> </strong><br/>
+      <p><%= comment.content %></p>
+    </div>
+    <% end %>
+  <% end %>
+</section>
