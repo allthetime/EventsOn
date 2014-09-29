@@ -48,17 +48,17 @@
 
 
       function initialize() {
-          var bounds = new google.maps.LatLngBounds();
+          //var bounds = new google.maps.LatLngBounds();
           var mapOptions = {
-            center: new google.maps.LatLng(49.2805,-123.1085761),
+            center: new google.maps.LatLng(49.2545,-123.1085761),
             disableDefaultUI: true
           };
 
 
           map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
           map.setTilt(45);
-          bounds.extend(new google.maps.LatLng(49.2805,-123.1085761));
-          map.fitBounds(bounds);
+          //bounds.extend(new google.maps.LatLng(49.2805,-123.1085761));
+          //map.fitBounds(bounds);
 
  <% if @events %>
 
@@ -112,7 +112,7 @@
         <% @events.each_with_index do |event,index| %>
  
               var position = new google.maps.LatLng(markers[<%= index %>][1], markers[<%= index %>][2]);
-              bounds.extend(position);
+              //bounds.extend(position);
               marker = new google.maps.Marker({
                   position: position,
                   map: map,
@@ -151,7 +151,7 @@
                   };
               })(marker, <%= index %>));
 
-              map.fitBounds(bounds);
+              //map.fitBounds(bounds);
               // $('.stores ul').append('<li><a href=' + '"' + markers[<%= index %>][3] + '"' + 'target="_blank"' + 'data-id="' + <%= index %> + '"' + '>' + markers[<%= index %>][0] + '</a></li>');
   
       <% end %>
@@ -174,10 +174,10 @@
 <% end %>
 
 
-          var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-              this.setZoom(12);
-              google.maps.event.removeListener(boundsListener);
-          });
+          // var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+          //     this.setZoom(12);
+          //     google.maps.event.removeListener(boundsListener);
+          // });
 
           google.maps.event.addDomListener(map, "idle", function() {
               center = map.getCenter();
@@ -187,6 +187,8 @@
               map.setCenter(center);
           });
 
+
+  map.setZoom(12);
 
 
       }

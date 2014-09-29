@@ -70,3 +70,16 @@ input[type="submit"]{
   font-size:16px;
   margin-bottom:30px;
 }
+
+ #eo {
+  left: 0.7em;
+  top: 0.5em;
+  font-size:30px; 
+  transition:0.2s ease 0.3s;
+}
+
+#logo img{
+  height: 30px;
+  top:0;
+  transition:0.2s ease 0.3s;
+}
