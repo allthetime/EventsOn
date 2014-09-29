@@ -1,4 +1,5 @@
-require 'environment'
+require_relative "environment"
+require_relative "database"
 
 names = [
   "Somewhere",
@@ -147,6 +148,7 @@ addresses = [
 
 (0..31).each do |index|
   Venue.create(
+    id: index,
     name:names[index],
     address:addresses[index],
     latitude:latitudes[index],
@@ -370,6 +372,7 @@ types = [
 
 (0..31).each do |index|
   Event.create(
+    id: index,
     name:names[index],
     date:dates[index].to_date,
     time:times[index].to_time,
@@ -379,7 +382,7 @@ types = [
     venue_id:index
   )
 
-  Event.types << Type.find_by(name:types[index])
+  Event.find(index).types << Type.find_by(name:types[index])
 
 end
 
