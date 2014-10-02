@@ -3,11 +3,20 @@ helpers do
   require_relative "helpers"
 end
 
+
+
+
+
 # root: main map view
 get '/' do
   @events = Event.by_date(params[:date]).by_type(params[:type])
   erb :index
 end
+
+
+
+
+
 
 get '/signup' do
   @user = User.new
@@ -41,6 +50,14 @@ post '/signup' do
 end
 
 
+
+
+
+
+
+
+
+
 post '/login' do
   return redirect '/' unless User.find_by(name: params[:name])
   password = encrypt(params[:password],User.find_by(name: params[:name]).salt)
@@ -57,15 +74,20 @@ post '/logout' do
   redirect '/'
 end
 
+
+
+
+
+
+
 get '/events/new' do
+  @venues = Venue.all  
   @event = Event.new
   erb :'events/new'
 end
 
 
-
 post '/events' do
-  @venues = Venue.all
   if !(params[:photo] && is_picture?(params[:photo][:filename]))
     @error = true
     erb :'/events/new'
@@ -91,7 +113,7 @@ post '/events' do
   end
   @event = Event.new(
     name: params[:name],
-    description:  params[:description],
+    description: params[:description],
     picture_url: "/uploads/" + fname,
     date: params[:date].to_date,
     time: params[:time].to_time,
@@ -105,7 +127,6 @@ post '/events' do
     erb :'events/new'
   end
 end
-
 
 post '/events/comments' do
   if current_user
