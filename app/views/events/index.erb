@@ -120,7 +120,7 @@ border:2px solid rgba(12,102,240,0.8);}
     <div class="span6 column" id="column2">
       <% unless current_user.nil?  %>
 
-        <form id="comments-form" method="post" action="/events/messages">
+        <form id="comments-form" method="post" action="/events/comments">
           <textarea name="content" placeholder="Leave a comment..."></textarea><br/>
           <input type="hidden" name="event_id" value="<%= @event.id %>">
           <input type="submit" >

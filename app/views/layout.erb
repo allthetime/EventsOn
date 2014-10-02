@@ -23,7 +23,7 @@
   <div id="logo">
     <img src="/images/logo.png"></img>
   </div>
-<% unless current_user.nil? && current_planner.nil? %> 
+<% unless current_user.nil? %> 
 
   <div class="chunk">
   </div>
@@ -31,7 +31,7 @@
     <form autocomplete="off" action="/logout" method="post">
       <input type="submit" value="logout"/ style="vertical-align:bottom;width:100px;">
     </form>
-  <% if current_planner %>
+  <% if current_user.planner %>
     <form autocomplete="off" action="/events/new" method="get">
       <input type="submit" value="new event"/ style="vertical-align:top;width:100px;">
     </form> 
@@ -46,13 +46,10 @@
         placeholder="name"
         id="login"
         tabindex="1"/>
-                  <input type="submit" style="display:none"/>
-
-        <button onclick="window.open('/signup','_top');return false; ">U</button>
       </div>
       <div>
-        <input type="checkbox" name="planner" tabindex="3"/>
                 <input type="submit" style="display:none"/>
+        <button onclick="window.open('/signup','_top');return false; ">sign up</button>
 
         <input
         type="password"
@@ -61,7 +58,6 @@
         tabindex="2"/>
                 <input type="submit" style="display:none"/>
 
-        <button onclick="window.open('/signup/event_planner','_top');return false; ">eP</button>
       </div>
     </div>
   </form>
