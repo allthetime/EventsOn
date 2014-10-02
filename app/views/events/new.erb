@@ -43,7 +43,7 @@ document.querySelector('#new-event > input[type="file"]').onchange =
         <!--  -->
         <select name="type">
           <% all_types.each do |type| %>
-          <option value="<%= type.name %>"><%= type.name %></option>
+          <option value="<%= type %>"><%= type %></option>
           <% end %>
         </select>
         <div>
@@ -78,12 +78,12 @@ document.querySelector('#new-event > input[type="file"]').onchange =
   dateFormat: 'dd/mm/yy'
   });
   $("#venue_name").autocomplete({ source: [
-  <% all_venues.each do |venue| %>
+  <% @venues.each do |venue| %>
   "<%= venue.name %>",
   <% end %>
   ] });
   var venues = {}
-  <% all_venues.each do |venue| %>
+  <% @venues.each do |venue| %>
   venues["<%= venue.name %>"] = "<%= venue.address %>"
   <% end %>
 

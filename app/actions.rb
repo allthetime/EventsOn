@@ -5,51 +5,7 @@ get '/' do
 end
 
 helpers do
-  def sanitize_filename(filename)
-    filename.gsub(/[^\w\.\-]/,"_")
-  end
-  def is_picture?(filename)
-    filename =~ /([^\s]+(\.(?i)(JPG|jpg|PNG|png|GIF|gif|BMP|bmp))$)/
-  end
-  def current_user
-    @current_user = User.find(session[:user_id]) if session[:user_id]
-  end
-  def current_planner
-    @current_planner = EventPlanner.find(session[:planner_id]) if session[:planner_id]
-  end
-  def salt_string
-    chars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-    (0...50).map { chars[rand(chars.length)] }.join
-  end
-  def encrypt(password,salt)
-    Digest::SHA256.hexdigest(password+salt)
-  end
-  def all_events
-    Event.all
-  end
-  def all_venues
-    Venue.all
-  end
-  def all_types
-    Type.all
-  end
-  def all_users
-    User.all
-  end
-  def log_in(user_type)
-    return redirect '/' unless user_type.find_by(name: params[:name])
-    password = encrypt(params[:password],user_type.find_by(name: params[:name]).salt)
-    if user_type.find_by(name: params[:name]).password == password
-      if user_type == EventPlanner
-        session[:planner_id] = user_type.find_by(name: params[:name])
-      elsif user_type == User
-        session[:user_id] = user_type.find_by(name: params[:name])
-      end
-      redirect '/'
-    else
-      redirect '/'
-    end
-  end
+  require_relative "helpers"
 end
 
 get '/signup' do
@@ -139,6 +95,7 @@ end
 
 
 post '/events' do
+  @venues = Venue.all
   if !(params[:photo] && is_picture?(params[:photo][:filename]))
     @error = true
     erb :'/events/new'
@@ -169,9 +126,9 @@ post '/events' do
     date: params[:date].to_date,
     time: params[:time].to_time,
     venue_id: @venue.id,
-    event_planner_id: current_planner.id
+    event_planner_id: current_planner.id,
+    type_name: params[:type]
   )
-  @event.types << Type.find_by(name: params[:type])
   if @event.save
     redirect "/events/#{@event.id}"
   else
@@ -197,6 +154,7 @@ post '/events/messages' do
 end
 
 get '/events/:id' do
+  @users = User.all
   @event = Event.find(params[:id])
   @venue = Venue.find(@event.venue_id)
   @comments = @event.comments.order(:created_at).reverse

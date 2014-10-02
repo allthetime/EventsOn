@@ -130,7 +130,7 @@ border:2px solid rgba(12,102,240,0.8);}
         <% @comments.each do |comment| %>
           <div id = "comment_block">
             <br/>
-            <span><strong> <%= all_users.find(comment.user_id).name %></strong></span><br/>
+            <span><strong> <%= @users.find(comment.user_id).name %></strong></span><br/>
             <p><%= comment.content %></p>
           </div>
         <% end %>
@@ -165,7 +165,7 @@ border:2px solid rgba(12,102,240,0.8);}
                 map: map,
                 title: "YOUR LOCATION",
                 animation: google.maps.Animation.DROP,
-                icon: "/icons/<%= @event.types[0].name %>.png",
+                icon: "/icons/<%= @event.type_name %>.png",
                 zIndex: 1000
             });
 
