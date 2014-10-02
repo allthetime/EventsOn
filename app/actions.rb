@@ -1,53 +1,40 @@
 # Homepage (Root path)
-
-
-post '/' do
-  puts "POST--------------------------"
-  type = params[:type]
-  date = params[:date].to_date
-  t = params[:type_option]
-  d = params[:date_option]
-  redirect "/?t=#{t}&d=#{d}&type=#{type}&date=#{date}"
-end
-
-
-require "pry"
-
 get '/' do
-  if params[:type] || params[:date]
+  @events = Event.by_date(params[:date]).by_type(params[:type])
+  erb :index
 
-
-    if !params[:t].empty? && params[:d].empty?
-      unless params[:type] == "all"
-        @events = Type.find_by(name: params[:type]).events
-      else
-        @events = Event.all
-      end
-    elsif !params[:d].empty? && params[:t].empty?
-      @events = Event.where(date:params[:date])
-    elsif params[:d].empty? && params[:t].empty?
-      @events = Event.all
-    elsif (params[:t] == 'on') && (params[:d] == 'on')
-      unless params[:type] == "all"
-        @events = Type.find_by(name: params[:type]).events.where(date:params[:date])
-      else
-        if params[:date] == ""
-          @events = Event.all
-        else
-          @events = Event.where(date:params[:date])
-        end
-      end
-    else
-      @events = []
-    end
-    if @events.empty? || @events.nil? || @events == []
-      @results = "none"
-    end
-    erb :index
-  else
-    @events = Event.all
-    erb :index
-  end
+  # if params[:type] || params[:date]
+  #   if !params[:t].empty? && params[:d].empty?
+  #     unless params[:type] == "all"
+  #       @events = Type.find_by(name: params[:type]).events
+  #     else
+  #       @events = Event.all
+  #     end
+  #   elsif !params[:d].empty? && params[:t].empty?
+  #     @events = Event.where(date:params[:date])
+  #   elsif params[:d].empty? && params[:t].empty?
+  #     @events = Event.all
+  #   elsif (params[:t] == 'on') && (params[:d] == 'on')
+  #     unless params[:type] == "all"
+  #       @events = Type.find_by(name: params[:type]).events.where(date:params[:date])
+  #     else
+  #       if params[:date] == ""
+  #         @events = Event.all
+  #       else
+  #         @events = Event.where(date:params[:date])
+  #       end
+  #     end
+  #   else
+  #     @events = []
+  #   end
+  #   if @events.empty? || @events.nil? || @events == []
+  #     @results = "none"
+  #   end
+  #   erb :index
+  # else
+  #   @events = Event.all
+  #   erb :index
+  # end
 end
 
 helpers do

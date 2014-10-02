@@ -11,4 +11,7 @@ class Event < ActiveRecord::Base
   has_many :event_types
   has_many :types, through: :event_types
 
+  scope :by_date, -> (date) { where('date = ?', date.to_date) if date && date != '' }
+  scope :by_type, -> (type) { where('type_name = ?', type) if type && type != '' }
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140926023553) do
+ActiveRecord::Schema.define(version: 20141002183252) do
 
   create_table "bookmarks", force: true do |t|
     t.integer  "user_id"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20140926023553) do
     t.integer  "venue_id"
     t.date     "date"
     t.time     "time"
+    t.string   "type_name"
   end
 
   add_index "events", ["venue_id"], name: "index_events_on_venue_id"
@@ -93,4 +94,5 @@ ActiveRecord::Schema.define(version: 20140926023553) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
 end

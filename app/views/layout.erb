@@ -77,12 +77,12 @@ label{
 </header>
 <footer id="bottombar">
   
-  <form action="/" method="post">
-    <input type="checkbox" name="date_option" id="date_option" style="display:none;"/>
+  <form action="/" method="get">
+    <!-- <input type="checkbox" name="date_option" id="date_option" style="display:none;"/> -->
     <input name="date" type="text" id="date_picker" placeholder="date">
-    <input type="checkbox" name="type_option" id="type_option" style="display:none;"/>
+    <!-- <input type="checkbox" name="type_option" id="type_option" style="display:none;"/> -->
     <select name="type" id="type_picker">
-          <option value="all">all</option>
+          <option value=""></option>
   <% all_types.each do |type| %>
       <option value="<%= type.name %>"><%= type.name %></option>
   <% end %>
