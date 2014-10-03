@@ -12,6 +12,8 @@ gem 'puma'
 gem 'tux'
 gem 'factory_girl'
 gem 'faker'
+gem 'pg'
+
 
 group :development, :test do
   gem 'pry'

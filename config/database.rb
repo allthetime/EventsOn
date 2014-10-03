@@ -6,9 +6,14 @@ configure do
 
   ActiveRecord::Base.logger = nil
 
+  # set :database, {
+  #   adapter: "sqlite3",
+  #   database: "db/db.sqlite3"
+  # }
+
   set :database, {
-    adapter: "sqlite3",
-    database: "db/db.sqlite3"
+    adapter: "postgresql",
+    database: "eventson"
   }
 
   # Load all models from app/models, using autoload instead of require
