@@ -5,11 +5,13 @@ end
 
 
 
-
+# require 'json'
 
 # root: main map view
 get '/' do
   @events = Event.by_date(params[:date]).by_type(params[:type])
+  @events_json = @events.to_json
+  @venues_json = Venue.joins(:events).where(events: {id: @events}).to_json
   erb :index
 end
 

@@ -1,126 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link rel="stylesheet" href="/stylesheets/normalize.css">
-  <link rel="stylesheet" href="/stylesheets/application.css">
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/javascript/application.js"></script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
-  <script src="/javascript/jquery.timepicker.js"></script>
-  <link rel="stylesheet" href="/stylesheets/jquery.timepicker.css" />
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> 
-  <title>EventsOn</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-</head>
-<body>
-<header id="topbar">
-  <div id="eo">
-    <a href="/">eventsOn</a>
-  </div>
-  <div id="logo">
-    <img src="/images/logo.png"></img>
-  </div>
-<% unless current_user.nil? %> 
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/application.css">
 
-  <div class="chunk">
-  </div>
-  <div class="chunk">
-    <form autocomplete="off" action="/logout" method="post">
-      <input type="submit" value="logout"/ style="vertical-align:bottom;width:100px;">
-    </form>
-  <% if current_user.planner %>
-    <form autocomplete="off" action="/events/new" method="get">
-      <input type="submit" value="new event"/ style="vertical-align:top;width:100px;">
-    </form> 
- <% end %>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="/javascript/application.js"></script>
+    <script src="/javascript/jquery.timepicker.js"></script>
 
-<% else %>
-    <form action="/login" method="post">
-      <div>
-        <input
-        type="text"
-        name="name" 
-        placeholder="name"
-        id="login"
-        tabindex="1"/>
+    <link rel="stylesheet" href="/stylesheets/jquery.timepicker.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+
+    <title>EventsOn</title>
+  </head>
+  <body>
+
+    <header id="topbar">
+
+      <div id="eo">
+        <a href="/">eventsOn</a>
       </div>
-      <div>
-                <input type="submit" style="display:none"/>
-        <button onclick="window.open('/signup','_top');return false; ">sign up</button>
-
-        <input
-        type="password"
-        name="password" 
-        placeholder="*****"
-        tabindex="2"/>
-                <input type="submit" style="display:none"/>
-
+      <div id="logo">
+        <img src="/images/logo.png"></img>
       </div>
-    </div>
-  </form>
-<% end %>
 
+      <% unless current_user.nil? %>
 
-<style>
-label{
-  vertical-align: sub;
-}
-</style>
+        <form autocomplete="off" action="/logout" method="post">
+          <input type="submit" value="logout"/ style="vertical-align:bottom;width:100px;">
+        </form>
 
-</header>
-<footer id="bottombar">
-  
-  <form action="/" method="get">
-    <!-- <input type="checkbox" name="date_option" id="date_option" style="display:none;"/> -->
-    <input name="date" type="text" id="date_picker" placeholder="date">
-    <!-- <input type="checkbox" name="type_option" id="type_option" style="display:none;"/> -->
-    <select name="type" id="type_picker">
+        <% if current_user.planner %>
+          <form autocomplete="off" action="/events/new" method="get">
+            <input type="submit" value="new event"/ style="vertical-align:top;width:100px;">
+          </form>
+        <% end %>
+
+      <% else %>
+        <form action="/login" method="post">
+          <div>
+            <input
+            type="text"
+            name="name"
+            placeholder="name"
+            id="login"
+            tabindex="1"/>
+          </div>
+          <div>
+            <input type="submit" style="display:none"/>
+            <button onclick="window.open('/signup','_top');return false; ">sign up</button>
+            <input
+            type="password"
+            name="password"
+            placeholder="*****"
+            tabindex="2"/>
+            <input type="submit" style="display:none"/>
+          </div>    
+        </form>
+      <% end %>
+
+      <style>
+        label{
+          vertical-align: sub;
+        }
+      </style>
+    </header>
+
+    <footer id="bottombar">
+      
+      <form action="/" method="get">
+        <input name="date" type="text" id="date_picker" placeholder="date">
+        <select name="type" id="type_picker">
           <option value=""></option>
-  <% all_types.each do |type| %>
-      <option value="<%= type %>"><%= type %></option>
-  <% end %>
-    </select>
-    <input type="submit" style="font-size: 12px;
-height: 22px;">
-    <!-- <input type="submit" style="display:none;float:right;"/> <button id="share_location" onclick="showlocation();">YOUR LOCATION</button> -->
-    <svg id="geo-po" onclick="showlocation();" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="42px"
-    height="42px" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;position:absolute;right:20px;bottom:0;" xml:space="preserve">
-    <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M240,159.909c-44.235,0-80.091,35.859-80.091,80.091
-    s35.855,80.091,80.091,80.091c44.231,0,80.091-35.859,80.091-80.091S284.231,159.909,240,159.909z M400,226.667h-25.694
-    c-6.267-63.891-57.086-114.701-120.973-120.967V80c0-7.363-5.97-13.333-13.333-13.333S226.667,72.637,226.667,80v25.701
-    c-63.889,6.266-114.705,57.075-120.971,120.966H80c-7.363,0-13.333,5.97-13.333,13.333s5.97,13.333,13.333,13.333h25.696
-    c6.266,63.891,57.082,114.7,120.971,120.966V400c0,7.363,5.97,13.333,13.333,13.333s13.333-5.97,13.333-13.333v-25.701
-    c63.888-6.266,114.707-57.075,120.974-120.966H400c7.363,0,13.333-5.97,13.333-13.333S407.363,226.667,400,226.667z M240,347.669
-    c-59.463,0-107.666-48.209-107.666-107.669S180.537,132.331,240,132.331c59.466,0,107.669,48.209,107.669,107.669
-    S299.466,347.669,240,347.669z"/>
-    </svg>
-  </form>
-</footer>
-  <%= yield %>
+            <% all_types.each do |type| %>
+              <option value="<%= type %>"><%= type %></option>
+            <% end %>
+        </select>
+        <input type="submit" style="font-size: 12px;
+        height: 22px;">
+        <!-- <input type="submit" style="display:none;float:right;"/> <button id="share_location" onclick="showlocation();">YOUR LOCATION</button> -->
+        <svg id="geo-po" onclick="getLocation();" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="42px"
+        height="42px" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;position:absolute;right:20px;bottom:0;" xml:space="preserve">
+          <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M240,159.909c-44.235,0-80.091,35.859-80.091,80.091
+          s35.855,80.091,80.091,80.091c44.231,0,80.091-35.859,80.091-80.091S284.231,159.909,240,159.909z M400,226.667h-25.694
+          c-6.267-63.891-57.086-114.701-120.973-120.967V80c0-7.363-5.97-13.333-13.333-13.333S226.667,72.637,226.667,80v25.701
+          c-63.889,6.266-114.705,57.075-120.971,120.966H80c-7.363,0-13.333,5.97-13.333,13.333s5.97,13.333,13.333,13.333h25.696
+          c6.266,63.891,57.082,114.7,120.971,120.966V400c0,7.363,5.97,13.333,13.333,13.333s13.333-5.97,13.333-13.333v-25.701
+          c63.888-6.266,114.707-57.075,120.974-120.966H400c7.363,0,13.333-5.97,13.333-13.333S407.363,226.667,400,226.667z M240,347.669
+          c-59.463,0-107.666-48.209-107.666-107.669S180.537,132.331,240,132.331c59.466,0,107.669,48.209,107.669,107.669
+          S299.466,347.669,240,347.669z"/>
+        </svg>
+      </form>
+    </footer>
+    
+    <%= yield %>
+    
+    <script>
+      $(function() {
+        $( "#date_picker" ).datepicker({
+          dateFormat: 'dd/mm/yy'
+        });
+      });
+    </script>
 
-
-<script>
- $(function() {
-    $( "#date_picker" ).datepicker({
-      dateFormat: 'dd/mm/yy'
-    });
-  });
-
-  $('#date_picker').click(function(){
-    console.log("OK")
-    $('#date_option').prop('checked', true);
-  })
-
-  $('#type_picker').click(function(){
-    console.log('yup')
-    $('#type_option').prop('checked', true);
-  })
-
-  </script>
-
-
-</body>
+  </body>
 </html>
