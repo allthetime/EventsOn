@@ -1,51 +1,36 @@
-
-
 <link rel="stylesheet" href="/stylesheets/forms.css">
 <link rel="stylesheet" href="/stylesheets/other.css">
-
-
-
-
-
-
 <% if current_user.planner %>
-<section id="content">
-  <div class="cols right">
-           <label>Picture</label><br>
-              <label>Event Name</label><br>
-            <label>Type</label><br>
-    <label>Description</label><br>
+  <section id="content">
+    <div class="cols right">
+      <label>Picture</label><br>
+      <label>Event Name</label><br>
+      <label>Type</label><br>
+      <label>Description</label><br>
       <label>Date</label><br>
-       <label>Time</label><br>
-        <label>Venue</label><br>
-         <label>Address</label><br>
-  </div>
-  <div class="cols left">
-    <form action="/events" method="post" id="new-event" enctype='multipart/form-data' runat="server">
-
-    <label id="file-label" for="file-input"></label>
-      <input id="file-input" style="display:none;" type="file" name="photo" accept=".jpg,.gif,.png" required >    
-
-
-
-      <script>
-document.querySelector('#new-event > input[type="file"]').onchange = 
-  function(){
-    document.querySelector('#file-label').innerHTML=this.files[0].name
-  }
-      </script>
-
+      <label>Time</label><br>
+      <label>Venue</label><br>
+      <label>Address</label><br>
+    </div>
+    <div class="cols left">
+      <form action="/events" method="post" id="new-event" enctype='multipart/form-data' runat="server">
+        <label id="file-label" for="file-input"></label>
+        <input id="file-input" style="display:none;" type="file" name="photo" accept=".jpg,.gif,.png" required >
+        <script>
+          document.querySelector('#new-event > input[type="file"]').onchange = function(){
+            document.querySelector('#file-label').innerHTML=this.files[0].name
+          }
+        </script>
         <div>
- <!-- document.querySelector('#new-event > input[type="file"]').files[0].name -->
-        <input type="text" name="name">
-      </div>
-      <div>
-        <!--  -->
-        <select name="type">
-          <% all_types.each do |type| %>
-          <option value="<%= type %>"><%= type %></option>
-          <% end %>
-        </select>
+          <input type="text" name="name">
+        </div>
+        <div>
+          <select name="type">
+            <% all_types.each do |type| %>
+              <option value="<%= type %>"><%= type %></option>
+            <% end %>
+          </select>
+        </div>
         <div>
           <input type="text" name="description">
         </div>
@@ -70,68 +55,66 @@ document.querySelector('#new-event > input[type="file"]').onchange =
       </form>
     </div>
   </section>
+
   <script>
-  jQuery('#datetimepicker').datepicker({
-  onSelect: function(i){
-  $('#datetimepicker_line').val(i)
-  },
-  dateFormat: 'dd/mm/yy'
-  });
-  $("#venue_name").autocomplete({ source: [
-  <% @venues.each do |venue| %>
-  "<%= venue.name %>",
-  <% end %>
-  ] });
-  var venues = {}
-  <% @venues.each do |venue| %>
-  venues["<%= venue.name %>"] = "<%= venue.address %>"
-  <% end %>
-
-    $( "#venue_name" ).on('keydown', function () {
-    if(venues[$(this).val()]){
-      $('#street_address').val(venues[$(this).val()])
-    }else{
-      return
-    }
+    jQuery('#datetimepicker').datepicker({
+      onSelect: function(i) {
+        $('#datetimepicker_line').val(i)
+      },
+      dateFormat: 'dd/mm/yy'
     });
-
-    $( "#venue_name" ).on('keyup', function () {
-      if($(this).val()==""){
+    $("#venue_name").autocomplete({
+      source: [ <% @venues.each do |
+        venue | %>
+        "<%= venue.name %>", <% end %>
+      ]
+    });
+    var venues = {} <% @venues.each do |
+      venue | %>
+      venues["<%= venue.name %>"] = "<%= venue.address %>" <% end %>
+      $("#venue_name").on('keydown', function() {
+        if (venues[$(this).val()]) {
+          $('#street_address').val(venues[$(this).val()])
+        } else {
+          return
+        }
+      });
+    $("#venue_name").on('keyup', function() {
+      if ($(this).val() == "") {
         $('#street_address').val("")
       }
     });
-
-
-   $( "textarea" ).on('keyup', function () {
-      if($(this).val()==""){
+    $("textarea").on('keyup', function() {
+      if ($(this).val() == "") {
         $('#street_address').val("")
       }
     });
-
-
-  $('#time_pick').timepicker({ 'scrollDefault': 'now' });
+    $('#time_pick').timepicker({
+      'scrollDefault': 'now'
+    });
   </script>
+
   <script>
-  $('#new-event').submit(function(e) {
-  console.log(venues[$(this).val()])
-  if(venues[$(this).val()]){
-  console.log(venues[$(this).val()])
-  }else{
-  console.log('to google')
-  if(!$('input[name="lat"]').val()) {
-  e.preventDefault();
-  var addressOfVenue = $('#street_address').val().split(" ").join("+")
-  var connection = $.getJSON("https://maps.google.com/maps/api/geocode/json?address="+addressOfVenue+"&sensor=false&key=AIzaSyAPHhHcY9JGUE4pwDrfRuOJI4iEkYN25rc", function(response){
-  if(response.results.length > 0) {
-  console.log(response.results[0].geometry.location);
-  var location = response.results[0].geometry.location;
-  $('input[name="lat"]').val(location.lat);
-  $('input[name="lng"]').val(location.lng);
-  $('#new-event').submit();
-  }
-  }
-  )}
-  }
-  });
+    $('#new-event').submit(function(e) {
+     console.log(venues[$(this).val()])
+     if (venues[$(this).val()]) {
+       console.log(venues[$(this).val()])
+     } else {
+       console.log('to google')
+       if (!$('input[name="lat"]').val()) {
+         e.preventDefault();
+         var addressOfVenue = $('#street_address').val().split(" ").join("+")
+         var connection = $.getJSON("https://maps.google.com/maps/api/geocode/json?address=" + addressOfVenue + "&sensor=false&key=AIzaSyAPHhHcY9JGUE4pwDrfRuOJI4iEkYN25rc", function(response) {
+           if (response.results.length > 0) {
+             console.log(response.results[0].geometry.location);
+             var location = response.results[0].geometry.location;
+             $('input[name="lat"]').val(location.lat);
+             $('input[name="lng"]').val(location.lng);
+             $('#new-event').submit();
+           }
+         })
+       }
+     }
+   });
   </script>
-  <% end %>
+<% end %>

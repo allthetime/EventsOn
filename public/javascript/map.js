@@ -132,7 +132,7 @@ function initialize() {
 
   if (events.length == 0){
     var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-        this.setZoom(14);
+        this.setZoom(12);
         google.maps.event.removeListener(boundsListener);
     });
   }
