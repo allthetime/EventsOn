@@ -1,0 +1,642 @@
+D, [2014-10-03T16:01:44.024258 #5612] DEBUG -- :   [1m[36mEvent Load (1.1ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T16:01:44.039681 #5612] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T16:04:47.797455 #5615] DEBUG -- :   [1m[36mEvent Load (1.1ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T16:04:47.811234 #5615] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T16:04:51.191900 #5615] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T16:04:51.192891 #5615] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T16:09:06.116926 #5612] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2014-10-03T16:09:06.120716 #5612] DEBUG -- :   [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:09:06.121288 #5612] DEBUG -- :   [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'chronic88@gmail.com' LIMIT 1[0m
+D, [2014-10-03T16:09:06.124241 #5612] DEBUG -- :   [1m[35mSQL (1.9ms)[0m  INSERT INTO "users" ("avatar_url", "created_at", "email", "name", "password", "salt", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["avatar_url", "public/uploads/logocopy.jpg"], ["created_at", 2014-10-03 16:09:06 UTC], ["email", "chronic88@gmail.com"], ["name", "admin"], ["password", "4a39a06945019ae6e723c9edaa697eed05e1b03cbebccad652b9c72567965b62"], ["salt", "JXaFIugnNAjpVEAHEgzNsmrsRUBFPHYsEixKXGdZoAUQludBUV"], ["updated_at", 2014-10-03 16:09:06 UTC]]
+D, [2014-10-03T16:09:06.125290 #5612] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+D, [2014-10-03T16:09:06.154850 #5607] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T16:09:06.165039 #5607] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T16:09:11.963022 #5612] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:09:11.963749 #5612] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:09:11.964232 #5612] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:09:11.964643 #5612] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:09:18.615778 #5615] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:09:18.622136 #5615] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:09:18.623402 #5615] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:09:18.623853 #5615] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:09:24.883009 #5612] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-03T16:09:24.884001 #5612] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-03T16:11:26.784790 #5607] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:11:26.785569 #5607] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:11:26.786721 #5607] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:11:26.787191 #5607] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:11:33.621915 #5609] DEBUG -- :   [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:11:33.622755 #5609] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:11:33.623881 #5609] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:11:33.624346 #5609] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:11:51.978823 #5607] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:11:51.979276 #5607] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:11:51.979737 #5607] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:11:51.980194 #5607] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:35:59.805805 #6644] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:35:59.812549 #6644] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:35:59.813686 #6644] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:35:59.814219 #6644] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:36:02.356839 #6644] DEBUG -- :   [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T16:36:02.370367 #6644] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T16:36:07.121662 #6650] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:36:07.129405 #6650] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:36:07.130709 #6650] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:36:07.131223 #6650] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:36:50.188639 #6642] DEBUG -- :   [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T16:36:50.200123 #6642] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T16:36:54.017247 #6650] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:36:54.017752 #6650] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:36:54.018290 #6650] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:36:54.018781 #6650] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:38:12.803159 #6642] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:38:12.809739 #6642] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:38:12.810997 #6642] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:38:12.811482 #6642] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:54:57.707468 #6895] DEBUG -- :   [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T16:54:57.718879 #6895] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T16:55:03.605580 #6897] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:55:03.612295 #6897] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T16:55:03.613401 #6897] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T16:55:03.613913 #6897] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T17:00:06.899394 #7022] DEBUG -- :   [1m[36mEvent Load (1.1ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T17:00:06.911576 #7022] DEBUG -- :   [1m[35mVenue Load (0.6ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T17:00:48.401658 #7027] DEBUG -- :   [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T17:00:48.413488 #7027] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T17:00:49.989092 #7030] DEBUG -- :   [1m[36mEvent Load (1.1ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T17:00:50.000512 #7030] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T17:01:36.612584 #7022] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T17:01:36.619312 #7022] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T17:01:36.620531 #7022] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T17:01:36.621023 #7022] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T17:25:21.801299 #7289] DEBUG -- :   [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T17:25:21.812500 #7289] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T17:25:26.545207 #7281] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T17:25:26.552246 #7281] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T17:25:26.553384 #7281] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T17:25:26.553906 #7281] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T17:27:45.726522 #7334] DEBUG -- :   [1m[36mEvent Load (1.1ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T17:27:45.738199 #7334] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T17:29:00.034957 #7339] DEBUG -- :   [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T17:29:00.045609 #7339] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T17:35:35.018814 #7336] DEBUG -- :   [1m[36mEvent Load (1.1ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T17:35:35.029966 #7336] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T17:35:39.272230 #7336] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T17:35:39.278504 #7336] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T17:35:39.279582 #7336] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T17:35:39.280029 #7336] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T18:11:54.736002 #7342] DEBUG -- :   [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T18:11:54.747288 #7342] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T18:12:03.705283 #7342] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T18:12:03.711395 #7342] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T18:12:03.712439 #7342] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T18:12:03.712874 #7342] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T18:21:04.094340 #7334] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T18:21:04.095433 #7334] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T18:21:10.288378 #7336] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T18:21:10.288859 #7336] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T18:21:10.289347 #7336] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T18:21:10.289820 #7336] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T18:21:13.395116 #7334] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T18:21:13.396080 #7334] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T18:22:03.224997 #7334] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T18:22:03.225923 #7334] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T18:22:07.400300 #7334] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T18:22:07.407026 #7334] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T18:22:07.408206 #7334] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T18:22:07.408710 #7334] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T18:46:57.155901 #8374] DEBUG -- :   [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T18:46:57.167232 #8374] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T18:47:29.278862 #8379] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T18:47:29.285779 #8379] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T18:47:29.287103 #8379] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T18:47:29.287593 #8379] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T18:47:41.890543 #8374] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T18:47:41.891488 #8374] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T18:47:43.163151 #8379] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T18:47:43.172891 #8379] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T18:47:44.306415 #8382] DEBUG -- :   [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T18:47:44.319003 #8382] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T18:53:06.653471 #8379] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T18:53:06.654438 #8379] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T18:54:02.491586 #8379] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T18:54:02.492612 #8379] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T18:54:58.701294 #8379] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T18:54:58.702397 #8379] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T18:55:02.805938 #8379] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T18:55:02.806508 #8379] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T18:55:02.806970 #8379] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T18:55:02.807423 #8379] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T18:59:42.780036 #8562] DEBUG -- :   [1m[36mEvent Load (1.1ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T18:59:42.791206 #8562] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:06:32.701644 #8730] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T19:06:32.708524 #8730] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T19:06:32.709672 #8730] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T19:06:32.710142 #8730] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T19:06:38.739679 #8730] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T19:06:38.740224 #8730] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T19:06:38.740719 #8730] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T19:06:38.741170 #8730] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T19:10:25.427958 #8730] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T19:10:25.428590 #8730] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T19:10:25.429095 #8730] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1[0m
+D, [2014-10-03T19:10:25.429684 #8730] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'admin' LIMIT 1
+D, [2014-10-03T19:10:25.482698 #8732] DEBUG -- :   [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:10:25.493751 #8732] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:10:25.506992 #8732] DEBUG -- :   [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:10:25.507902 #8732] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T19:11:23.615278 #8732] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:11:23.616262 #8732] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:11:23.619988 #8732] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:11:23.620560 #8732] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T19:13:35.012258 #8735] DEBUG -- :   [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:13:35.028634 #8735] DEBUG -- :   [1m[35mVenue Load (0.6ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:13:35.034650 #8735] DEBUG -- :   [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:13:35.035744 #8735] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T19:13:37.357132 #8738] DEBUG -- :   [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:13:37.369681 #8738] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:13:37.374949 #8738] DEBUG -- :   [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:13:37.375788 #8738] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T19:13:42.213391 #8735] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:13:42.214484 #8735] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:13:42.218050 #8735] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:13:42.218609 #8735] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T19:13:43.705435 #8730] DEBUG -- :   [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:13:43.715404 #8730] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:13:43.720219 #8730] DEBUG -- :   [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:13:43.720714 #8730] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T19:13:45.291066 #8735] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:13:45.291978 #8735] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:13:45.295534 #8735] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:13:45.296066 #8735] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T19:18:08.425298 #9047] DEBUG -- :   [1m[36mEvent Load (1.1ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:18:08.436964 #9047] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:18:08.450888 #9047] DEBUG -- :   [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:18:08.451926 #9047] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T19:18:10.232389 #9047] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:18:10.233497 #9047] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:18:10.237166 #9047] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:18:10.237724 #9047] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T19:18:11.656236 #9044] DEBUG -- :   [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:18:11.669722 #9044] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:18:11.675486 #9044] DEBUG -- :   [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:18:11.676387 #9044] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T19:21:37.534970 #9041] DEBUG -- :   [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:21:37.547603 #9041] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:21:37.552935 #9041] DEBUG -- :   [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:21:37.553718 #9041] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T19:22:48.853886 #9044] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:22:48.856899 #9044] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:22:48.860604 #9044] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:22:48.861124 #9044] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T19:22:50.527285 #9039] DEBUG -- :   [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:22:50.537838 #9039] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:22:50.543057 #9039] DEBUG -- :   [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:22:50.543907 #9039] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T19:25:05.236679 #9047] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:25:05.237652 #9047] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:25:05.241411 #9047] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:25:05.241886 #9047] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T19:46:23.808389 #9039] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:46:23.809465 #9039] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:46:23.813241 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:46:23.813758 #9039] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T19:46:26.455686 #9044] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:46:26.456719 #9044] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:46:26.460346 #9044] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:46:26.460820 #9044] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T19:51:55.516685 #9047] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:51:55.517768 #9047] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:51:55.521386 #9047] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:51:55.521896 #9047] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T19:51:57.391845 #9039] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T19:51:57.392764 #9039] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T19:51:57.396359 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T19:51:57.397012 #9039] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T20:33:58.037695 #9044] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T20:33:58.038858 #9044] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T20:33:58.042406 #9044] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T20:33:58.042894 #9044] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T20:34:06.312772 #9047] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T20:34:06.313754 #9047] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T20:34:06.317313 #9047] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T20:34:06.317762 #9047] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T20:37:59.391519 #9041] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T20:37:59.402083 #9041] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T20:37:59.405271 #9041] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T20:37:59.405972 #9041] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T20:41:59.075341 #9044] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T20:41:59.076424 #9044] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T20:41:59.079912 #9044] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T20:41:59.080479 #9044] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T20:42:02.752648 #9039] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T20:42:02.753612 #9039] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T20:42:02.757047 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T20:42:02.757661 #9039] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T20:42:04.684070 #9041] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T20:42:04.684515 #9041] DEBUG -- :   [1m[35mVenue Load (0.1ms)[0m  SELECT "venues".* FROM "venues"
+D, [2014-10-03T20:42:04.687083 #9041] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T20:42:04.687523 #9041] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T20:49:50.863720 #9047] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T20:49:50.866623 #9047] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T20:49:50.869735 #9047] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T20:49:50.870206 #9047] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T20:54:00.481319 #9039] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T20:54:00.482340 #9039] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T20:54:00.485871 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T20:54:00.486334 #9039] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T20:54:03.600279 #9044] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T20:54:03.601289 #9044] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T20:54:03.605123 #9044] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T20:54:03.605566 #9044] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T20:57:34.086341 #9039] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T20:57:34.087342 #9039] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T20:57:34.091457 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T20:57:34.091952 #9039] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T20:57:36.780185 #9044] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T20:57:36.781119 #9044] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T20:57:36.784326 #9044] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T20:57:36.784779 #9044] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T20:57:44.576847 #9047] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T20:57:44.577725 #9047] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T20:57:44.580994 #9047] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T20:57:44.581450 #9047] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T20:58:09.940889 #9044] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T20:58:09.941821 #9044] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T20:58:09.945000 #9044] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T20:58:09.945495 #9044] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T20:59:23.491283 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T20:59:23.491755 #9039] DEBUG -- :   [1m[35mVenue Load (0.1ms)[0m  SELECT "venues".* FROM "venues"
+D, [2014-10-03T20:59:23.494281 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T20:59:23.494718 #9039] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T21:01:38.456554 #9041] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T21:01:38.457600 #9041] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T21:01:38.461258 #9041] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T21:01:38.461693 #9041] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T21:04:03.293929 #9039] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T21:04:03.294883 #9039] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T21:04:03.298433 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T21:04:03.298936 #9039] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T21:12:08.332915 #9047] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T21:12:08.333864 #9047] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T21:12:08.337103 #9047] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T21:12:08.337513 #9047] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T21:12:11.074232 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T21:12:11.074714 #9039] DEBUG -- :   [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues"
+D, [2014-10-03T21:12:11.077246 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T21:12:11.077711 #9039] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T21:12:54.031471 #9044] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."name" = 'My Place' LIMIT 1[0m
+D, [2014-10-03T21:12:54.035882 #9044] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2014-10-03T21:12:54.039047 #9044] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "venues" ("created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", 2014-10-03 21:12:54 UTC], ["latitude", 49.270622], ["longitude", -123.134741], ["name", "My Place"], ["updated_at", 2014-10-03 21:12:54 UTC]]
+D, [2014-10-03T21:12:54.040288 #9044] DEBUG -- :   [1m[35m (1.1ms)[0m  COMMIT
+D, [2014-10-03T21:12:54.041793 #9044] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T21:12:54.048405 #9044] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2014-10-03T21:12:54.053070 #9044] DEBUG -- :   [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "events" ("created_at", "date", "description", "name", "picture_url", "time", "type_name", "updated_at", "user_id", "venue_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["created_at", 2014-10-03 21:12:54 UTC], ["date", Sat, 04 Oct 2014], ["description", "Laugh, Cry, All of these things and more."], ["name", "The First Event"], ["picture_url", "/uploads/logocopy.jpg"], ["time", 2014-10-03 18:30:00 +0000], ["type_name", "comedy"], ["updated_at", 2014-10-03 21:12:54 UTC], ["user_id", 1], ["venue_id", 1]]
+D, [2014-10-03T21:12:54.054053 #9044] DEBUG -- :   [1m[35m (0.7ms)[0m  COMMIT
+D, [2014-10-03T21:12:54.077530 #9041] DEBUG -- :   [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+D, [2014-10-03T21:12:54.085371 #9041] DEBUG -- :   [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T21:12:54.098806 #9041] DEBUG -- :   [1m[36mComment Load (0.6ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["event_id", 1]]
+D, [2014-10-03T21:12:54.102055 #9041] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T21:12:54.104579 #9041] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T21:12:54.105023 #9041] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T21:13:18.153658 #9044] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T21:13:18.155687 #9044] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T21:13:18.159732 #9044] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T21:13:18.160184 #9044] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T21:13:23.040778 #9039] DEBUG -- :   [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+D, [2014-10-03T21:13:23.048304 #9039] DEBUG -- :   [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T21:13:23.061198 #9039] DEBUG -- :   [1m[36mComment Load (0.5ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["event_id", 1]]
+D, [2014-10-03T21:13:23.064816 #9039] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T21:13:23.067498 #9039] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T21:13:23.067979 #9039] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T21:13:30.835048 #9044] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE (date = '2014-10-04')[0m
+D, [2014-10-03T21:13:30.836502 #9044] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events" WHERE (date = '2014-10-04'))
+D, [2014-10-03T21:13:30.839936 #9044] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T21:13:30.840369 #9044] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T21:13:55.152984 #9039] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE (date = '2014-10-04')[0m
+D, [2014-10-03T21:13:55.154719 #9039] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events" WHERE (date = '2014-10-04'))
+D, [2014-10-03T21:13:55.158735 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T21:13:55.159219 #9039] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T21:35:32.598371 #9047] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T21:35:32.607022 #9047] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T21:35:32.614681 #9047] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T21:35:32.615136 #9047] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T21:35:44.919000 #9044] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE (type_name = 'comedy')[0m
+D, [2014-10-03T21:35:44.920493 #9044] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events" WHERE (type_name = 'comedy'))
+D, [2014-10-03T21:35:44.924160 #9044] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T21:35:44.924609 #9044] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T21:54:19.450544 #9039] DEBUG -- :   [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events" WHERE (type_name = 'comedy')[0m
+D, [2014-10-03T21:54:19.452004 #9039] DEBUG -- :   [1m[35mVenue Load (0.5ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events" WHERE (type_name = 'comedy'))
+D, [2014-10-03T21:54:19.455519 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T21:54:19.455974 #9039] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T22:46:16.577770 #9044] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T22:46:16.579232 #9044] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T22:46:16.582781 #9044] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T22:46:16.583202 #9044] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T23:06:29.955608 #9039] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T23:06:29.957101 #9039] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T23:06:29.963466 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T23:06:29.964403 #9039] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T23:08:24.728198 #9041] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T23:08:24.729881 #9041] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T23:08:24.733568 #9041] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T23:08:24.733977 #9041] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T23:08:52.777154 #9039] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T23:08:52.778596 #9039] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T23:08:52.783042 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T23:08:52.783470 #9039] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T23:16:14.754350 #9047] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T23:16:14.755848 #9047] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T23:39:19.953639 #9041] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T23:39:19.955123 #9041] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T23:39:19.958553 #9041] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T23:39:19.958951 #9041] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T23:40:19.157673 #9047] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T23:40:19.159073 #9047] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T23:40:39.978189 #9039] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+D, [2014-10-03T23:40:39.978788 #9039] DEBUG -- :   [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T23:40:39.979628 #9039] DEBUG -- :   [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["event_id", 1]]
+D, [2014-10-03T23:40:45.578874 #9041] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+D, [2014-10-03T23:40:45.579493 #9041] DEBUG -- :   [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T23:40:45.580308 #9041] DEBUG -- :   [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["event_id", 1]]
+D, [2014-10-03T23:40:45.798876 #9039] DEBUG -- :   [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", "1"]]
+D, [2014-10-03T23:40:45.799600 #9039] DEBUG -- :   [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-03T23:40:45.800647 #9039] DEBUG -- :   [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."event_id" = $1 ORDER BY "comments"."created_at" ASC  [["event_id", 1]]
+D, [2014-10-03T23:41:40.702867 #9041] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-03T23:41:40.704333 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-03T23:41:41.182165 #9047] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-03T23:41:41.183591 #9047] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-03T23:41:57.543612 #9041] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-03T23:41:57.545129 #9041] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-03T23:42:09.496177 #9047] DEBUG -- :   [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+D, [2014-10-03T23:42:09.496932 #9047] DEBUG -- :   [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T23:42:09.506834 #9047] DEBUG -- :   [1m[36mComment Load (0.5ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["event_id", 1]]
+D, [2014-10-03T23:42:10.803348 #9044] DEBUG -- :   [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+D, [2014-10-03T23:42:10.804006 #9044] DEBUG -- :   [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T23:42:10.813156 #9044] DEBUG -- :   [1m[36mComment Load (0.5ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["event_id", 1]]
+D, [2014-10-03T23:42:58.777013 #9047] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-03T23:42:58.778478 #9047] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-03T23:43:02.786905 #9041] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-03T23:43:02.788295 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-03T23:43:14.012197 #9039] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+D, [2014-10-03T23:43:14.012787 #9039] DEBUG -- :   [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-03T23:43:14.013579 #9039] DEBUG -- :   [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["event_id", 1]]
+D, [2014-10-03T23:43:46.368264 #9041] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-03T23:43:46.369773 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-04T02:04:44.823863 #9039] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-04T02:04:44.825383 #9039] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-04T02:04:44.829378 #9039] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-04T02:04:44.829832 #9039] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-04T02:04:54.556426 #9044] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", "1"]]
+D, [2014-10-04T02:04:54.557099 #9044] DEBUG -- :   [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-04T02:04:54.557994 #9044] DEBUG -- :   [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."event_id" = $1 ORDER BY "comments"."created_at" ASC  [["event_id", 1]]
+D, [2014-10-04T02:04:54.562950 #9044] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-04T02:04:54.565669 #9044] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-04T02:04:54.566179 #9044] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-04T02:04:56.932986 #9041] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-04T02:04:56.934466 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-04T02:04:56.940427 #9041] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-04T02:04:56.940884 #9041] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-04T02:04:58.668122 #9044] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-04T02:04:58.668641 #9044] DEBUG -- :   [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues"[0m
+D, [2014-10-04T02:04:58.672355 #9044] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-04T02:04:58.672809 #9044] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-04T02:10:32.727033 #9041] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."name" = 'My house' LIMIT 1
+D, [2014-10-04T02:10:32.727540 #9041] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2014-10-04T02:10:32.730811 #9041] DEBUG -- :   [1m[35mSQL (0.5ms)[0m  INSERT INTO "venues" ("address", "created_at", "latitude", "longitude", "name", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address", "Main and hastings Vancouver "], ["created_at", 2014-10-04 02:10:32 UTC], ["latitude", 49.2813379], ["longitude", -123.0996501], ["name", "My house"], ["updated_at", 2014-10-04 02:10:32 UTC]]
+D, [2014-10-04T02:10:32.731929 #9041] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+D, [2014-10-04T02:10:32.733463 #9041] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-04T02:10:32.733955 #9041] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+D, [2014-10-04T02:10:32.736869 #9041] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("created_at", "date", "description", "name", "picture_url", "time", "type_name", "updated_at", "user_id", "venue_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["created_at", 2014-10-04 02:10:32 UTC], ["date", Tue, 28 Oct 2014], ["description", "..."], ["name", "Something"], ["picture_url", "/uploads/fly1.JPG"], ["time", 2014-10-04 20:00:00 +0000], ["type_name", "art"], ["updated_at", 2014-10-04 02:10:32 UTC], ["user_id", 1], ["venue_id", 2]]
+D, [2014-10-04T02:10:32.737848 #9041] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+D, [2014-10-04T02:10:32.806593 #9039] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", "2"]]
+D, [2014-10-04T02:10:32.807213 #9039] DEBUG -- :   [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+D, [2014-10-04T02:10:32.808078 #9039] DEBUG -- :   [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."event_id" = $1 ORDER BY "comments"."created_at" ASC  [["event_id", 2]]
+D, [2014-10-04T02:10:32.811403 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-04T02:10:32.813967 #9039] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-04T02:10:32.814428 #9039] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-04T02:10:39.771400 #9041] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-04T02:10:39.773180 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-04T02:10:39.776731 #9041] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-04T02:10:39.777141 #9041] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-04T02:10:52.663546 #9047] DEBUG -- :   [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events" WHERE (type_name = 'art')
+D, [2014-10-04T02:10:52.665085 #9047] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events" WHERE (type_name = 'art'))[0m
+D, [2014-10-04T02:10:52.669834 #9047] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-04T02:10:52.670305 #9047] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-04T02:11:02.593620 #9039] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE (type_name = 'comedy')
+D, [2014-10-04T02:11:02.595287 #9039] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events" WHERE (type_name = 'comedy'))[0m
+D, [2014-10-04T02:11:02.598740 #9039] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-04T02:11:02.599178 #9039] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-04T02:32:48.826564 #9047] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-04T02:32:48.828319 #9047] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-04T12:27:37.211227 #9039] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-04T12:27:37.212960 #9039] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-04T18:12:36.286183 #9047] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-04T18:12:36.287898 #9047] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-04T21:32:57.201949 #9047] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-04T21:32:57.203756 #9047] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-05T09:08:06.481315 #9039] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-05T09:08:06.483098 #9039] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-05T12:08:22.640143 #9041] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-05T12:08:22.642023 #9041] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-05T17:58:19.259137 #9044] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-05T17:58:19.260931 #9044] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-05T19:40:02.119272 #9041] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-05T19:40:02.120993 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-06T01:51:23.495165 #9044] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-06T01:51:23.496913 #9044] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-06T06:04:36.537851 #9041] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-06T06:04:36.539814 #9041] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-06T17:26:52.215341 #9041] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-06T17:26:52.217275 #9041] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-06T23:44:02.046746 #9039] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-06T23:44:02.048415 #9039] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-06T23:44:02.052276 #9039] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-06T23:44:02.052733 #9039] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+D, [2014-10-07T00:16:15.824784 #9041] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-07T00:16:15.829170 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-07T00:48:58.156824 #9047] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-07T00:48:58.158581 #9047] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-07T04:43:49.987507 #9041] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-07T04:43:49.989202 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-07T18:52:15.108464 #9039] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-07T18:52:15.112066 #9039] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-07T20:19:06.119214 #9044] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-07T20:19:06.121057 #9044] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-08T00:01:31.972654 #9041] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-08T00:01:31.974429 #9041] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-08T00:03:26.404181 #9041] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2014-10-08T00:03:26.406244 #9041] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."name" = 'Veronika' LIMIT 1[0m
+D, [2014-10-08T00:03:26.406882 #9041] DEBUG -- :   [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'recycle@netghost.ca' LIMIT 1
+D, [2014-10-08T00:03:26.408370 #9041] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("avatar_url", "created_at", "email", "name", "password", "salt", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["avatar_url", "public/uploads/1236122_643141002371834_1614424158_n.jpg"], ["created_at", 2014-10-08 00:03:26 UTC], ["email", "recycle@netghost.ca"], ["name", "Veronika"], ["password", "a6569ce862747962382b5f4df7b5a88d99d6180f7cae248d3aaab7edd9bb5977"], ["salt", "myEhWsxOeimFjuAwyyxXSPMwDjYLlwxpvllexZVeZSOToUQVYQ"], ["updated_at", 2014-10-08 00:03:26 UTC]]
+D, [2014-10-08T00:03:26.409603 #9041] DEBUG -- :   [1m[35m (1.0ms)[0m  COMMIT
+D, [2014-10-08T00:03:26.496447 #9047] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-08T00:03:26.498250 #9047] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-08T00:03:42.371655 #9041] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'Veronika' LIMIT 1[0m
+D, [2014-10-08T00:03:42.372192 #9041] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'Veronika' LIMIT 1
+D, [2014-10-08T00:03:42.372637 #9041] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'Veronika' LIMIT 1[0m
+D, [2014-10-08T00:03:42.373090 #9041] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'Veronika' LIMIT 1
+D, [2014-10-08T00:03:42.402790 #9039] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-08T00:03:42.404515 #9039] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-08T00:03:42.408749 #9039] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+D, [2014-10-08T00:03:42.409370 #9039] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+D, [2014-10-08T00:05:44.245592 #9041] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+D, [2014-10-08T00:05:44.246229 #9041] DEBUG -- :   [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+D, [2014-10-08T00:05:44.247164 #9041] DEBUG -- :   [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["event_id", 2]]
+D, [2014-10-08T00:05:44.250430 #9041] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+D, [2014-10-08T00:05:44.253026 #9041] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+D, [2014-10-08T00:05:44.253456 #9041] DEBUG -- :   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+D, [2014-10-08T00:07:28.209096 #9044] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-08T00:07:28.211111 #9044] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-08T00:07:28.214865 #9044] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+D, [2014-10-08T00:07:28.215311 #9044] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+D, [2014-10-08T00:07:40.489132 #9041] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-08T00:07:40.491053 #9041] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-08T03:26:58.737481 #9041] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+D, [2014-10-08T03:26:58.738169 #9041] DEBUG -- :   [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 1]]
+D, [2014-10-08T03:26:58.739027 #9041] DEBUG -- :   [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["event_id", 1]]
+D, [2014-10-08T03:27:09.765043 #9039] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-08T03:27:09.766994 #9039] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-08T03:27:42.025010 #9047] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE (type_name = 'art')
+D, [2014-10-08T03:27:42.026430 #9047] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events" WHERE (type_name = 'art'))[0m
+D, [2014-10-08T03:28:43.605724 #9041] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", "2"]]
+D, [2014-10-08T03:28:43.606529 #9041] DEBUG -- :   [1m[36mVenue Load (0.2ms)[0m  [1mSELECT "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+D, [2014-10-08T03:28:43.607446 #9041] DEBUG -- :   [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."event_id" = $1 ORDER BY "comments"."created_at" ASC  [["event_id", 2]]
+D, [2014-10-08T03:28:53.427311 #9047] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'recycle@netghost.ca' LIMIT 1
+D, [2014-10-08T03:28:53.450087 #9044] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-08T03:28:53.451903 #9044] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-08T03:28:59.868173 #9047] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'recycle@netghost.ca' LIMIT 1[0m
+D, [2014-10-08T03:28:59.900690 #9039] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-08T03:28:59.903588 #9039] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-08T03:29:09.328922 #9047] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'recycle@netghost.ca' LIMIT 1
+D, [2014-10-08T03:29:09.423140 #9041] DEBUG -- :   [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-08T03:29:09.424818 #9041] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-08T03:29:18.718474 #9047] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'recycle@netghost.ca' LIMIT 1[0m
+D, [2014-10-08T03:29:18.794476 #9044] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-08T03:29:18.796204 #9044] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-08T03:30:58.976894 #9044] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-08T03:30:58.978563 #9044] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-08T03:31:08.513837 #9041] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+D, [2014-10-08T03:31:08.514551 #9041] DEBUG -- :   [1m[35mVenue Load (0.2ms)[0m  SELECT "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+D, [2014-10-08T03:31:08.515398 #9041] DEBUG -- :   [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["event_id", 2]]
+D, [2014-10-08T03:31:54.403434 #9039] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-08T03:31:54.405253 #9039] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-08T12:22:16.033784 #9044] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-08T12:22:16.035613 #9044] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-08T12:43:26.299046 #9039] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-08T12:43:26.300928 #9039] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-09T06:53:18.570812 #9039] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-09T06:53:18.574917 #9039] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-09T18:11:53.903773 #9047] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-09T18:11:53.905737 #9047] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-09T22:03:40.857381 #9044] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-09T22:03:40.859260 #9044] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-09T22:03:52.125938 #9039] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-09T22:03:52.127894 #9039] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-09T22:04:22.917981 #9047] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2014-10-09T22:04:22.919792 #9047] DEBUG -- :   [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."name" = 'chronic' LIMIT 1[0m
+D, [2014-10-09T22:04:22.920353 #9047] DEBUG -- :   [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'chronic88@gmail.com' LIMIT 1
+D, [2014-10-09T22:04:22.936223 #9047] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mROLLBACK[0m
+D, [2014-10-09T22:04:50.836342 #9039] DEBUG -- :   [1m[35m (0.1ms)[0m  BEGIN
+D, [2014-10-09T22:04:50.838339 #9039] DEBUG -- :   [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."name" = 'chronic88' LIMIT 1[0m
+D, [2014-10-09T22:04:50.838913 #9039] DEBUG -- :   [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'chronic@gmail.com' LIMIT 1
+D, [2014-10-09T22:04:50.840445 #9039] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("avatar_url", "created_at", "email", "name", "password", "salt", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["avatar_url", "public/uploads/logocopy.jpg"], ["created_at", 2014-10-09 22:04:50 UTC], ["email", "chronic@gmail.com"], ["name", "chronic88"], ["password", "9380fe0b598687048be36a73da672943958c64a9970a86ffb0f36fef57b522c3"], ["salt", "wyDNOIdcWPaKGPymePnsyyEIUGyjDgbjmQSbriGSmQQkSQzxLg"], ["updated_at", 2014-10-09 22:04:50 UTC]]
+D, [2014-10-09T22:04:50.841786 #9039] DEBUG -- :   [1m[35m (1.1ms)[0m  COMMIT
+D, [2014-10-09T22:04:50.945094 #9041] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-09T22:04:50.947123 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-09T22:04:55.919814 #9039] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'chronic88' LIMIT 1[0m
+D, [2014-10-09T22:04:55.923041 #9039] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'chronic88' LIMIT 1
+D, [2014-10-09T22:04:55.923531 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'chronic88' LIMIT 1[0m
+D, [2014-10-09T22:04:55.923987 #9039] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'chronic88' LIMIT 1
+D, [2014-10-09T22:04:56.497269 #9044] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-09T22:04:56.499161 #9044] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-09T22:04:56.503283 #9044] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+D, [2014-10-09T22:04:56.503744 #9044] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+D, [2014-10-09T22:05:14.583620 #9041] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE (date = '2014-10-22')
+D, [2014-10-09T22:05:14.584582 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events" WHERE (date = '2014-10-22'))[0m
+D, [2014-10-09T22:05:14.587934 #9041] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+D, [2014-10-09T22:05:14.588396 #9041] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+D, [2014-10-09T22:39:20.398782 #9044] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-09T22:39:20.400623 #9044] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-10T02:03:21.802555 #9041] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-10T02:03:21.804296 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-10T02:03:21.808123 #9041] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+D, [2014-10-10T02:03:21.808606 #9041] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+D, [2014-10-10T02:03:56.619498 #9044] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-10T02:03:56.621486 #9044] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-10T02:04:15.766219 #9041] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-10T02:04:15.767999 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-10T07:38:52.658201 #9044] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-10T07:38:52.659895 #9044] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-10T07:39:09.760658 #9047] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-10T07:39:09.762477 #9047] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-10T09:12:08.192423 #9041] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-10T09:12:08.194139 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-10T11:28:50.037526 #9047] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-10T11:28:50.039197 #9047] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-10T11:30:37.497808 #9041] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-10T11:30:37.499588 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-10T12:05:52.032692 #9047] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-10T12:05:52.034484 #9047] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-10T16:44:36.025013 #9039] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+D, [2014-10-10T16:44:36.026908 #9039] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")
+D, [2014-10-10T21:31:06.908452 #9041] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-10T21:31:06.910120 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-10T21:31:13.131302 #9039] DEBUG -- :   [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE (date = '2014-10-04')[0m
+D, [2014-10-10T21:31:13.132749 #9039] DEBUG -- :   [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events" WHERE (date = '2014-10-04'))
+D, [2014-10-10T21:31:27.659831 #9039] DEBUG -- :   [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'chronic88@gmail.com' LIMIT 1[0m
+D, [2014-10-10T21:31:27.711421 #9041] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-10T21:31:27.713138 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-10T21:31:36.005357 #9039] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'chronic88@gmail.com' LIMIT 1
+D, [2014-10-10T21:31:36.043535 #9044] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-10T21:31:36.045338 #9044] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-10T21:31:44.793797 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'chronic' LIMIT 1[0m
+D, [2014-10-10T21:31:44.867791 #9047] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-10T21:31:44.869549 #9047] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-10T21:31:49.171781 #9039] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'chronic88' LIMIT 1
+D, [2014-10-10T21:31:49.172393 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'chronic88' LIMIT 1[0m
+D, [2014-10-10T21:31:49.172885 #9039] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'chronic88' LIMIT 1
+D, [2014-10-10T21:31:49.173345 #9039] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'chronic88' LIMIT 1[0m
+D, [2014-10-10T21:31:49.229036 #9041] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-10T21:31:49.230703 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-10T21:31:49.234413 #9041] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+D, [2014-10-10T21:31:49.234852 #9041] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+D, [2014-10-10T21:31:59.230550 #9039] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-10T21:31:59.232150 #9039] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-10T21:31:59.235739 #9039] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+D, [2014-10-10T21:31:59.236143 #9039] DEBUG -- :   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+D, [2014-10-11T03:25:50.469874 #9044] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-11T03:25:50.471595 #9044] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-11T06:07:06.983331 #9039] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-11T06:07:06.985300 #9039] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-11T06:16:30.665393 #9047] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-11T06:16:30.667164 #9047] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-11T21:06:48.709330 #9044] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-11T21:06:48.711208 #9044] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-11T21:06:48.715389 #9044] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+D, [2014-10-11T21:06:48.715878 #9044] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+D, [2014-10-11T21:07:08.434396 #9047] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-11T21:07:08.436206 #9047] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-11T21:12:05.718360 #9041] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-11T21:12:05.720289 #9041] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-11T23:35:05.798319 #9039] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-11T23:35:05.800079 #9039] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-12T00:10:02.860397 #9044] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-12T00:10:02.862296 #9044] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-12T03:29:59.353373 #9047] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-12T03:29:59.355156 #9047] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-12T03:31:13.524098 #9044] DEBUG -- :   [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'chronic' LIMIT 1
+D, [2014-10-12T03:31:13.569789 #9039] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-12T03:31:13.571678 #9039] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-12T03:31:19.668827 #9044] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'chronic88' LIMIT 1[0m
+D, [2014-10-12T03:31:19.669414 #9044] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'chronic88' LIMIT 1
+D, [2014-10-12T03:31:19.670673 #9044] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'chronic88' LIMIT 1[0m
+D, [2014-10-12T03:31:19.671149 #9044] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'chronic88' LIMIT 1
+D, [2014-10-12T03:31:19.725367 #9041] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-12T03:31:19.727305 #9041] DEBUG -- :   [1m[36mVenue Load (0.5ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-12T03:31:19.731599 #9041] DEBUG -- :   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+D, [2014-10-12T03:31:19.732085 #9041] DEBUG -- :   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+D, [2014-10-12T03:31:24.701017 #9039] DEBUG -- :   [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-12T03:31:24.704998 #9039] DEBUG -- :   [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m
+D, [2014-10-12T03:34:26.285696 #9047] DEBUG -- :   [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+D, [2014-10-12T03:34:26.287792 #9047] DEBUG -- :   [1m[36mVenue Load (0.6ms)[0m  [1mSELECT "venues".* FROM "venues" INNER JOIN "events" ON "events"."venue_id" = "venues"."id" WHERE "events"."id" IN (SELECT "events"."id" FROM "events")[0m

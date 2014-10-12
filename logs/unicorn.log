@@ -1,0 +1,970 @@
+I, [2014-10-03T15:36:12.627988 #4744]  INFO -- : listening on addr=/tmp/unicorn.eventson.sock fd=10
+I, [2014-10-03T15:36:12.628186 #4744]  INFO -- : worker=0 spawning...
+I, [2014-10-03T15:36:12.628758 #4744]  INFO -- : worker=1 spawning...
+I, [2014-10-03T15:36:12.629844 #4744]  INFO -- : worker=2 spawning...
+I, [2014-10-03T15:36:12.632139 #4747]  INFO -- : worker=0 spawned pid=4747
+I, [2014-10-03T15:36:12.632263 #4747]  INFO -- : Refreshing Gem list
+I, [2014-10-03T15:36:12.634446 #4744]  INFO -- : worker=3 spawning...
+I, [2014-10-03T15:36:12.635016 #4749]  INFO -- : worker=1 spawned pid=4749
+I, [2014-10-03T15:36:12.635140 #4749]  INFO -- : Refreshing Gem list
+I, [2014-10-03T15:36:12.638534 #4744]  INFO -- : master process ready
+I, [2014-10-03T15:36:12.646614 #4752]  INFO -- : worker=2 spawned pid=4752
+I, [2014-10-03T15:36:12.646772 #4752]  INFO -- : Refreshing Gem list
+I, [2014-10-03T15:36:12.653775 #4755]  INFO -- : worker=3 spawned pid=4755
+I, [2014-10-03T15:36:12.653920 #4755]  INFO -- : Refreshing Gem list
+I, [2014-10-03T15:36:15.127815 #4747]  INFO -- : worker=0 ready
+I, [2014-10-03T15:36:15.129020 #4752]  INFO -- : worker=2 ready
+I, [2014-10-03T15:36:15.134250 #4755]  INFO -- : worker=3 ready
+I, [2014-10-03T15:36:15.136949 #4749]  INFO -- : worker=1 ready
+I, [2014-10-03T15:47:42.562532 #4744]  INFO -- : reaped #<Process::Status: pid 4747 exit 0> worker=0
+I, [2014-10-03T15:47:42.565122 #4744]  INFO -- : reaped #<Process::Status: pid 4749 exit 0> worker=1
+I, [2014-10-03T15:47:42.565172 #4744]  INFO -- : reaped #<Process::Status: pid 4752 exit 0> worker=2
+I, [2014-10-03T15:47:42.565214 #4744]  INFO -- : reaped #<Process::Status: pid 4755 exit 0> worker=3
+I, [2014-10-03T15:47:42.565307 #4744]  INFO -- : master complete
+I, [2014-10-03T15:55:45.240283 #5604]  INFO -- : unlinking existing socket=/tmp/unicorn.eventson.sock
+I, [2014-10-03T15:55:45.240496 #5604]  INFO -- : listening on addr=/tmp/unicorn.eventson.sock fd=10
+I, [2014-10-03T15:55:45.240928 #5604]  INFO -- : listening on addr=0.0.0.0:6666 fd=11
+I, [2014-10-03T15:55:45.241047 #5604]  INFO -- : worker=0 spawning...
+I, [2014-10-03T15:55:45.246572 #5604]  INFO -- : worker=1 spawning...
+I, [2014-10-03T15:55:45.246964 #5604]  INFO -- : worker=2 spawning...
+I, [2014-10-03T15:55:45.247573 #5607]  INFO -- : worker=0 spawned pid=5607
+I, [2014-10-03T15:55:45.247703 #5607]  INFO -- : Refreshing Gem list
+I, [2014-10-03T15:55:45.249148 #5604]  INFO -- : worker=3 spawning...
+I, [2014-10-03T15:55:45.249690 #5609]  INFO -- : worker=1 spawned pid=5609
+I, [2014-10-03T15:55:45.249822 #5609]  INFO -- : Refreshing Gem list
+I, [2014-10-03T15:55:45.252174 #5604]  INFO -- : master process ready
+I, [2014-10-03T15:55:45.258775 #5612]  INFO -- : worker=2 spawned pid=5612
+I, [2014-10-03T15:55:45.258925 #5612]  INFO -- : Refreshing Gem list
+I, [2014-10-03T15:55:45.275151 #5615]  INFO -- : worker=3 spawned pid=5615
+I, [2014-10-03T15:55:45.275323 #5615]  INFO -- : Refreshing Gem list
+I, [2014-10-03T15:55:47.797216 #5609]  INFO -- : worker=1 ready
+I, [2014-10-03T15:55:47.799208 #5615]  INFO -- : worker=3 ready
+I, [2014-10-03T15:55:47.802230 #5612]  INFO -- : worker=2 ready
+I, [2014-10-03T15:55:47.802614 #5607]  INFO -- : worker=0 ready
+54.69.74.3 - - [03/Oct/2014 16:01:44] "GET / HTTP/1.0" 200 4401 0.0381
+54.69.74.3 - - [03/Oct/2014 16:01:44] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 200 1614 0.0013
+54.69.74.3 - - [03/Oct/2014 16:01:44] "GET /stylesheets/application.css HTTP/1.0" 200 4622 0.0257
+54.69.74.3 - - [03/Oct/2014 16:01:44] "GET /stylesheets/normalize.css HTTP/1.0" 200 7583 0.0285
+54.69.74.3 - - [03/Oct/2014 16:01:44] "GET /javascript/application.js HTTP/1.0" 200 111 0.0010
+54.69.74.3 - - [03/Oct/2014 16:01:44] "GET /javascript/jquery.timepicker.js HTTP/1.0" 200 30317 0.0016
+54.69.74.3 - - [03/Oct/2014 16:01:44] "GET /javascript/infobubble.js HTTP/1.0" 200 44522 0.0178
+54.69.74.3 - - [03/Oct/2014 16:01:44] "GET /javascript/geopo.js HTTP/1.0" 200 489 0.0012
+54.69.74.3 - - [03/Oct/2014 16:01:44] "GET /javascript/map.js HTTP/1.0" 200 3648 0.0033
+54.69.74.3 - - [03/Oct/2014 16:01:44] "GET /images/logo.png HTTP/1.0" 200 250811 0.0296
+54.69.74.3 - - [03/Oct/2014 16:04:47] "GET / HTTP/1.0" 200 4401 0.0288
+54.69.74.3 - - [03/Oct/2014 16:04:47] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0011
+54.69.74.3 - - [03/Oct/2014 16:04:47] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0010
+54.69.74.3 - - [03/Oct/2014 16:04:47] "GET /javascript/application.js HTTP/1.0" 304 - 0.0014
+54.69.74.3 - - [03/Oct/2014 16:04:47] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0009
+54.69.74.3 - - [03/Oct/2014 16:04:47] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0027
+54.69.74.3 - - [03/Oct/2014 16:04:47] "GET /images/logo.png HTTP/1.0" 304 - 0.0017
+54.69.74.3 - - [03/Oct/2014 16:04:47] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0009
+54.69.74.3 - - [03/Oct/2014 16:04:47] "GET /javascript/map.js HTTP/1.0" 304 - 0.0008
+54.69.74.3 - - [03/Oct/2014 16:04:47] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0009
+54.69.74.3 - - [03/Oct/2014 16:04:51] "GET / HTTP/1.0" 200 4401 0.0067
+54.69.74.3 - - [03/Oct/2014 16:04:51] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0011
+54.69.74.3 - - [03/Oct/2014 16:04:51] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0027
+54.69.74.3 - - [03/Oct/2014 16:04:51] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0013
+54.69.74.3 - - [03/Oct/2014 16:04:51] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0017
+54.69.74.3 - - [03/Oct/2014 16:04:51] "GET /javascript/application.js HTTP/1.0" 304 - 0.0024
+54.69.74.3 - - [03/Oct/2014 16:04:51] "GET /images/logo.png HTTP/1.0" 304 - 0.0014
+54.69.74.3 - - [03/Oct/2014 16:04:51] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0011
+54.69.74.3 - - [03/Oct/2014 16:04:51] "GET /javascript/map.js HTTP/1.0" 304 - 0.0058
+54.69.74.3 - - [03/Oct/2014 16:04:51] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0014
+54.69.74.3 - - [03/Oct/2014 16:04:54] "GET /signup HTTP/1.0" 200 5255 0.0259
+54.69.74.3 - - [03/Oct/2014 16:04:54] "GET /stylesheets/other.css HTTP/1.0" 200 1408 0.0012
+54.69.74.3 - - [03/Oct/2014 16:04:54] "GET /stylesheets/forms.css HTTP/1.0" 200 1471 0.0030
+54.69.74.3 - - [03/Oct/2014 16:04:54] "GET /images/Lines_on_Twirl_by_ViCoDe.jpg HTTP/1.0" 200 95655 0.0112
+W, [2014-10-03T16:05:07.941536 #5615]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+Errno::ENOENT - No such file or directory @ rb_sysopen - public/uploads/logocopy.jpg:
+	/home/ubuntu/EventsOn/app/actions.rb:35:in `initialize'
+	/home/ubuntu/EventsOn/app/actions.rb:35:in `open'
+	/home/ubuntu/EventsOn/app/actions.rb:35:in `block in <top (required)>'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:1593:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:1593:in `block in compile!'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:957:in `[]'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:957:in `block (3 levels) in route!'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:976:in `route_eval'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:957:in `block (2 levels) in route!'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:997:in `block in process_route'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:995:in `catch'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:995:in `process_route'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:955:in `block in route!'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:954:in `each'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:954:in `route!'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:1067:in `block in dispatch!'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:1049:in `block in invoke'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:1049:in `catch'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:1049:in `invoke'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:1064:in `dispatch!'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:889:in `block in call!'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:1049:in `block in invoke'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:1049:in `catch'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:1049:in `invoke'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:889:in `call!'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:877:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-protection-1.5.2/lib/rack/protection/xss_header.rb:18:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-protection-1.5.2/lib/rack/protection/base.rb:50:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-protection-1.5.2/lib/rack/protection/base.rb:50:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-protection-1.5.2/lib/rack/protection/path_traversal.rb:16:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-protection-1.5.2/lib/rack/protection/json_csrf.rb:18:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-protection-1.5.2/lib/rack/protection/base.rb:50:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-protection-1.5.2/lib/rack/protection/base.rb:50:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-protection-1.5.2/lib/rack/protection/frame_options.rb:31:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/logger.rb:15:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:210:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/head.rb:11:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/show_exceptions.rb:21:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:180:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:2004:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:1469:in `block in call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:1778:in `synchronize'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:1469:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/lint.rb:49:in `_call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/lint.rb:37:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/showexceptions.rb:24:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/commonlogger.rb:33:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/sinatra-1.4.4/lib/sinatra/base.rb:217:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/chunked.rb:43:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:576:in `process_client'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:670:in `worker_loop'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:140:in `start'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/bin/unicorn:126:in `<top (required)>'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/bin/ruby_executable_hooks:15:in `eval'
+	/home/ubuntu/.rvm/gems/ruby-2.1.3/bin/ruby_executable_hooks:15:in `<main>'
+54.69.74.3 - - [03/Oct/2014 16:05:07] "POST /signup HTTP/1.0" 500 175489 0.0559
+54.69.74.3 - - [03/Oct/2014 16:05:08] "GET /__sinatra__/500.png HTTP/1.0" 200 24378 0.0044
+W, [2014-10-03T16:09:06.102473 #5612]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 16:09:06] "POST /signup HTTP/1.0" 302 - 0.0302
+54.69.74.3 - - [03/Oct/2014 16:09:06] "GET / HTTP/1.0" 200 4401 0.0197
+W, [2014-10-03T16:09:11.961535 #5612]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 16:09:11] "POST /login HTTP/1.0" 302 - 0.0049
+54.69.74.3 - - [03/Oct/2014 16:09:11] "GET /500.html HTTP/1.0" 404 446 0.0025
+W, [2014-10-03T16:09:18.608003 #5615]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 16:09:18] "POST /login HTTP/1.0" 302 - 0.0177
+54.69.74.3 - - [03/Oct/2014 16:09:18] "GET /500.html HTTP/1.0" 404 446 0.0014
+54.69.74.3 - - [03/Oct/2014 16:09:24] "GET / HTTP/1.0" 200 4401 0.0063
+54.69.74.3 - - [03/Oct/2014 16:09:25] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0013
+54.69.74.3 - - [03/Oct/2014 16:09:25] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0011
+54.69.74.3 - - [03/Oct/2014 16:09:25] "GET /javascript/application.js HTTP/1.0" 304 - 0.0012
+54.69.74.3 - - [03/Oct/2014 16:09:25] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0010
+54.69.74.3 - - [03/Oct/2014 16:09:25] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0008
+54.69.74.3 - - [03/Oct/2014 16:09:25] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0011
+54.69.74.3 - - [03/Oct/2014 16:09:25] "GET /javascript/map.js HTTP/1.0" 304 - 0.0009
+54.69.74.3 - - [03/Oct/2014 16:09:25] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0008
+54.69.74.3 - - [03/Oct/2014 16:09:25] "GET /images/logo.png HTTP/1.0" 304 - 0.0008
+54.69.74.3 - - [03/Oct/2014 16:09:36] "GET /signup HTTP/1.0" 200 5255 0.0053
+54.69.74.3 - - [03/Oct/2014 16:11:22] "GET /signup HTTP/1.0" 200 5255 0.0248
+54.69.74.3 - - [03/Oct/2014 16:11:22] "GET /stylesheets/forms.css HTTP/1.0" 304 - 0.0012
+54.69.74.3 - - [03/Oct/2014 16:11:22] "GET /stylesheets/other.css HTTP/1.0" 304 - 0.0010
+W, [2014-10-03T16:11:26.782008 #5607]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 16:11:26] "POST /login HTTP/1.0" 302 - 0.0081
+54.69.74.3 - - [03/Oct/2014 16:11:26] "GET /500.html HTTP/1.0" 404 446 0.0016
+W, [2014-10-03T16:11:33.618207 #5609]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 16:11:33] "POST /login HTTP/1.0" 302 - 0.0080
+54.69.74.3 - - [03/Oct/2014 16:11:33] "GET /500.html HTTP/1.0" 404 446 0.0014
+54.69.74.3 - - [03/Oct/2014 16:11:36] "GET /login HTTP/1.0" 404 443 0.0015
+W, [2014-10-03T16:11:51.977444 #5607]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 16:11:51] "POST /login HTTP/1.0" 302 - 0.0045
+54.69.74.3 - - [03/Oct/2014 16:11:52] "GET /500.html HTTP/1.0" 404 446 0.0014
+I, [2014-10-03T16:35:24.678210 #5604]  INFO -- : reaped #<Process::Status: pid 5607 exit 0> worker=0
+I, [2014-10-03T16:35:24.678321 #5604]  INFO -- : reaped #<Process::Status: pid 5609 exit 0> worker=1
+I, [2014-10-03T16:35:24.678377 #5604]  INFO -- : reaped #<Process::Status: pid 5612 exit 0> worker=2
+I, [2014-10-03T16:35:24.678419 #5604]  INFO -- : reaped #<Process::Status: pid 5615 exit 0> worker=3
+I, [2014-10-03T16:35:24.678514 #5604]  INFO -- : master complete
+I, [2014-10-03T16:35:53.940037 #6639]  INFO -- : unlinking existing socket=/tmp/unicorn.eventson.sock
+I, [2014-10-03T16:35:53.940251 #6639]  INFO -- : listening on addr=/tmp/unicorn.eventson.sock fd=10
+I, [2014-10-03T16:35:53.940673 #6639]  INFO -- : listening on addr=0.0.0.0:6666 fd=11
+I, [2014-10-03T16:35:53.940779 #6639]  INFO -- : worker=0 spawning...
+I, [2014-10-03T16:35:53.941258 #6639]  INFO -- : worker=1 spawning...
+I, [2014-10-03T16:35:53.943594 #6639]  INFO -- : worker=2 spawning...
+I, [2014-10-03T16:35:53.944256 #6642]  INFO -- : worker=0 spawned pid=6642
+I, [2014-10-03T16:35:53.944381 #6642]  INFO -- : Refreshing Gem list
+I, [2014-10-03T16:35:53.947790 #6639]  INFO -- : worker=3 spawning...
+I, [2014-10-03T16:35:53.948288 #6644]  INFO -- : worker=1 spawned pid=6644
+I, [2014-10-03T16:35:53.948430 #6644]  INFO -- : Refreshing Gem list
+I, [2014-10-03T16:35:53.950397 #6639]  INFO -- : master process ready
+I, [2014-10-03T16:35:53.954727 #6647]  INFO -- : worker=2 spawned pid=6647
+I, [2014-10-03T16:35:53.954855 #6647]  INFO -- : Refreshing Gem list
+I, [2014-10-03T16:35:53.965688 #6650]  INFO -- : worker=3 spawned pid=6650
+I, [2014-10-03T16:35:53.965839 #6650]  INFO -- : Refreshing Gem list
+I, [2014-10-03T16:35:56.488714 #6642]  INFO -- : worker=0 ready
+I, [2014-10-03T16:35:56.491241 #6644]  INFO -- : worker=1 ready
+I, [2014-10-03T16:35:56.493852 #6647]  INFO -- : worker=2 ready
+I, [2014-10-03T16:35:56.493968 #6650]  INFO -- : worker=3 ready
+W, [2014-10-03T16:35:59.795137 #6644]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 16:35:59] "POST /login HTTP/1.0" 302 - 0.0332
+54.69.74.3 - - [03/Oct/2014 16:35:59] "GET /500.html HTTP/1.0" 404 446 0.0136
+54.69.74.3 - - [03/Oct/2014 16:36:02] "GET / HTTP/1.0" 200 4401 0.0240
+54.69.74.3 - - [03/Oct/2014 16:36:02] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0011
+54.69.74.3 - - [03/Oct/2014 16:36:02] "GET /javascript/application.js HTTP/1.0" 304 - 0.0009
+54.69.74.3 - - [03/Oct/2014 16:36:02] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0058
+54.69.74.3 - - [03/Oct/2014 16:36:02] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0012
+54.69.74.3 - - [03/Oct/2014 16:36:02] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0029
+54.69.74.3 - - [03/Oct/2014 16:36:02] "GET /javascript/map.js HTTP/1.0" 304 - 0.0007
+54.69.74.3 - - [03/Oct/2014 16:36:02] "GET /images/logo.png HTTP/1.0" 304 - 0.0008
+54.69.74.3 - - [03/Oct/2014 16:36:02] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0312
+54.69.74.3 - - [03/Oct/2014 16:36:02] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0316
+W, [2014-10-03T16:36:07.109968 #6650]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 16:36:07] "POST /login HTTP/1.0" 302 - 0.0232
+54.69.74.3 - - [03/Oct/2014 16:36:07] "GET /500.html HTTP/1.0" 404 446 0.0028
+54.69.74.3 - - [03/Oct/2014 16:36:50] "GET / HTTP/1.0" 200 4401 0.0253
+54.69.74.3 - - [03/Oct/2014 16:36:50] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0012
+54.69.74.3 - - [03/Oct/2014 16:36:50] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0015
+54.69.74.3 - - [03/Oct/2014 16:36:50] "GET /javascript/application.js HTTP/1.0" 304 - 0.0014
+54.69.74.3 - - [03/Oct/2014 16:36:50] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0011
+54.69.74.3 - - [03/Oct/2014 16:36:50] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0009
+54.69.74.3 - - [03/Oct/2014 16:36:50] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0010
+54.69.74.3 - - [03/Oct/2014 16:36:50] "GET /javascript/map.js HTTP/1.0" 304 - 0.0010
+54.69.74.3 - - [03/Oct/2014 16:36:50] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0008
+54.69.74.3 - - [03/Oct/2014 16:36:50] "GET /images/logo.png HTTP/1.0" 304 - 0.0009
+W, [2014-10-03T16:36:54.015880 #6650]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 16:36:54] "POST /login HTTP/1.0" 302 - 0.0045
+54.69.74.3 - - [03/Oct/2014 16:36:54] "GET /500.html HTTP/1.0" 404 446 0.0014
+W, [2014-10-03T16:38:12.795267 #6642]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 16:38:12] "POST /login HTTP/1.0" 302 - 0.0194
+54.69.74.3 - - [03/Oct/2014 16:38:12] "GET /500.html HTTP/1.0" 404 446 0.0013
+I, [2014-10-03T16:53:57.783401 #6639]  INFO -- : reaped #<Process::Status: pid 6642 exit 0> worker=0
+I, [2014-10-03T16:53:57.783481 #6639]  INFO -- : reaped #<Process::Status: pid 6644 exit 0> worker=1
+I, [2014-10-03T16:53:57.783521 #6639]  INFO -- : reaped #<Process::Status: pid 6647 exit 0> worker=2
+I, [2014-10-03T16:53:57.783559 #6639]  INFO -- : reaped #<Process::Status: pid 6650 exit 0> worker=3
+I, [2014-10-03T16:53:57.783621 #6639]  INFO -- : master complete
+I, [2014-10-03T16:54:56.007893 #6892]  INFO -- : unlinking existing socket=/tmp/unicorn.eventson.sock
+I, [2014-10-03T16:54:56.008132 #6892]  INFO -- : listening on addr=/tmp/unicorn.eventson.sock fd=10
+I, [2014-10-03T16:54:56.008635 #6892]  INFO -- : listening on addr=0.0.0.0:6666 fd=11
+I, [2014-10-03T16:54:56.008776 #6892]  INFO -- : worker=0 spawning...
+I, [2014-10-03T16:54:56.010564 #6892]  INFO -- : worker=1 spawning...
+I, [2014-10-03T16:54:56.013071 #6892]  INFO -- : worker=2 spawning...
+I, [2014-10-03T16:54:56.013612 #6895]  INFO -- : worker=0 spawned pid=6895
+I, [2014-10-03T16:54:56.013751 #6895]  INFO -- : Refreshing Gem list
+I, [2014-10-03T16:54:56.014403 #6892]  INFO -- : worker=3 spawning...
+I, [2014-10-03T16:54:56.017672 #6897]  INFO -- : worker=1 spawned pid=6897
+I, [2014-10-03T16:54:56.017827 #6897]  INFO -- : Refreshing Gem list
+I, [2014-10-03T16:54:56.019764 #6892]  INFO -- : master process ready
+I, [2014-10-03T16:54:56.026647 #6900]  INFO -- : worker=2 spawned pid=6900
+I, [2014-10-03T16:54:56.026823 #6900]  INFO -- : Refreshing Gem list
+I, [2014-10-03T16:54:56.034599 #6903]  INFO -- : worker=3 spawned pid=6903
+I, [2014-10-03T16:54:56.034744 #6903]  INFO -- : Refreshing Gem list
+I, [2014-10-03T16:54:57.387352 #6895]  INFO -- : worker=0 ready
+I, [2014-10-03T16:54:57.392933 #6897]  INFO -- : worker=1 ready
+I, [2014-10-03T16:54:57.395536 #6903]  INFO -- : worker=3 ready
+I, [2014-10-03T16:54:57.396620 #6900]  INFO -- : worker=2 ready
+54.69.74.3 - - [03/Oct/2014 16:54:57] "GET / HTTP/1.0" 200 4401 0.0369
+54.69.74.3 - - [03/Oct/2014 16:54:58] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0465
+54.69.74.3 - - [03/Oct/2014 16:54:58] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0317
+54.69.74.3 - - [03/Oct/2014 16:54:58] "GET /javascript/application.js HTTP/1.0" 304 - 0.0482
+54.69.74.3 - - [03/Oct/2014 16:54:58] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0553
+54.69.74.3 - - [03/Oct/2014 16:54:58] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0083
+54.69.74.3 - - [03/Oct/2014 16:54:58] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0040
+54.69.74.3 - - [03/Oct/2014 16:54:58] "GET /javascript/map.js HTTP/1.0" 304 - 0.0010
+54.69.74.3 - - [03/Oct/2014 16:54:58] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0009
+54.69.74.3 - - [03/Oct/2014 16:54:58] "GET /images/logo.png HTTP/1.0" 304 - 0.0008
+W, [2014-10-03T16:55:03.594573 #6897]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 16:55:03] "POST /login HTTP/1.0" 302 - 0.0226
+54.69.74.3 - - [03/Oct/2014 16:55:03] "GET /500.html HTTP/1.0" 404 446 0.0031
+I, [2014-10-03T16:57:43.595189 #6892]  INFO -- : reaped #<Process::Status: pid 6895 exit 0> worker=0
+I, [2014-10-03T16:57:43.595268 #6892]  INFO -- : reaped #<Process::Status: pid 6897 exit 0> worker=1
+I, [2014-10-03T16:57:43.595309 #6892]  INFO -- : reaped #<Process::Status: pid 6900 exit 0> worker=2
+I, [2014-10-03T16:57:43.595371 #6892]  INFO -- : reaped #<Process::Status: pid 6903 exit 0> worker=3
+I, [2014-10-03T16:57:43.595431 #6892]  INFO -- : master complete
+I, [2014-10-03T16:59:56.519959 #7019]  INFO -- : unlinking existing socket=/tmp/unicorn.eventson.sock
+I, [2014-10-03T16:59:56.520166 #7019]  INFO -- : listening on addr=/tmp/unicorn.eventson.sock fd=10
+I, [2014-10-03T16:59:56.520597 #7019]  INFO -- : listening on addr=0.0.0.0:6666 fd=11
+I, [2014-10-03T16:59:56.520702 #7019]  INFO -- : worker=0 spawning...
+I, [2014-10-03T16:59:56.521184 #7019]  INFO -- : worker=1 spawning...
+I, [2014-10-03T16:59:56.523700 #7019]  INFO -- : worker=2 spawning...
+I, [2014-10-03T16:59:56.524204 #7022]  INFO -- : worker=0 spawned pid=7022
+I, [2014-10-03T16:59:56.524337 #7022]  INFO -- : Refreshing Gem list
+I, [2014-10-03T16:59:56.526382 #7019]  INFO -- : worker=3 spawning...
+I, [2014-10-03T16:59:56.528034 #7024]  INFO -- : worker=1 spawned pid=7024
+I, [2014-10-03T16:59:56.528165 #7024]  INFO -- : Refreshing Gem list
+I, [2014-10-03T16:59:56.529313 #7019]  INFO -- : master process ready
+I, [2014-10-03T16:59:56.534693 #7027]  INFO -- : worker=2 spawned pid=7027
+I, [2014-10-03T16:59:56.534834 #7027]  INFO -- : Refreshing Gem list
+I, [2014-10-03T16:59:56.549744 #7030]  INFO -- : worker=3 spawned pid=7030
+I, [2014-10-03T16:59:56.549887 #7030]  INFO -- : Refreshing Gem list
+I, [2014-10-03T16:59:57.888693 #7022]  INFO -- : worker=0 ready
+I, [2014-10-03T16:59:57.893067 #7027]  INFO -- : worker=2 ready
+I, [2014-10-03T16:59:57.895770 #7030]  INFO -- : worker=3 ready
+I, [2014-10-03T16:59:57.896236 #7024]  INFO -- : worker=1 ready
+54.69.74.3 - - [03/Oct/2014 17:00:06] "GET / HTTP/1.0" 200 4401 0.0357
+54.69.74.3 - - [03/Oct/2014 17:00:48] "GET / HTTP/1.0" 200 4401 0.0347
+54.69.74.3 - - [03/Oct/2014 17:00:50] "GET / HTTP/1.0" 200 4401 0.0341
+W, [2014-10-03T17:01:36.594548 #7022]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 17:01:36] "POST /login HTTP/1.0" 302 - 0.0296
+54.69.74.3 - - [03/Oct/2014 17:01:36] "GET /500.html HTTP/1.0" 404 446 0.0125
+I, [2014-10-03T17:24:47.674717 #7019]  INFO -- : reaped #<Process::Status: pid 7022 exit 0> worker=0
+I, [2014-10-03T17:24:47.674804 #7019]  INFO -- : reaped #<Process::Status: pid 7024 exit 0> worker=1
+I, [2014-10-03T17:24:47.674845 #7019]  INFO -- : reaped #<Process::Status: pid 7027 exit 0> worker=2
+I, [2014-10-03T17:24:47.674883 #7019]  INFO -- : reaped #<Process::Status: pid 7030 exit 0> worker=3
+I, [2014-10-03T17:24:47.674943 #7019]  INFO -- : master complete
+I, [2014-10-03T17:25:16.911997 #7278]  INFO -- : unlinking existing socket=/tmp/unicorn.eventson.sock
+I, [2014-10-03T17:25:16.912209 #7278]  INFO -- : listening on addr=/tmp/unicorn.eventson.sock fd=10
+I, [2014-10-03T17:25:16.912569 #7278]  INFO -- : listening on addr=0.0.0.0:6666 fd=11
+I, [2014-10-03T17:25:16.912690 #7278]  INFO -- : worker=0 spawning...
+I, [2014-10-03T17:25:16.918591 #7278]  INFO -- : worker=1 spawning...
+I, [2014-10-03T17:25:16.918996 #7278]  INFO -- : worker=2 spawning...
+I, [2014-10-03T17:25:16.919587 #7281]  INFO -- : worker=0 spawned pid=7281
+I, [2014-10-03T17:25:16.919737 #7281]  INFO -- : Refreshing Gem list
+I, [2014-10-03T17:25:16.922384 #7278]  INFO -- : worker=3 spawning...
+I, [2014-10-03T17:25:16.922969 #7283]  INFO -- : worker=1 spawned pid=7283
+I, [2014-10-03T17:25:16.923113 #7283]  INFO -- : Refreshing Gem list
+I, [2014-10-03T17:25:16.925193 #7278]  INFO -- : master process ready
+I, [2014-10-03T17:25:16.930768 #7286]  INFO -- : worker=2 spawned pid=7286
+I, [2014-10-03T17:25:16.931026 #7286]  INFO -- : Refreshing Gem list
+I, [2014-10-03T17:25:16.940172 #7289]  INFO -- : worker=3 spawned pid=7289
+I, [2014-10-03T17:25:16.940334 #7289]  INFO -- : Refreshing Gem list
+I, [2014-10-03T17:25:18.292751 #7286]  INFO -- : worker=2 ready
+I, [2014-10-03T17:25:18.294482 #7281]  INFO -- : worker=0 ready
+I, [2014-10-03T17:25:18.299215 #7289]  INFO -- : worker=3 ready
+I, [2014-10-03T17:25:18.300807 #7283]  INFO -- : worker=1 ready
+54.69.74.3 - - [03/Oct/2014 17:25:21] "GET / HTTP/1.0" 200 4401 0.0336
+54.69.74.3 - - [03/Oct/2014 17:25:22] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0016
+54.69.74.3 - - [03/Oct/2014 17:25:22] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0011
+54.69.74.3 - - [03/Oct/2014 17:25:22] "GET /javascript/application.js HTTP/1.0" 304 - 0.0336
+54.69.74.3 - - [03/Oct/2014 17:25:22] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0448
+54.69.74.3 - - [03/Oct/2014 17:25:22] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0057
+54.69.74.3 - - [03/Oct/2014 17:25:22] "GET /javascript/map.js HTTP/1.0" 304 - 0.0031
+54.69.74.3 - - [03/Oct/2014 17:25:22] "GET /images/logo.png HTTP/1.0" 304 - 0.0030
+54.69.74.3 - - [03/Oct/2014 17:25:22] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0617
+54.69.74.3 - - [03/Oct/2014 17:25:22] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0037
+54.69.74.3 - - [03/Oct/2014 17:25:26] "POST /login HTTP/1.0" 302 - 0.0229
+54.69.74.3 - - [03/Oct/2014 17:25:26] "GET /500.html HTTP/1.0" 404 446 0.0027
+I, [2014-10-03T17:27:36.804854 #7278]  INFO -- : reaped #<Process::Status: pid 7281 exit 0> worker=0
+I, [2014-10-03T17:27:36.804978 #7278]  INFO -- : reaped #<Process::Status: pid 7283 exit 0> worker=1
+I, [2014-10-03T17:27:36.805024 #7278]  INFO -- : reaped #<Process::Status: pid 7286 exit 0> worker=2
+I, [2014-10-03T17:27:36.805082 #7278]  INFO -- : reaped #<Process::Status: pid 7289 exit 0> worker=3
+I, [2014-10-03T17:27:36.805181 #7278]  INFO -- : master complete
+I, [2014-10-03T17:27:40.771201 #7331]  INFO -- : unlinking existing socket=/tmp/unicorn.eventson.sock
+I, [2014-10-03T17:27:40.771427 #7331]  INFO -- : listening on addr=/tmp/unicorn.eventson.sock fd=10
+I, [2014-10-03T17:27:40.771940 #7331]  INFO -- : listening on addr=0.0.0.0:6666 fd=11
+I, [2014-10-03T17:27:40.772056 #7331]  INFO -- : worker=0 spawning...
+I, [2014-10-03T17:27:40.772546 #7331]  INFO -- : worker=1 spawning...
+I, [2014-10-03T17:27:40.774413 #7331]  INFO -- : worker=2 spawning...
+I, [2014-10-03T17:27:40.774966 #7334]  INFO -- : worker=0 spawned pid=7334
+I, [2014-10-03T17:27:40.775098 #7334]  INFO -- : Refreshing Gem list
+I, [2014-10-03T17:27:40.778277 #7331]  INFO -- : worker=3 spawning...
+I, [2014-10-03T17:27:40.778886 #7336]  INFO -- : worker=1 spawned pid=7336
+I, [2014-10-03T17:27:40.779010 #7336]  INFO -- : Refreshing Gem list
+I, [2014-10-03T17:27:40.783601 #7331]  INFO -- : master process ready
+I, [2014-10-03T17:27:40.787560 #7339]  INFO -- : worker=2 spawned pid=7339
+I, [2014-10-03T17:27:40.787694 #7339]  INFO -- : Refreshing Gem list
+I, [2014-10-03T17:27:40.800710 #7342]  INFO -- : worker=3 spawned pid=7342
+I, [2014-10-03T17:27:40.800861 #7342]  INFO -- : Refreshing Gem list
+I, [2014-10-03T17:27:42.137612 #7342]  INFO -- : worker=3 ready
+I, [2014-10-03T17:27:42.141328 #7334]  INFO -- : worker=0 ready
+I, [2014-10-03T17:27:42.141389 #7336]  INFO -- : worker=1 ready
+I, [2014-10-03T17:27:42.142451 #7339]  INFO -- : worker=2 ready
+54.69.74.3 - - [03/Oct/2014 17:27:45] "GET / HTTP/1.0" 200 4401 0.0347
+54.69.74.3 - - [03/Oct/2014 17:28:57] "GET /icons/user.png HTTP/1.0" 200 6529 0.0138
+54.69.74.3 - - [03/Oct/2014 17:29:00] "GET / HTTP/1.0" 200 4401 0.0318
+54.69.74.3 - - [03/Oct/2014 17:35:35] "GET / HTTP/1.0" 200 4401 0.0218
+54.69.74.3 - - [03/Oct/2014 17:35:35] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0014
+54.69.74.3 - - [03/Oct/2014 17:35:35] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0013
+54.69.74.3 - - [03/Oct/2014 17:35:35] "GET /javascript/application.js HTTP/1.0" 304 - 0.0053
+54.69.74.3 - - [03/Oct/2014 17:35:35] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0089
+54.69.74.3 - - [03/Oct/2014 17:35:35] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0010
+54.69.74.3 - - [03/Oct/2014 17:35:35] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0333
+54.69.74.3 - - [03/Oct/2014 17:35:35] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0349
+54.69.74.3 - - [03/Oct/2014 17:35:35] "GET /javascript/map.js HTTP/1.0" 304 - 0.0335
+54.69.74.3 - - [03/Oct/2014 17:35:35] "GET /images/logo.png HTTP/1.0" 304 - 0.0159
+W, [2014-10-03T17:35:39.264058 #7336]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 17:35:39] "POST /login HTTP/1.0" 302 - 0.0187
+54.69.74.3 - - [03/Oct/2014 17:35:39] "GET /500.html HTTP/1.0" 404 446 0.0025
+54.69.74.3 - - [03/Oct/2014 18:11:54] "GET / HTTP/1.0" 200 4401 0.0217
+54.69.74.3 - - [03/Oct/2014 18:11:55] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0011
+54.69.74.3 - - [03/Oct/2014 18:11:55] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0015
+54.69.74.3 - - [03/Oct/2014 18:11:55] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0013
+54.69.74.3 - - [03/Oct/2014 18:11:55] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0008
+54.69.74.3 - - [03/Oct/2014 18:11:55] "GET /javascript/application.js HTTP/1.0" 304 - 0.0016
+54.69.74.3 - - [03/Oct/2014 18:11:55] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0020
+54.69.74.3 - - [03/Oct/2014 18:11:55] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0007
+54.69.74.3 - - [03/Oct/2014 18:11:55] "GET /javascript/map.js HTTP/1.0" 304 - 0.0011
+54.69.74.3 - - [03/Oct/2014 18:11:55] "GET /images/logo.png HTTP/1.0" 304 - 0.0009
+W, [2014-10-03T18:12:03.697983 #7342]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 18:12:03] "POST /login HTTP/1.0" 302 - 0.0270
+54.69.74.3 - - [03/Oct/2014 18:12:03] "GET /500.html HTTP/1.0" 404 446 0.0014
+54.69.74.3 - - [03/Oct/2014 18:21:04] "GET / HTTP/1.0" 200 4401 0.0069
+54.69.74.3 - - [03/Oct/2014 18:21:04] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0011
+54.69.74.3 - - [03/Oct/2014 18:21:04] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0011
+54.69.74.3 - - [03/Oct/2014 18:21:04] "GET /javascript/application.js HTTP/1.0" 304 - 0.0011
+54.69.74.3 - - [03/Oct/2014 18:21:04] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0007
+54.69.74.3 - - [03/Oct/2014 18:21:04] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0008
+54.69.74.3 - - [03/Oct/2014 18:21:04] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0009
+54.69.74.3 - - [03/Oct/2014 18:21:04] "GET /javascript/map.js HTTP/1.0" 304 - 0.0008
+54.69.74.3 - - [03/Oct/2014 18:21:04] "GET /images/logo.png HTTP/1.0" 304 - 0.0009
+54.69.74.3 - - [03/Oct/2014 18:21:04] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0023
+W, [2014-10-03T18:21:10.287000 #7336]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 18:21:10] "POST /login HTTP/1.0" 302 - 0.0045
+54.69.74.3 - - [03/Oct/2014 18:21:10] "GET /500.html HTTP/1.0" 404 446 0.0015
+54.69.74.3 - - [03/Oct/2014 18:21:13] "GET / HTTP/1.0" 200 4401 0.0063
+54.69.74.3 - - [03/Oct/2014 18:21:13] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0013
+54.69.74.3 - - [03/Oct/2014 18:21:13] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0011
+54.69.74.3 - - [03/Oct/2014 18:21:13] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0012
+54.69.74.3 - - [03/Oct/2014 18:21:13] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0009
+54.69.74.3 - - [03/Oct/2014 18:21:13] "GET /javascript/application.js HTTP/1.0" 304 - 0.0020
+54.69.74.3 - - [03/Oct/2014 18:21:13] "GET /images/logo.png HTTP/1.0" 304 - 0.0008
+54.69.74.3 - - [03/Oct/2014 18:21:13] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0008
+54.69.74.3 - - [03/Oct/2014 18:21:13] "GET /javascript/map.js HTTP/1.0" 304 - 0.0009
+54.69.74.3 - - [03/Oct/2014 18:21:13] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0009
+54.69.74.3 - - [03/Oct/2014 18:22:03] "GET / HTTP/1.0" 200 4401 0.0063
+54.69.74.3 - - [03/Oct/2014 18:22:03] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0012
+54.69.74.3 - - [03/Oct/2014 18:22:03] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0012
+54.69.74.3 - - [03/Oct/2014 18:22:03] "GET /javascript/application.js HTTP/1.0" 304 - 0.0012
+54.69.74.3 - - [03/Oct/2014 18:22:03] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0020
+54.69.74.3 - - [03/Oct/2014 18:22:03] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0017
+54.69.74.3 - - [03/Oct/2014 18:22:03] "GET /images/logo.png HTTP/1.0" 304 - 0.0008
+54.69.74.3 - - [03/Oct/2014 18:22:03] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0009
+54.69.74.3 - - [03/Oct/2014 18:22:03] "GET /javascript/map.js HTTP/1.0" 304 - 0.0009
+54.69.74.3 - - [03/Oct/2014 18:22:03] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0008
+W, [2014-10-03T18:22:07.392440 #7334]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 18:22:07] "POST /login HTTP/1.0" 302 - 0.0192
+54.69.74.3 - - [03/Oct/2014 18:22:07] "GET /500.html HTTP/1.0" 404 446 0.0013
+I, [2014-10-03T18:23:00.363975 #7331]  INFO -- : reaped #<Process::Status: pid 7334 exit 0> worker=0
+I, [2014-10-03T18:23:00.364082 #7331]  INFO -- : reaped #<Process::Status: pid 7336 exit 0> worker=1
+I, [2014-10-03T18:23:00.364168 #7331]  INFO -- : reaped #<Process::Status: pid 7339 exit 0> worker=2
+I, [2014-10-03T18:23:00.364210 #7331]  INFO -- : reaped #<Process::Status: pid 7342 exit 0> worker=3
+I, [2014-10-03T18:23:00.364275 #7331]  INFO -- : master complete
+I, [2014-10-03T18:23:10.628066 #7997]  INFO -- : unlinking existing socket=/tmp/unicorn.eventson.sock
+I, [2014-10-03T18:23:10.628312 #7997]  INFO -- : listening on addr=/tmp/unicorn.eventson.sock fd=10
+I, [2014-10-03T18:23:10.628431 #7997]  INFO -- : worker=0 spawning...
+I, [2014-10-03T18:23:10.628921 #7997]  INFO -- : worker=1 spawning...
+I, [2014-10-03T18:23:10.630374 #7997]  INFO -- : worker=2 spawning...
+I, [2014-10-03T18:23:10.630888 #8000]  INFO -- : worker=0 spawned pid=8000
+I, [2014-10-03T18:23:10.631010 #8000]  INFO -- : Refreshing Gem list
+I, [2014-10-03T18:23:10.634377 #7997]  INFO -- : worker=3 spawning...
+I, [2014-10-03T18:23:10.634879 #8002]  INFO -- : worker=1 spawned pid=8002
+I, [2014-10-03T18:23:10.634996 #8002]  INFO -- : Refreshing Gem list
+I, [2014-10-03T18:23:10.639656 #7997]  INFO -- : master process ready
+I, [2014-10-03T18:23:10.646900 #8005]  INFO -- : worker=2 spawned pid=8005
+I, [2014-10-03T18:23:10.647064 #8005]  INFO -- : Refreshing Gem list
+I, [2014-10-03T18:23:10.651999 #8008]  INFO -- : worker=3 spawned pid=8008
+I, [2014-10-03T18:23:10.652158 #8008]  INFO -- : Refreshing Gem list
+I, [2014-10-03T18:23:12.052610 #8005]  INFO -- : worker=2 ready
+I, [2014-10-03T18:23:12.058689 #8000]  INFO -- : worker=0 ready
+I, [2014-10-03T18:23:12.058944 #8002]  INFO -- : worker=1 ready
+I, [2014-10-03T18:23:12.059367 #8008]  INFO -- : worker=3 ready
+I, [2014-10-03T18:45:11.148153 #7997]  INFO -- : reaped #<Process::Status: pid 8000 exit 0> worker=0
+I, [2014-10-03T18:45:11.148253 #7997]  INFO -- : reaped #<Process::Status: pid 8002 exit 0> worker=1
+I, [2014-10-03T18:45:11.148299 #7997]  INFO -- : reaped #<Process::Status: pid 8005 exit 0> worker=2
+I, [2014-10-03T18:45:11.148340 #7997]  INFO -- : reaped #<Process::Status: pid 8008 exit 0> worker=3
+I, [2014-10-03T18:45:11.148450 #7997]  INFO -- : master complete
+I, [2014-10-03T18:45:15.339825 #8259]  INFO -- : unlinking existing socket=/tmp/unicorn.eventson.sock
+I, [2014-10-03T18:45:15.340039 #8259]  INFO -- : listening on addr=/tmp/unicorn.eventson.sock fd=10
+I, [2014-10-03T18:45:15.340496 #8259]  INFO -- : listening on addr=0.0.0.0:6666 fd=11
+I, [2014-10-03T18:45:15.340613 #8259]  INFO -- : worker=0 spawning...
+I, [2014-10-03T18:45:15.341142 #8259]  INFO -- : worker=1 spawning...
+I, [2014-10-03T18:45:15.344033 #8259]  INFO -- : worker=2 spawning...
+I, [2014-10-03T18:45:15.344593 #8262]  INFO -- : worker=0 spawned pid=8262
+I, [2014-10-03T18:45:15.344746 #8262]  INFO -- : Refreshing Gem list
+I, [2014-10-03T18:45:15.347536 #8259]  INFO -- : worker=3 spawning...
+I, [2014-10-03T18:45:15.348013 #8264]  INFO -- : worker=1 spawned pid=8264
+I, [2014-10-03T18:45:15.348125 #8264]  INFO -- : Refreshing Gem list
+I, [2014-10-03T18:45:15.350127 #8259]  INFO -- : master process ready
+I, [2014-10-03T18:45:15.354693 #8267]  INFO -- : worker=2 spawned pid=8267
+I, [2014-10-03T18:45:15.354815 #8267]  INFO -- : Refreshing Gem list
+I, [2014-10-03T18:45:15.369384 #8270]  INFO -- : worker=3 spawned pid=8270
+I, [2014-10-03T18:45:15.369534 #8270]  INFO -- : Refreshing Gem list
+I, [2014-10-03T18:45:16.741882 #8267]  INFO -- : worker=2 ready
+I, [2014-10-03T18:45:16.755018 #8264]  INFO -- : worker=1 ready
+I, [2014-10-03T18:45:16.750040 #8270]  INFO -- : worker=3 ready
+I, [2014-10-03T18:45:16.757429 #8262]  INFO -- : worker=0 ready
+I, [2014-10-03T18:45:38.556135 #8259]  INFO -- : reaped #<Process::Status: pid 8262 exit 0> worker=0
+I, [2014-10-03T18:45:38.556249 #8259]  INFO -- : reaped #<Process::Status: pid 8264 exit 0> worker=1
+I, [2014-10-03T18:45:38.556293 #8259]  INFO -- : reaped #<Process::Status: pid 8267 exit 0> worker=2
+I, [2014-10-03T18:45:38.556337 #8259]  INFO -- : reaped #<Process::Status: pid 8270 exit 0> worker=3
+I, [2014-10-03T18:45:38.556405 #8259]  INFO -- : master complete
+I, [2014-10-03T18:46:49.130240 #8371]  INFO -- : unlinking existing socket=/tmp/unicorn.eventson.sock
+I, [2014-10-03T18:46:49.130581 #8371]  INFO -- : listening on addr=/tmp/unicorn.eventson.sock fd=10
+I, [2014-10-03T18:46:49.130916 #8371]  INFO -- : listening on addr=0.0.0.0:6666 fd=11
+I, [2014-10-03T18:46:49.131021 #8371]  INFO -- : worker=0 spawning...
+I, [2014-10-03T18:46:49.131513 #8371]  INFO -- : worker=1 spawning...
+I, [2014-10-03T18:46:49.134402 #8371]  INFO -- : worker=2 spawning...
+I, [2014-10-03T18:46:49.134971 #8374]  INFO -- : worker=0 spawned pid=8374
+I, [2014-10-03T18:46:49.135107 #8374]  INFO -- : Refreshing Gem list
+I, [2014-10-03T18:46:49.138414 #8371]  INFO -- : worker=3 spawning...
+I, [2014-10-03T18:46:49.139607 #8376]  INFO -- : worker=1 spawned pid=8376
+I, [2014-10-03T18:46:49.139747 #8376]  INFO -- : Refreshing Gem list
+I, [2014-10-03T18:46:49.143595 #8371]  INFO -- : master process ready
+I, [2014-10-03T18:46:49.150762 #8379]  INFO -- : worker=2 spawned pid=8379
+I, [2014-10-03T18:46:49.151017 #8379]  INFO -- : Refreshing Gem list
+I, [2014-10-03T18:46:49.154605 #8382]  INFO -- : worker=3 spawned pid=8382
+I, [2014-10-03T18:46:49.154737 #8382]  INFO -- : Refreshing Gem list
+I, [2014-10-03T18:46:50.497487 #8382]  INFO -- : worker=3 ready
+I, [2014-10-03T18:46:50.504978 #8376]  INFO -- : worker=1 ready
+I, [2014-10-03T18:46:50.506213 #8374]  INFO -- : worker=0 ready
+I, [2014-10-03T18:46:50.508678 #8379]  INFO -- : worker=2 ready
+54.69.74.3 - - [03/Oct/2014 18:46:57] "GET / HTTP/1.0" 200 4401 0.0333
+54.69.74.3 - - [03/Oct/2014 18:46:57] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0130
+54.69.74.3 - - [03/Oct/2014 18:46:57] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0039
+54.69.74.3 - - [03/Oct/2014 18:46:57] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0081
+54.69.74.3 - - [03/Oct/2014 18:46:57] "GET /javascript/map.js HTTP/1.0" 304 - 0.0010
+54.69.74.3 - - [03/Oct/2014 18:46:57] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0010
+54.69.74.3 - - [03/Oct/2014 18:46:57] "GET /images/logo.png HTTP/1.0" 304 - 0.0010
+54.69.74.3 - - [03/Oct/2014 18:46:57] "GET /javascript/application.js HTTP/1.0" 304 - 0.0429
+54.69.74.3 - - [03/Oct/2014 18:46:57] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0324
+54.69.74.3 - - [03/Oct/2014 18:46:57] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0435
+W, [2014-10-03T18:47:29.266923 #8379]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 18:47:29] "POST /login HTTP/1.0" 302 - 0.0238
+54.69.74.3 - - [03/Oct/2014 18:47:29] "GET /500.html HTTP/1.0" 404 446 0.0028
+54.69.74.3 - - [03/Oct/2014 18:47:41] "GET /?date=&type= HTTP/1.0" 200 4401 0.0063
+54.69.74.3 - - [03/Oct/2014 18:47:43] "GET /?date=&type= HTTP/1.0" 200 4401 0.0286
+54.69.74.3 - - [03/Oct/2014 18:47:44] "GET /?date=&type= HTTP/1.0" 200 4401 0.0238
+54.69.74.3 - - [03/Oct/2014 18:53:06] "GET /?date=&type= HTTP/1.0" 200 4401 0.0065
+54.69.74.3 - - [03/Oct/2014 18:53:06] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0014
+54.69.74.3 - - [03/Oct/2014 18:53:06] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0012
+54.69.74.3 - - [03/Oct/2014 18:53:06] "GET /javascript/application.js HTTP/1.0" 304 - 0.0012
+54.69.74.3 - - [03/Oct/2014 18:53:06] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0102
+54.69.74.3 - - [03/Oct/2014 18:53:06] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0010
+54.69.74.3 - - [03/Oct/2014 18:53:06] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0024
+54.69.74.3 - - [03/Oct/2014 18:53:06] "GET /javascript/map.js HTTP/1.0" 304 - 0.0013
+54.69.74.3 - - [03/Oct/2014 18:53:06] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0009
+54.69.74.3 - - [03/Oct/2014 18:53:06] "GET /images/logo.png HTTP/1.0" 304 - 0.0007
+54.69.74.3 - - [03/Oct/2014 18:54:02] "GET /?date=&type= HTTP/1.0" 200 4401 0.0067
+54.69.74.3 - - [03/Oct/2014 18:54:02] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0010
+54.69.74.3 - - [03/Oct/2014 18:54:02] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0023
+54.69.74.3 - - [03/Oct/2014 18:54:02] "GET /javascript/application.js HTTP/1.0" 304 - 0.0009
+54.69.74.3 - - [03/Oct/2014 18:54:02] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0009
+54.69.74.3 - - [03/Oct/2014 18:54:02] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0010
+54.69.74.3 - - [03/Oct/2014 18:54:02] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0020
+54.69.74.3 - - [03/Oct/2014 18:54:02] "GET /images/logo.png HTTP/1.0" 304 - 0.0008
+54.69.74.3 - - [03/Oct/2014 18:54:02] "GET /javascript/map.js HTTP/1.0" 304 - 0.0022
+54.69.74.3 - - [03/Oct/2014 18:54:02] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0032
+54.69.74.3 - - [03/Oct/2014 18:54:58] "GET /?date=&type= HTTP/1.0" 200 4401 0.0071
+54.69.74.3 - - [03/Oct/2014 18:54:58] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0010
+54.69.74.3 - - [03/Oct/2014 18:54:58] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0011
+54.69.74.3 - - [03/Oct/2014 18:54:58] "GET /javascript/application.js HTTP/1.0" 304 - 0.0016
+54.69.74.3 - - [03/Oct/2014 18:54:58] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0023
+54.69.74.3 - - [03/Oct/2014 18:54:58] "GET /javascript/map.js HTTP/1.0" 304 - 0.0024
+54.69.74.3 - - [03/Oct/2014 18:54:58] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0041
+54.69.74.3 - - [03/Oct/2014 18:54:58] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0011
+54.69.74.3 - - [03/Oct/2014 18:54:58] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0024
+54.69.74.3 - - [03/Oct/2014 18:54:58] "GET /images/logo.png HTTP/1.0" 304 - 0.0007
+W, [2014-10-03T18:55:02.804349 #8379]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 18:55:02] "POST /login HTTP/1.0" 302 - 0.0070
+54.69.74.3 - - [03/Oct/2014 18:55:02] "GET /500.html HTTP/1.0" 404 446 0.0028
+I, [2014-10-03T18:58:26.996916 #8371]  INFO -- : reaped #<Process::Status: pid 8374 exit 0> worker=0
+I, [2014-10-03T18:58:26.997044 #8371]  INFO -- : reaped #<Process::Status: pid 8376 exit 0> worker=1
+I, [2014-10-03T18:58:26.997092 #8371]  INFO -- : reaped #<Process::Status: pid 8379 exit 0> worker=2
+I, [2014-10-03T18:58:26.997135 #8371]  INFO -- : reaped #<Process::Status: pid 8382 exit 0> worker=3
+I, [2014-10-03T18:58:26.997205 #8371]  INFO -- : master complete
+I, [2014-10-03T18:58:51.715822 #8551]  INFO -- : unlinking existing socket=/tmp/unicorn.eventson.sock
+I, [2014-10-03T18:58:51.716061 #8551]  INFO -- : listening on addr=/tmp/unicorn.eventson.sock fd=10
+I, [2014-10-03T18:58:51.716498 #8551]  INFO -- : listening on addr=0.0.0.0:6666 fd=11
+I, [2014-10-03T18:58:51.716607 #8551]  INFO -- : worker=0 spawning...
+I, [2014-10-03T18:58:51.717080 #8551]  INFO -- : worker=1 spawning...
+I, [2014-10-03T18:58:51.720158 #8551]  INFO -- : worker=2 spawning...
+I, [2014-10-03T18:58:51.720714 #8554]  INFO -- : worker=0 spawned pid=8554
+I, [2014-10-03T18:58:51.720833 #8554]  INFO -- : Refreshing Gem list
+I, [2014-10-03T18:58:51.722413 #8551]  INFO -- : worker=3 spawning...
+I, [2014-10-03T18:58:51.722922 #8556]  INFO -- : worker=1 spawned pid=8556
+I, [2014-10-03T18:58:51.723040 #8556]  INFO -- : Refreshing Gem list
+I, [2014-10-03T18:58:51.726402 #8551]  INFO -- : master process ready
+I, [2014-10-03T18:58:51.730804 #8559]  INFO -- : worker=2 spawned pid=8559
+I, [2014-10-03T18:58:51.730941 #8559]  INFO -- : Refreshing Gem list
+I, [2014-10-03T18:58:51.745648 #8562]  INFO -- : worker=3 spawned pid=8562
+I, [2014-10-03T18:58:51.745826 #8562]  INFO -- : Refreshing Gem list
+I, [2014-10-03T18:58:53.083467 #8554]  INFO -- : worker=0 ready
+I, [2014-10-03T18:58:53.088195 #8559]  INFO -- : worker=2 ready
+I, [2014-10-03T18:58:53.091072 #8562]  INFO -- : worker=3 ready
+I, [2014-10-03T18:58:53.091298 #8556]  INFO -- : worker=1 ready
+W, [2014-10-03T18:59:40.360020 #8554]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 18:59:40] "POST /login HTTP/1.0" 403 - 0.0105
+54.69.74.3 - - [03/Oct/2014 18:59:42] "GET / HTTP/1.0" 200 4401 0.0413
+W, [2014-10-03T18:59:48.388738 #8554]  WARN -- : attack prevented by Rack::Protection::HttpOrigin
+54.69.74.3 - - [03/Oct/2014 18:59:48] "POST /login HTTP/1.0" 403 - 0.0012
+I, [2014-10-03T19:05:17.190197 #8551]  INFO -- : reaped #<Process::Status: pid 8554 exit 0> worker=0
+I, [2014-10-03T19:05:17.190307 #8551]  INFO -- : reaped #<Process::Status: pid 8556 exit 0> worker=1
+I, [2014-10-03T19:05:17.190355 #8551]  INFO -- : reaped #<Process::Status: pid 8559 exit 0> worker=2
+I, [2014-10-03T19:05:17.190418 #8551]  INFO -- : reaped #<Process::Status: pid 8562 exit 0> worker=3
+I, [2014-10-03T19:05:17.190533 #8551]  INFO -- : master complete
+I, [2014-10-03T19:05:52.790727 #8727]  INFO -- : unlinking existing socket=/tmp/unicorn.eventson.sock
+I, [2014-10-03T19:05:52.790944 #8727]  INFO -- : listening on addr=/tmp/unicorn.eventson.sock fd=10
+I, [2014-10-03T19:05:52.791421 #8727]  INFO -- : listening on addr=0.0.0.0:6666 fd=11
+I, [2014-10-03T19:05:52.791546 #8727]  INFO -- : worker=0 spawning...
+I, [2014-10-03T19:05:52.794672 #8727]  INFO -- : worker=1 spawning...
+I, [2014-10-03T19:05:52.795068 #8727]  INFO -- : worker=2 spawning...
+I, [2014-10-03T19:05:52.797999 #8730]  INFO -- : worker=0 spawned pid=8730
+I, [2014-10-03T19:05:52.798195 #8730]  INFO -- : Refreshing Gem list
+I, [2014-10-03T19:05:52.799354 #8727]  INFO -- : worker=3 spawning...
+I, [2014-10-03T19:05:52.799878 #8732]  INFO -- : worker=1 spawned pid=8732
+I, [2014-10-03T19:05:52.799997 #8732]  INFO -- : Refreshing Gem list
+I, [2014-10-03T19:05:52.806568 #8727]  INFO -- : master process ready
+I, [2014-10-03T19:05:52.810743 #8735]  INFO -- : worker=2 spawned pid=8735
+I, [2014-10-03T19:05:52.810905 #8735]  INFO -- : Refreshing Gem list
+I, [2014-10-03T19:05:52.822678 #8738]  INFO -- : worker=3 spawned pid=8738
+I, [2014-10-03T19:05:52.822855 #8738]  INFO -- : Refreshing Gem list
+I, [2014-10-03T19:05:54.241827 #8732]  INFO -- : worker=1 ready
+I, [2014-10-03T19:05:54.248989 #8730]  INFO -- : worker=0 ready
+I, [2014-10-03T19:05:54.251505 #8738]  INFO -- : worker=3 ready
+I, [2014-10-03T19:05:54.253420 #8735]  INFO -- : worker=2 ready
+54.69.74.3 - - [03/Oct/2014 19:06:32] "POST /login HTTP/1.0" 302 - 0.0331
+54.69.74.3 - - [03/Oct/2014 19:06:32] "GET /500.html HTTP/1.0" 404 446 0.0167
+54.69.74.3 - - [03/Oct/2014 19:06:38] "POST /login HTTP/1.0" 302 - 0.0047
+54.69.74.3 - - [03/Oct/2014 19:06:38] "GET /500.html HTTP/1.0" 404 446 0.0183
+54.69.74.3 - - [03/Oct/2014 19:10:25] "POST /login HTTP/1.0" 302 - 0.0048
+54.69.74.3 - - [03/Oct/2014 19:10:25] "GET / HTTP/1.0" 200 4158 0.0530
+54.69.74.3 - - [03/Oct/2014 19:10:25] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0046
+54.69.74.3 - - [03/Oct/2014 19:10:25] "GET /javascript/application.js HTTP/1.0" 304 - 0.0026
+54.69.74.3 - - [03/Oct/2014 19:10:25] "GET /javascript/map.js HTTP/1.0" 304 - 0.0017
+54.69.74.3 - - [03/Oct/2014 19:10:25] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0077
+54.69.74.3 - - [03/Oct/2014 19:10:25] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0104
+54.69.74.3 - - [03/Oct/2014 19:10:25] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0016
+54.69.74.3 - - [03/Oct/2014 19:10:25] "GET /images/logo.png HTTP/1.0" 304 - 0.0015
+54.69.74.3 - - [03/Oct/2014 19:10:25] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0467
+54.69.74.3 - - [03/Oct/2014 19:10:25] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0432
+54.69.74.3 - - [03/Oct/2014 19:11:23] "GET / HTTP/1.0" 200 4158 0.0085
+54.69.74.3 - - [03/Oct/2014 19:13:35] "GET /?date=&type= HTTP/1.0" 200 4158 0.0309
+54.69.74.3 - - [03/Oct/2014 19:13:37] "GET /?date=&type= HTTP/1.0" 200 4158 0.0256
+54.69.74.3 - - [03/Oct/2014 19:13:42] "GET /?date=&type= HTTP/1.0" 200 4158 0.0083
+54.69.74.3 - - [03/Oct/2014 19:13:43] "GET /?date=&type= HTTP/1.0" 200 4158 0.0221
+54.69.74.3 - - [03/Oct/2014 19:13:45] "GET /?date=&type= HTTP/1.0" 200 4158 0.0082
+I, [2014-10-03T19:17:38.079922 #8727]  INFO -- : reaped #<Process::Status: pid 8730 exit 0> worker=0
+I, [2014-10-03T19:17:38.080012 #8727]  INFO -- : reaped #<Process::Status: pid 8732 exit 0> worker=1
+I, [2014-10-03T19:17:38.080096 #8727]  INFO -- : reaped #<Process::Status: pid 8735 exit 0> worker=2
+I, [2014-10-03T19:17:38.080151 #8727]  INFO -- : reaped #<Process::Status: pid 8738 exit 0> worker=3
+I, [2014-10-03T19:17:38.080219 #8727]  INFO -- : master complete
+I, [2014-10-03T19:18:01.322129 #9036]  INFO -- : unlinking existing socket=/tmp/unicorn.eventson.sock
+I, [2014-10-03T19:18:01.322441 #9036]  INFO -- : listening on addr=/tmp/unicorn.eventson.sock fd=10
+I, [2014-10-03T19:18:01.322594 #9036]  INFO -- : worker=0 spawning...
+I, [2014-10-03T19:18:01.323159 #9036]  INFO -- : worker=1 spawning...
+I, [2014-10-03T19:18:01.323534 #9036]  INFO -- : worker=2 spawning...
+I, [2014-10-03T19:18:01.324087 #9039]  INFO -- : worker=0 spawned pid=9039
+I, [2014-10-03T19:18:01.325554 #9039]  INFO -- : Refreshing Gem list
+I, [2014-10-03T19:18:01.326413 #9036]  INFO -- : worker=3 spawning...
+I, [2014-10-03T19:18:01.326954 #9041]  INFO -- : worker=1 spawned pid=9041
+I, [2014-10-03T19:18:01.327078 #9041]  INFO -- : Refreshing Gem list
+I, [2014-10-03T19:18:01.334489 #9036]  INFO -- : master process ready
+I, [2014-10-03T19:18:01.338738 #9044]  INFO -- : worker=2 spawned pid=9044
+I, [2014-10-03T19:18:01.338865 #9044]  INFO -- : Refreshing Gem list
+I, [2014-10-03T19:18:01.350551 #9047]  INFO -- : worker=3 spawned pid=9047
+I, [2014-10-03T19:18:01.350720 #9047]  INFO -- : Refreshing Gem list
+I, [2014-10-03T19:18:02.704032 #9044]  INFO -- : worker=2 ready
+I, [2014-10-03T19:18:02.705850 #9047]  INFO -- : worker=3 ready
+I, [2014-10-03T19:18:02.707110 #9039]  INFO -- : worker=0 ready
+I, [2014-10-03T19:18:02.708016 #9041]  INFO -- : worker=1 ready
+70.36.63.26 - - [03/Oct/2014 19:18:08] "GET /?date=&type= HTTP/1.0" 200 4158 0.0553
+70.36.63.26 - - [03/Oct/2014 19:18:08] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0023
+70.36.63.26 - - [03/Oct/2014 19:18:08] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0324
+70.36.63.26 - - [03/Oct/2014 19:18:08] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0083
+70.36.63.26 - - [03/Oct/2014 19:18:08] "GET /javascript/map.js HTTP/1.0" 304 - 0.0044
+70.36.63.26 - - [03/Oct/2014 19:18:08] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0084
+70.36.63.26 - - [03/Oct/2014 19:18:08] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0014
+70.36.63.26 - - [03/Oct/2014 19:18:08] "GET /images/logo.png HTTP/1.0" 304 - 0.0014
+70.36.63.26 - - [03/Oct/2014 19:18:08] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0675
+70.36.63.26 - - [03/Oct/2014 19:18:08] "GET /javascript/application.js HTTP/1.0" 304 - 0.0685
+70.36.63.26 - - [03/Oct/2014 19:18:10] "GET / HTTP/1.0" 200 4158 0.0087
+70.36.63.26 - - [03/Oct/2014 19:18:11] "GET / HTTP/1.0" 200 4158 0.0284
+70.36.63.26 - - [03/Oct/2014 19:21:37] "GET / HTTP/1.0" 200 4158 0.0266
+70.36.63.26 - - [03/Oct/2014 19:21:37] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0018
+70.36.63.26 - - [03/Oct/2014 19:21:37] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0036
+70.36.63.26 - - [03/Oct/2014 19:21:37] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0060
+70.36.63.26 - - [03/Oct/2014 19:21:37] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0039
+70.36.63.26 - - [03/Oct/2014 19:21:37] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0029
+70.36.63.26 - - [03/Oct/2014 19:21:37] "GET /javascript/application.js HTTP/1.0" 304 - 0.0057
+70.36.63.26 - - [03/Oct/2014 19:21:37] "GET /javascript/map.js HTTP/1.0" 304 - 0.0022
+70.36.63.26 - - [03/Oct/2014 19:21:37] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0032
+70.36.63.26 - - [03/Oct/2014 19:21:37] "GET /images/logo.png HTTP/1.0" 304 - 0.0020
+70.36.63.26 - - [03/Oct/2014 19:22:48] "GET / HTTP/1.0" 200 4158 0.0105
+70.36.63.26 - - [03/Oct/2014 19:22:48] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0016
+70.36.63.26 - - [03/Oct/2014 19:22:48] "GET /javascript/application.js HTTP/1.0" 304 - 0.0026
+70.36.63.26 - - [03/Oct/2014 19:22:48] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0037
+70.36.63.26 - - [03/Oct/2014 19:22:48] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0014
+70.36.63.26 - - [03/Oct/2014 19:22:49] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0014
+70.36.63.26 - - [03/Oct/2014 19:22:49] "GET /images/logo.png HTTP/1.0" 304 - 0.0033
+70.36.63.26 - - [03/Oct/2014 19:22:49] "GET /javascript/map.js HTTP/1.0" 304 - 0.0030
+70.36.63.26 - - [03/Oct/2014 19:22:49] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0033
+70.36.63.26 - - [03/Oct/2014 19:22:49] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0014
+70.36.63.26 - - [03/Oct/2014 19:22:50] "GET / HTTP/1.0" 200 4158 0.0270
+70.36.63.26 - - [03/Oct/2014 19:22:50] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0025
+70.36.63.26 - - [03/Oct/2014 19:22:50] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0036
+70.36.63.26 - - [03/Oct/2014 19:22:50] "GET /javascript/application.js HTTP/1.0" 304 - 0.0018
+70.36.63.26 - - [03/Oct/2014 19:22:50] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0040
+70.36.63.26 - - [03/Oct/2014 19:22:50] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0123
+70.36.63.26 - - [03/Oct/2014 19:22:50] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0033
+70.36.63.26 - - [03/Oct/2014 19:22:50] "GET /javascript/map.js HTTP/1.0" 304 - 0.0031
+70.36.63.26 - - [03/Oct/2014 19:22:50] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0029
+70.36.63.26 - - [03/Oct/2014 19:22:50] "GET /images/logo.png HTTP/1.0" 304 - 0.0014
+70.36.63.26 - - [03/Oct/2014 19:22:59] "GET /public HTTP/1.0" 404 439 0.0021
+70.36.63.26 - - [03/Oct/2014 19:22:59] "GET /__sinatra__/404.png HTTP/1.0" 200 18893 0.0037
+70.36.63.26 - - [03/Oct/2014 19:23:01] "GET /public HTTP/1.0" 404 439 0.0020
+70.36.63.26 - - [03/Oct/2014 19:25:05] "GET / HTTP/1.0" 200 4158 0.0085
+70.36.63.26 - - [03/Oct/2014 19:25:05] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0017
+70.36.63.26 - - [03/Oct/2014 19:25:05] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0044
+70.36.63.26 - - [03/Oct/2014 19:25:05] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0019
+70.36.63.26 - - [03/Oct/2014 19:25:05] "GET /javascript/application.js HTTP/1.0" 304 - 0.0030
+70.36.63.26 - - [03/Oct/2014 19:25:05] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0017
+70.36.63.26 - - [03/Oct/2014 19:25:05] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0019
+70.36.63.26 - - [03/Oct/2014 19:25:05] "GET /javascript/map.js HTTP/1.0" 304 - 0.0016
+70.36.63.26 - - [03/Oct/2014 19:25:05] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0030
+70.36.63.26 - - [03/Oct/2014 19:25:05] "GET /images/logo.png HTTP/1.0" 304 - 0.0022
+70.36.63.26 - - [03/Oct/2014 19:46:23] "GET / HTTP/1.0" 200 4158 0.0087
+70.36.63.26 - - [03/Oct/2014 19:46:23] "GET /stylesheets/normalize.css HTTP/1.0" 304 - 0.0018
+70.36.63.26 - - [03/Oct/2014 19:46:23] "GET /stylesheets/application.css HTTP/1.0" 304 - 0.0017
+70.36.63.26 - - [03/Oct/2014 19:46:23] "GET /stylesheets/jquery.timepicker.css HTTP/1.0" 304 - 0.0020
+70.36.63.26 - - [03/Oct/2014 19:46:23] "GET /javascript/application.js HTTP/1.0" 304 - 0.0029
+70.36.63.26 - - [03/Oct/2014 19:46:23] "GET /javascript/jquery.timepicker.js HTTP/1.0" 304 - 0.0017
+70.36.63.26 - - [03/Oct/2014 19:46:23] "GET /javascript/geopo.js HTTP/1.0" 304 - 0.0065
+70.36.63.26 - - [03/Oct/2014 19:46:23] "GET /javascript/map.js HTTP/1.0" 304 - 0.0082
+70.36.63.26 - - [03/Oct/2014 19:46:23] "GET /javascript/infobubble.js HTTP/1.0" 304 - 0.0156
+70.36.63.26 - - [03/Oct/2014 19:46:23] "GET /images/logo.png HTTP/1.0" 304 - 0.0115
+70.36.63.26 - - [03/Oct/2014 19:46:26] "GET / HTTP/1.0" 200 4158 0.0084
+70.36.63.26 - - [03/Oct/2014 19:51:55] "GET / HTTP/1.0" 200 4158 0.0084
+70.36.63.26 - - [03/Oct/2014 19:51:57] "GET / HTTP/1.0" 200 4158 0.0085
+70.36.63.26 - - [03/Oct/2014 20:33:58] "GET / HTTP/1.0" 200 4158 0.0087
+70.36.63.26 - - [03/Oct/2014 20:34:06] "GET / HTTP/1.0" 200 4158 0.0085
+70.36.63.26 - - [03/Oct/2014 20:37:59] "GET / HTTP/1.0" 200 4158 0.0177
+70.36.63.26 - - [03/Oct/2014 20:41:59] "GET / HTTP/1.0" 200 4158 0.0085
+70.36.63.26 - - [03/Oct/2014 20:42:02] "GET / HTTP/1.0" 200 4158 0.0084
+70.36.63.26 - - [03/Oct/2014 20:42:04] "GET /events/new HTTP/1.0" 200 7866 0.0105
+70.36.63.26 - - [03/Oct/2014 20:49:50] "GET / HTTP/1.0" 200 4158 0.0097
+70.36.63.26 - - [03/Oct/2014 20:54:00] "GET / HTTP/1.0" 200 4158 0.0082
+70.36.63.26 - - [03/Oct/2014 20:54:03] "GET / HTTP/1.0" 200 4158 0.0086
+70.36.63.26 - - [03/Oct/2014 20:57:34] "GET / HTTP/1.0" 200 4158 0.0089
+70.36.63.26 - - [03/Oct/2014 20:57:36] "GET /?date=&type= HTTP/1.0" 200 4158 0.0077
+70.36.63.26 - - [03/Oct/2014 20:57:44] "GET / HTTP/1.0" 200 4158 0.0078
+70.36.63.26 - - [03/Oct/2014 20:58:09] "GET / HTTP/1.0" 200 4158 0.0079
+70.36.63.26 - - [03/Oct/2014 20:59:23] "GET /events/new HTTP/1.0" 200 7866 0.0101
+70.36.63.26 - - [03/Oct/2014 21:01:38] "GET / HTTP/1.0" 200 4158 0.0084
+70.36.63.26 - - [03/Oct/2014 21:04:03] "GET / HTTP/1.0" 200 4158 0.0083
+70.36.63.26 - - [03/Oct/2014 21:12:08] "GET / HTTP/1.0" 200 4158 0.0077
+70.36.63.26 - - [03/Oct/2014 21:12:11] "GET /events/new HTTP/1.0" 200 7866 0.0093
+70.36.63.26 - - [03/Oct/2014 21:12:54] "POST /events HTTP/1.0" 302 - 0.0313
+70.36.63.26 - - [03/Oct/2014 21:12:54] "GET /events/1 HTTP/1.0" 200 7425 0.0313
+70.36.63.26 - - [03/Oct/2014 21:13:18] "GET / HTTP/1.0" 200 4629 0.0099
+70.36.63.26 - - [03/Oct/2014 21:13:23] "GET /events/1 HTTP/1.0" 200 7425 0.0311
+70.36.63.26 - - [03/Oct/2014 21:13:30] "GET /?date=04%2F10%2F2014&type= HTTP/1.0" 200 4629 0.0088
+70.36.63.26 - - [03/Oct/2014 21:13:55] "GET /?date=04%2F10%2F2014&type= HTTP/1.0" 200 4629 0.0109
+70.36.63.26 - - [03/Oct/2014 21:35:32] "GET / HTTP/1.0" 200 4629 0.0200
+70.36.63.26 - - [03/Oct/2014 21:35:44] "GET /?date=&type=comedy HTTP/1.0" 200 4629 0.0091
+70.36.63.26 - - [03/Oct/2014 21:54:19] "GET /?date=&type=comedy HTTP/1.0" 200 4629 0.0091
+70.36.63.26 - - [03/Oct/2014 22:46:16] "GET / HTTP/1.0" 200 4629 0.0085
+70.36.63.26 - - [03/Oct/2014 23:06:29] "GET / HTTP/1.0" 200 4629 0.0121
+70.36.63.26 - - [03/Oct/2014 23:08:24] "GET / HTTP/1.0" 200 4629 0.0091
+70.36.63.26 - - [03/Oct/2014 23:08:52] "GET / HTTP/1.0" 200 4629 0.0098
+66.249.84.27 - - [03/Oct/2014 23:16:14] "GET / HTTP/1.0" 200 4872 0.0075
+117.21.173.140 - - [03/Oct/2014 23:37:28] "GET /manager/html HTTP/1.0" 404 445 0.0015
+70.36.63.26 - - [03/Oct/2014 23:39:19] "GET / HTTP/1.0" 200 4629 0.0086
+24.114.45.105 - - [03/Oct/2014 23:40:19] "GET / HTTP/1.0" 200 4872 0.0070
+24.114.45.105 - - [03/Oct/2014 23:40:39] "GET /events/1 HTTP/1.0" 200 7394 0.0095
+24.114.45.105 - - [03/Oct/2014 23:40:45] "GET /events/1 HTTP/1.0" 200 7394 0.0090
+24.114.45.105 - - [03/Oct/2014 23:40:45] "GET /events/1 HTTP/1.0" 200 7394 0.0110
+24.114.22.250 - - [03/Oct/2014 23:41:40] "GET / HTTP/1.0" 200 4872 0.0073
+24.114.45.105 - - [03/Oct/2014 23:41:41] "GET / HTTP/1.0" 200 4872 0.0074
+24.114.22.250 - - [03/Oct/2014 23:41:57] "GET / HTTP/1.0" 200 4872 0.0073
+24.114.22.250 - - [03/Oct/2014 23:42:09] "GET /events/1 HTTP/1.0" 200 7394 0.0188
+24.114.45.105 - - [03/Oct/2014 23:42:10] "GET /events/1 HTTP/1.0" 200 7394 0.0204
+76.164.225.90 - - [03/Oct/2014 23:42:58] "GET / HTTP/1.0" 200 4872 0.0095
+70.36.63.26 - - [03/Oct/2014 23:43:02] "GET / HTTP/1.0" 200 4872 0.0072
+70.36.63.26 - - [03/Oct/2014 23:43:14] "GET /events/1 HTTP/1.0" 200 7394 0.0096
+70.36.63.26 - - [03/Oct/2014 23:43:46] "GET / HTTP/1.0" 200 4872 0.0074
+50.67.174.143 - - [04/Oct/2014 02:04:44] "GET / HTTP/1.0" 200 4629 0.0094
+50.67.174.143 - - [04/Oct/2014 02:04:54] "GET /events/1 HTTP/1.0" 200 7425 0.0135
+50.67.174.143 - - [04/Oct/2014 02:04:56] "GET / HTTP/1.0" 200 4629 0.0116
+50.67.174.143 - - [04/Oct/2014 02:04:58] "GET /events/new HTTP/1.0" 200 7918 0.0108
+50.67.174.143 - - [04/Oct/2014 02:10:32] "POST /events HTTP/1.0" 302 - 0.1033
+50.67.174.143 - - [04/Oct/2014 02:10:32] "GET /events/2 HTTP/1.0" 200 7402 0.0115
+50.67.174.143 - - [04/Oct/2014 02:10:39] "GET / HTTP/1.0" 200 5079 0.0089
+50.67.174.143 - - [04/Oct/2014 02:10:52] "GET /?date=&type=art HTTP/1.0" 200 4606 0.0104
+50.67.174.143 - - [04/Oct/2014 02:11:02] "GET /?date=&type=comedy HTTP/1.0" 200 4629 0.0088
+199.7.159.33 - - [04/Oct/2014 02:32:48] "GET / HTTP/1.0" 200 5322 0.0087
+123.249.19.23 - - [04/Oct/2014 06:33:39] "GET /manager/html HTTP/1.0" 404 445 0.0016
+192.3.45.107 - - [04/Oct/2014 08:47:54] "GET /etc/lib/pChart2/examples/index.php HTTP/1.0" 404 467 0.0015
+198.20.69.74 - - [04/Oct/2014 12:27:37] "GET / HTTP/1.0" 200 5322 0.0073
+184.73.149.171 - - [04/Oct/2014 18:12:36] "HEAD / HTTP/1.0" 200 5322 0.0081
+184.73.149.171 - - [04/Oct/2014 18:12:36] "GET /clientaccesspolicy.xml HTTP/1.0" 404 455 0.0016
+198.20.69.74 - - [04/Oct/2014 21:32:57] "GET / HTTP/1.0" 200 5322 0.0073
+192.3.45.107 - - [05/Oct/2014 00:51:46] "GET /etc/lib/pChart2/examples/index.php HTTP/1.0" 404 467 0.0016
+192.3.45.107 - - [05/Oct/2014 08:11:39] "GET /etc/lib/pChart2/examples/index.php HTTP/1.0" 404 467 0.0021
+179.107.41.6 - - [05/Oct/2014 09:08:06] "HEAD / HTTP/1.0" 200 5322 0.0076
+179.107.41.6 - - [05/Oct/2014 09:09:02] "GET /cgi-sys/entropysearch.cgi HTTP/1.0" 404 458 0.0015
+179.107.41.6 - - [05/Oct/2014 09:09:02] "GET /cgi-sys/FormMail-clone.cgi HTTP/1.0" 404 459 0.0014
+179.107.41.6 - - [05/Oct/2014 09:09:03] "GET /xul/ HTTP/1.0" 404 437 0.0022
+179.107.41.6 - - [05/Oct/2014 09:09:03] "GET /cgi-bin/status HTTP/1.0" 404 447 0.0015
+179.107.41.6 - - [05/Oct/2014 09:09:04] "GET /tmUnblock.cgi HTTP/1.0" 404 446 0.0015
+179.107.41.6 - - [05/Oct/2014 09:09:04] "GET /gitweb/ HTTP/1.0" 404 440 0.0015
+179.107.41.6 - - [05/Oct/2014 09:09:05] "GET /gitweb.cgi HTTP/1.0" 404 443 0.0018
+179.107.41.6 - - [05/Oct/2014 09:09:06] "GET /gitweb/gitweb.cgi HTTP/1.0" 404 450 0.0015
+179.107.41.6 - - [05/Oct/2014 09:09:06] "GET /cgi-bin/ HTTP/1.0" 404 441 0.0016
+179.107.41.6 - - [05/Oct/2014 09:09:06] "GET /cgi-bin/php HTTP/1.0" 404 444 0.0016
+179.107.41.6 - - [05/Oct/2014 09:09:07] "GET /cgi-bin/php5 HTTP/1.0" 404 445 0.0014
+179.107.41.6 - - [05/Oct/2014 09:09:07] "GET /cgi-bin/php4 HTTP/1.0" 404 445 0.0015
+179.107.41.6 - - [05/Oct/2014 09:09:08] "GET /cgi-bin/php-cgi HTTP/1.0" 404 448 0.0015
+179.107.41.6 - - [05/Oct/2014 09:09:09] "GET /cgi-bin/php.cgi HTTP/1.0" 404 448 0.0015
+179.107.41.6 - - [05/Oct/2014 09:09:09] "GET /cgi-bin/firmwarecfg HTTP/1.0" 404 452 0.0016
+179.107.41.6 - - [05/Oct/2014 09:09:10] "GET /cgi-bin/%2f/admin.html HTTP/1.0" 404 451 0.0015
+179.107.41.6 - - [05/Oct/2014 09:09:10] "GET /cgi-bin/admin.html HTTP/1.0" 404 451 0.0015
+179.107.41.6 - - [05/Oct/2014 09:09:11] "GET /cgi-bin/test-cgi HTTP/1.0" 404 449 0.0015
+179.107.41.6 - - [05/Oct/2014 09:09:11] "GET /sys-cgi HTTP/1.0" 404 440 0.0015
+179.107.41.6 - - [05/Oct/2014 09:09:12] "GET /dana-na/auth/url_default/welcome.cgi HTTP/1.0" 404 469 0.0016
+179.107.41.6 - - [05/Oct/2014 09:09:12] "GET /cgi-bin/tree.php HTTP/1.0" 404 449 0.0015
+179.107.41.6 - - [05/Oct/2014 09:09:13] "GET /cgi-bin/ICuGI/EST/blast_detail.cgi HTTP/1.0" 404 467 0.0015
+179.107.41.6 - - [05/Oct/2014 09:09:13] "GET /cgi-bin/hello HTTP/1.0" 404 446 0.0015
+179.107.41.6 - - [05/Oct/2014 09:09:14] "GET /cgi-sys/defaultwebpage.cgi HTTP/1.0" 404 459 0.0015
+179.107.41.6 - - [05/Oct/2014 09:09:14] "GET /cgi-bin/w3mman2html.cgi HTTP/1.0" 404 456 0.0018
+179.107.41.6 - - [05/Oct/2014 09:09:15] "GET /cgi-bin/status/status.cgi HTTP/1.0" 404 458 0.0015
+80.82.78.87 - - [05/Oct/2014 10:06:00] "GET /admin/config.php HTTP/1.0" 404 449 0.0014
+117.21.173.140 - - [05/Oct/2014 10:55:55] "GET /manager/html HTTP/1.0" 404 445 0.0014
+54.87.87.26 - - [05/Oct/2014 12:08:22] "HEAD / HTTP/1.0" 200 5322 0.0075
+54.87.87.26 - - [05/Oct/2014 12:08:22] "GET /clientaccesspolicy.xml HTTP/1.0" 404 455 0.0015
+66.249.84.27 - - [05/Oct/2014 17:58:19] "GET / HTTP/1.0" 200 5322 0.0076
+195.154.136.228 - - [05/Oct/2014 19:40:02] "GET / HTTP/1.0" 200 5322 0.0071
+61.174.51.47 - - [05/Oct/2014 23:19:08] "GET /manager/html HTTP/1.0" 404 445 0.0016
+195.154.136.228 - - [06/Oct/2014 01:51:23] "GET / HTTP/1.0" 200 5322 0.0090
+120.192.31.182 - - [06/Oct/2014 03:33:20] "GET /manager/html HTTP/1.0" 404 445 0.0017
+117.21.191.206 - - [06/Oct/2014 05:39:11] "GET /manager/html HTTP/1.0" 404 445 0.0015
+54.226.88.162 - - [06/Oct/2014 06:04:36] "HEAD / HTTP/1.0" 200 5322 0.0078
+54.226.88.162 - - [06/Oct/2014 06:04:36] "GET /clientaccesspolicy.xml HTTP/1.0" 404 455 0.0027
+193.174.89.19 - - [06/Oct/2014 17:26:52] "GET / HTTP/1.0" 200 5322 0.0084
+123.157.150.56 - - [06/Oct/2014 23:04:22] "GET /manager/html HTTP/1.0" 404 445 0.0014
+70.36.63.26 - - [06/Oct/2014 23:44:02] "GET / HTTP/1.0" 200 5079 0.0094
+112.237.109.142 - - [07/Oct/2014 00:16:15] "GET / HTTP/1.0" 200 5322 0.0125
+117.21.173.140 - - [07/Oct/2014 00:19:47] "GET /manager/html HTTP/1.0" 404 445 0.0018
+54.162.91.212 - - [07/Oct/2014 00:48:58] "HEAD / HTTP/1.0" 200 5322 0.0084
+54.162.91.212 - - [07/Oct/2014 00:48:58] "GET /clientaccesspolicy.xml HTTP/1.0" 404 455 0.0017
+210.17.38.217 - - [07/Oct/2014 04:43:49] "HEAD / HTTP/1.0" 200 5322 0.0080
+54.92.150.61 - - [07/Oct/2014 18:52:15] "HEAD / HTTP/1.0" 200 5322 0.0105
+54.92.150.61 - - [07/Oct/2014 18:52:15] "GET /clientaccesspolicy.xml HTTP/1.0" 404 455 0.0016
+70.36.63.26 - - [07/Oct/2014 20:19:06] "GET / HTTP/1.0" 200 5322 0.0080
+65.207.23.201 - - [07/Oct/2014 22:11:05] "GET /user/soapCaller.bs HTTP/1.0" 404 451 0.0015
+70.36.63.26 - - [08/Oct/2014 00:01:31] "GET / HTTP/1.0" 200 5322 0.0081
+70.36.63.26 - - [08/Oct/2014 00:02:25] "GET /signup HTTP/1.0" 200 5255 0.0100
+70.36.63.26 - - [08/Oct/2014 00:03:26] "POST /signup HTTP/1.0" 302 - 0.0117
+70.36.63.26 - - [08/Oct/2014 00:03:26] "GET / HTTP/1.0" 200 5322 0.0076
+70.36.63.26 - - [08/Oct/2014 00:03:42] "POST /login HTTP/1.0" 302 - 0.0045
+70.36.63.26 - - [08/Oct/2014 00:03:42] "GET / HTTP/1.0" 200 4889 0.0101
+70.36.63.26 - - [08/Oct/2014 00:05:44] "GET /events/2 HTTP/1.0" 200 7212 0.0113
+70.36.63.26 - - [08/Oct/2014 00:07:28] "GET / HTTP/1.0" 200 4889 0.0098
+70.36.63.26 - - [08/Oct/2014 00:07:40] "POST /logout HTTP/1.0" 302 - 0.0063
+70.36.63.26 - - [08/Oct/2014 00:07:40] "GET / HTTP/1.0" 200 5322 0.0076
+67.21.194.9 - - [08/Oct/2014 03:26:58] "GET /events/1 HTTP/1.0" 200 7394 0.0091
+67.21.194.9 - - [08/Oct/2014 03:27:09] "GET / HTTP/1.0" 200 5322 0.0080
+67.21.194.9 - - [08/Oct/2014 03:27:42] "GET /?date=&type=art HTTP/1.0" 200 4849 0.0073
+67.21.194.9 - - [08/Oct/2014 03:28:00] "GET /signup HTTP/1.0" 200 5255 0.0067
+67.21.194.9 - - [08/Oct/2014 03:28:43] "GET /events/2 HTTP/1.0" 200 7371 0.0092
+67.21.194.9 - - [08/Oct/2014 03:28:53] "POST /login HTTP/1.0" 302 - 0.0042
+67.21.194.9 - - [08/Oct/2014 03:28:53] "GET / HTTP/1.0" 200 5322 0.0075
+67.21.194.9 - - [08/Oct/2014 03:28:59] "POST /login HTTP/1.0" 302 - 0.0025
+67.21.194.9 - - [08/Oct/2014 03:28:59] "GET / HTTP/1.0" 200 5322 0.0091
+67.21.194.9 - - [08/Oct/2014 03:29:09] "POST /login HTTP/1.0" 302 - 0.0024
+67.21.194.9 - - [08/Oct/2014 03:29:09] "GET / HTTP/1.0" 200 5322 0.0069
+67.21.194.9 - - [08/Oct/2014 03:29:18] "POST /login HTTP/1.0" 302 - 0.0024
+67.21.194.9 - - [08/Oct/2014 03:29:18] "GET / HTTP/1.0" 200 5322 0.0076
+67.21.194.9 - - [08/Oct/2014 03:29:21] "GET /signup HTTP/1.0" 200 5255 0.0049
+67.21.194.9 - - [08/Oct/2014 03:29:36] "GET /signup HTTP/1.0" 200 5255 0.0057
+67.21.194.9 - - [08/Oct/2014 03:30:58] "GET / HTTP/1.0" 200 5322 0.0073
+67.21.194.9 - - [08/Oct/2014 03:31:08] "GET /events/2 HTTP/1.0" 200 7371 0.0087
+67.21.194.9 - - [08/Oct/2014 03:31:54] "GET / HTTP/1.0" 200 5322 0.0079
+54.205.245.1 - - [08/Oct/2014 12:22:16] "HEAD / HTTP/1.0" 200 5322 0.0091
+54.205.245.1 - - [08/Oct/2014 12:22:16] "GET /clientaccesspolicy.xml HTTP/1.0" 404 455 0.0017
+71.6.135.131 - - [08/Oct/2014 12:43:26] "GET / HTTP/1.0" 200 5322 0.0077
+71.6.135.131 - - [08/Oct/2014 12:43:26] "GET /robots.txt HTTP/1.0" 404 443 0.0017
+117.21.173.140 - - [08/Oct/2014 16:34:42] "GET /manager/html HTTP/1.0" 404 445 0.0013
+50.17.42.159 - - [09/Oct/2014 06:53:18] "HEAD / HTTP/1.0" 200 5322 0.0117
+50.17.42.159 - - [09/Oct/2014 06:53:18] "GET /clientaccesspolicy.xml HTTP/1.0" 404 455 0.0023
+118.123.119.14 - - [09/Oct/2014 16:47:22] "GET /manager/html HTTP/1.0" 404 445 0.0019
+54.166.214.33 - - [09/Oct/2014 18:11:53] "HEAD / HTTP/1.0" 200 5322 0.0082
+54.166.214.33 - - [09/Oct/2014 18:11:54] "GET /clientaccesspolicy.xml HTTP/1.0" 404 455 0.0017
+222.73.236.108 - - [09/Oct/2014 18:32:24] "GET /manager/html HTTP/1.0" 404 445 0.0017
+W, [2014-10-09T22:03:40.856171 #9044]  WARN -- : attack prevented by Rack::Protection::SessionHijacking
+70.36.63.26 - - [09/Oct/2014 22:03:40] "GET / HTTP/1.0" 200 5322 0.0086
+70.36.63.26 - - [09/Oct/2014 22:03:52] "GET / HTTP/1.0" 200 5322 0.0087
+70.36.63.26 - - [09/Oct/2014 22:04:04] "GET /signup HTTP/1.0" 200 5255 0.0059
+[deprecated] I18n.enforce_available_locales will default to true in the future. If you really want to skip validation of your locale you can set I18n.enforce_available_locales = false to avoid this message.
+70.36.63.26 - - [09/Oct/2014 22:04:22] "POST /signup HTTP/1.0" 200 5446 0.0315
+70.36.63.26 - - [09/Oct/2014 22:04:50] "POST /signup HTTP/1.0" 302 - 0.0117
+70.36.63.26 - - [09/Oct/2014 22:04:50] "GET / HTTP/1.0" 200 5322 0.0087
+70.36.63.26 - - [09/Oct/2014 22:04:55] "POST /login HTTP/1.0" 302 - 0.0074
+70.36.63.26 - - [09/Oct/2014 22:04:56] "GET / HTTP/1.0" 200 4889 0.0102
+70.36.63.26 - - [09/Oct/2014 22:05:14] "GET /?date=22%2F10%2F2014&type= HTTP/1.0" 200 3968 0.0084
+66.249.84.27 - - [09/Oct/2014 22:39:20] "GET / HTTP/1.0" 200 5322 0.0080
+50.67.174.143 - - [10/Oct/2014 02:03:21] "GET / HTTP/1.0" 200 4889 0.0094
+50.67.174.143 - - [10/Oct/2014 02:03:56] "POST /logout HTTP/1.0" 302 - 0.0019
+50.67.174.143 - - [10/Oct/2014 02:03:56] "GET / HTTP/1.0" 200 5322 0.0081
+50.67.174.143 - - [10/Oct/2014 02:03:59] "GET /signup HTTP/1.0" 200 5255 0.0057
+50.67.174.143 - - [10/Oct/2014 02:04:15] "GET / HTTP/1.0" 200 5322 0.0075
+198.20.69.74 - - [10/Oct/2014 07:38:52] "GET / HTTP/1.0" 200 5322 0.0077
+198.20.69.74 - - [10/Oct/2014 07:38:52] "GET /robots.txt HTTP/1.0" 404 443 0.0015
+198.20.69.74 - - [10/Oct/2014 07:39:09] "GET / HTTP/1.0" 200 5322 0.0077
+198.20.69.74 - - [10/Oct/2014 07:39:09] "GET /robots.txt HTTP/1.0" 404 443 0.0019
+85.25.103.50 - - [10/Oct/2014 09:12:08] "GET / HTTP/1.0" 200 5322 0.0075
+117.21.173.140 - - [10/Oct/2014 10:24:56] "GET /manager/html HTTP/1.0" 404 445 0.0019
+117.21.173.140 - - [10/Oct/2014 11:20:19] "GET /manager/html HTTP/1.0" 404 445 0.0014
+123.151.149.222 - - [10/Oct/2014 11:28:50] "GET / HTTP/1.0" 200 5322 0.0073
+114.250.98.179 - - [10/Oct/2014 11:30:37] "GET / HTTP/1.0" 200 5322 0.0073
+54.91.111.204 - - [10/Oct/2014 12:05:52] "HEAD / HTTP/1.0" 200 5322 0.0074
+54.91.111.204 - - [10/Oct/2014 12:05:52] "GET /clientaccesspolicy.xml HTTP/1.0" 404 455 0.0017
+80.253.11.42 - - [10/Oct/2014 16:44:36] "GET / HTTP/1.0" 200 5322 0.0080
+98.126.135.138 - - [10/Oct/2014 21:20:38] "GET /web-console/ServerInfo.jsp HTTP/1.0" 404 459 0.0021
+70.36.63.26 - - [10/Oct/2014 21:31:06] "GET / HTTP/1.0" 200 5322 0.0074
+70.36.63.26 - - [10/Oct/2014 21:31:13] "GET /?date=04%2F10%2F2014&type= HTTP/1.0" 200 4872 0.0071
+70.36.63.26 - - [10/Oct/2014 21:31:20] "GET /signup HTTP/1.0" 200 5255 0.0099
+70.36.63.26 - - [10/Oct/2014 21:31:27] "POST /login HTTP/1.0" 302 - 0.0027
+70.36.63.26 - - [10/Oct/2014 21:31:27] "GET / HTTP/1.0" 200 5322 0.0073
+70.36.63.26 - - [10/Oct/2014 21:31:36] "POST /login HTTP/1.0" 302 - 0.0024
+70.36.63.26 - - [10/Oct/2014 21:31:36] "GET / HTTP/1.0" 200 5322 0.0081
+70.36.63.26 - - [10/Oct/2014 21:31:44] "POST /login HTTP/1.0" 302 - 0.0024
+70.36.63.26 - - [10/Oct/2014 21:31:44] "GET / HTTP/1.0" 200 5322 0.0081
+70.36.63.26 - - [10/Oct/2014 21:31:49] "POST /login HTTP/1.0" 302 - 0.0048
+70.36.63.26 - - [10/Oct/2014 21:31:49] "GET / HTTP/1.0" 200 4889 0.0092
+70.36.63.26 - - [10/Oct/2014 21:31:59] "GET / HTTP/1.0" 200 4889 0.0087
+210.17.38.97 - - [11/Oct/2014 03:25:50] "HEAD / HTTP/1.0" 200 5322 0.0075
+222.175.241.131 - - [11/Oct/2014 05:24:42] "GET /muieblackcat HTTP/1.0" 404 445 0.0017
+222.175.241.131 - - [11/Oct/2014 05:24:42] "GET //scripts/setup.php HTTP/1.0" 404 450 0.0022
+222.175.241.131 - - [11/Oct/2014 05:24:43] "GET //phpMyAdmin/scripts/setup.php HTTP/1.0" 404 461 0.0018
+222.175.241.131 - - [11/Oct/2014 05:24:43] "GET //phpmyadmin/scripts/setup.php HTTP/1.0" 404 461 0.0016
+222.175.241.131 - - [11/Oct/2014 05:24:44] "GET //myadmin/scripts/setup.php HTTP/1.0" 404 458 0.0017
+222.175.241.131 - - [11/Oct/2014 05:24:44] "GET //mysqladmin/scripts/setup.php HTTP/1.0" 404 461 0.0031
+222.175.241.131 - - [11/Oct/2014 05:24:45] "GET //pma/scripts/setup.php HTTP/1.0" 404 454 0.0017
+222.175.241.131 - - [11/Oct/2014 05:24:45] "GET //mysql/scripts/setup.php HTTP/1.0" 404 456 0.0017
+222.175.241.131 - - [11/Oct/2014 05:24:46] "GET //phpadmin/scripts/setup.php HTTP/1.0" 404 459 0.0016
+222.175.241.131 - - [11/Oct/2014 05:24:46] "GET //websql/scripts/setup.php HTTP/1.0" 404 457 0.0017
+222.175.241.131 - - [11/Oct/2014 05:24:47] "GET //web/scripts/setup.php HTTP/1.0" 404 454 0.0016
+222.175.241.131 - - [11/Oct/2014 05:24:47] "GET //MyAdmin/scripts/setup.php HTTP/1.0" 404 458 0.0016
+222.175.241.131 - - [11/Oct/2014 05:24:48] "GET //typo3/phpmyadmin/scripts/setup.php HTTP/1.0" 404 467 0.0016
+222.175.241.131 - - [11/Oct/2014 05:24:48] "GET //phpadmin/scripts/setup.php HTTP/1.0" 404 459 0.0016
+222.175.241.131 - - [11/Oct/2014 05:24:49] "GET //web/phpMyAdmin/scripts/setup.php HTTP/1.0" 404 465 0.0016
+222.175.241.131 - - [11/Oct/2014 05:24:49] "GET //xampp/phpmyadmin/scripts/setup.php HTTP/1.0" 404 467 0.0017
+222.175.241.131 - - [11/Oct/2014 05:24:50] "GET //typo3/phpmyadmin/scripts/setup.php HTTP/1.0" 404 467 0.0016
+222.175.241.131 - - [11/Oct/2014 05:24:50] "GET //web/phpMyAdmin/scripts/setup.php HTTP/1.0" 404 465 0.0016
+222.175.241.131 - - [11/Oct/2014 05:24:51] "GET //php-my-admin/scripts/setup.php HTTP/1.0" 404 463 0.0017
+222.175.241.131 - - [11/Oct/2014 05:24:51] "GET //cpanelphpmyadmin/scripts/setup.php HTTP/1.0" 404 467 0.0016
+222.175.241.131 - - [11/Oct/2014 05:24:52] "GET //cpphpmyadmin/scripts/setup.php HTTP/1.0" 404 463 0.0018
+222.175.241.131 - - [11/Oct/2014 05:24:52] "GET //forum/phpmyadmin/scripts/setup.php HTTP/1.0" 404 467 0.0018
+222.175.241.131 - - [11/Oct/2014 05:24:53] "GET //phpMyAdmin-2.11.1-all-languages/scripts/setup.php HTTP/1.0" 404 482 0.0017
+222.175.241.131 - - [11/Oct/2014 05:24:53] "GET //phpMyAdmin-3.0.0-rc1-english/scripts/setup.php HTTP/1.0" 404 479 0.0016
+222.175.241.131 - - [11/Oct/2014 05:24:54] "GET //phpMyAdmin-3.0.0.0-all-languages/scripts/setup.php HTTP/1.0" 404 483 0.0017
+222.175.241.131 - - [11/Oct/2014 05:24:54] "GET //phpMyAdmin-3.0.1.0-english/scripts/setup.php HTTP/1.0" 404 477 0.0018
+222.175.241.131 - - [11/Oct/2014 05:24:55] "GET //phpMyAdmin2/scripts/setup.php HTTP/1.0" 404 462 0.0016
+222.175.241.131 - - [11/Oct/2014 05:24:55] "GET //phpMyAdmin3/scripts/setup.php HTTP/1.0" 404 462 0.0017
+54.162.85.0 - - [11/Oct/2014 06:07:06] "HEAD / HTTP/1.0" 200 5322 0.0079
+54.162.85.0 - - [11/Oct/2014 06:07:07] "GET /clientaccesspolicy.xml HTTP/1.0" 404 455 0.0014
+181.112.151.211 - - [11/Oct/2014 06:16:30] "HEAD / HTTP/1.0" 200 5322 0.0075
+117.21.173.140 - - [11/Oct/2014 12:16:32] "GET /manager/html HTTP/1.0" 404 445 0.0016
+117.21.191.206 - - [11/Oct/2014 17:40:59] "GET /manager/html HTTP/1.0" 404 445 0.0015
+122.114.36.36 - - [11/Oct/2014 19:40:24] "GET /manager/html HTTP/1.0" 404 445 0.0017
+50.67.174.143 - - [11/Oct/2014 21:06:48] "GET / HTTP/1.0" 200 4889 0.0100
+50.67.174.143 - - [11/Oct/2014 21:07:08] "POST /logout HTTP/1.0" 302 - 0.0020
+50.67.174.143 - - [11/Oct/2014 21:07:08] "GET / HTTP/1.0" 200 5322 0.0083
+50.67.174.143 - - [11/Oct/2014 21:12:05] "GET / HTTP/1.0" 200 5322 0.0080
+W, [2014-10-11T23:35:05.796991 #9039]  WARN -- : attack prevented by Rack::Protection::SessionHijacking
+50.67.174.143 - - [11/Oct/2014 23:35:05] "GET / HTTP/1.0" 200 5322 0.0084
+23.22.13.168 - - [12/Oct/2014 00:10:02] "HEAD / HTTP/1.0" 200 5322 0.0075
+23.22.13.168 - - [12/Oct/2014 00:10:03] "GET /clientaccesspolicy.xml HTTP/1.0" 404 455 0.0017
+123.249.19.23 - - [12/Oct/2014 02:56:25] "GET /manager/html HTTP/1.0" 404 445 0.0015
+50.67.174.143 - - [12/Oct/2014 03:29:59] "GET / HTTP/1.0" 200 5322 0.0079
+50.67.174.143 - - [12/Oct/2014 03:31:13] "POST /login HTTP/1.0" 302 - 0.0029
+50.67.174.143 - - [12/Oct/2014 03:31:13] "GET / HTTP/1.0" 200 5322 0.0088
+50.67.174.143 - - [12/Oct/2014 03:31:19] "POST /login HTTP/1.0" 302 - 0.0053
+50.67.174.143 - - [12/Oct/2014 03:31:19] "GET / HTTP/1.0" 200 4889 0.0105
+50.67.174.143 - - [12/Oct/2014 03:31:24] "POST /logout HTTP/1.0" 302 - 0.0018
+50.67.174.143 - - [12/Oct/2014 03:31:24] "GET / HTTP/1.0" 200 5322 0.0103
+123.249.19.23 - - [12/Oct/2014 03:34:05] "GET /manager/html HTTP/1.0" 404 445 0.0014
+50.67.174.143 - - [12/Oct/2014 03:34:26] "GET / HTTP/1.0" 200 5322 0.0083

@@ -13,7 +13,7 @@ gem 'tux'
 gem 'factory_girl'
 gem 'faker'
 gem 'pg'
-
+gem 'unicorn'
 
 group :development, :test do
   gem 'pry'
